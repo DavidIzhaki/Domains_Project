@@ -38,8 +38,8 @@ This ensures:
   - Uses **`fast-burn`** (which must be **lower than `slow-burn`**).
   - **Zoom-limit** restricts fast travel to a limited number of passengers.
 
- ## 🧮 Domain Type: Linear Task (LT) This domain models fuel consumption and movement in air travel using **numeric fluents** and **linear arithmetic expressions**. 
- It qualifies as a **Linear Task (LT)** due to the following characteristics: 
+ ## Domain Type: Linear Task (LT) 
+ This domain models fuel consumption and movement in air travel using **numeric fluents** and **linear arithmetic expressions**. It qualifies as a **Linear Task (LT)** due to the following characteristics: 
  - ✅ Uses **numeric fluents** such as `fuel`, `onboard`, and `fuel-used` 
  - ✅ Includes **linear preconditions** involving static functions like `distance` and `burn rate`, e.g., `(>= (fuel ?a) (* (slow-burn ?a) (distance ?c1 ?c2)))` 
  - ✅ Numeric effects use `increase` and `decrease` with **linear expressions** based on static terms (e.g., `(increase (fuel-used) (* (slow-burn ?a) (distance ?c1 ?c2)))`) 
