@@ -6,7 +6,7 @@
   )
 
   (:init
-    (= (max_int) 8)
+    (= (max_int) 5)
         (= (value c0) 0)
         (= (value c1) 0)
         (= (value c2) 0)
@@ -16,6 +16,7 @@
         (= (rate_value c1) 0)
         (= (rate_value c2) 0)
         (= (rate_value c3) 0)
+        (= (total-cost) 0)    
   )
 
   (:goal (and
