@@ -16,6 +16,18 @@ This is especially useful for modeling **time-based progression**, **natural gro
 
 ---
 
+## 🧮 Domain Type: Simple Numeric Task (SNT)
+
+This domain uses only **simple numeric fluents** updated through constant `increase` / `decrease` operations. There are:
+
+- No linear equations or expressions in effects
+- No arithmetic expressions in preconditions
+- No numeric functions combining multiple fluents
+
+This makes it a **Simple Numeric Task (SNT)** — highly efficient and well-supported by most numeric planners.
+
+---
+
 ## ⚙️ Domain Mechanics
 
 ### Predicates

@@ -38,6 +38,15 @@ This ensures:
   - Uses **`fast-burn`** (which must be **lower than `slow-burn`**).
   - **Zoom-limit** restricts fast travel to a limited number of passengers.
 
+ ## 🧮 Domain Type: Linear Task (LT) This domain models fuel consumption and movement in air travel using **numeric fluents** and **linear arithmetic expressions**. 
+ It qualifies as a **Linear Task (LT)** due to the following characteristics: 
+ - ✅ Uses **numeric fluents** such as `fuel`, `onboard`, and `fuel-used` 
+ - ✅ Includes **linear preconditions** involving static functions like `distance` and `burn rate`, e.g., `(>= (fuel ?a) (* (slow-burn ?a) (distance ?c1 ?c2)))` 
+ - ✅ Numeric effects use `increase` and `decrease` with **linear expressions** based on static terms (e.g., `(increase (fuel-used) (* (slow-burn ?a) (distance ?c1 ?c2)))`) 
+ - ❌ Does **not** use assignments (`:=`) or non-linear expressions 
+ - ❌ Violates **SNT** constraints because the `increase`/`decrease` operations are **not by constant literals**, but by computed static terms involving parameters This makes the domain a clear **Linear Task (LT)** 
+ — expressive enough for real-world modeling while still compatible with many numeric planners that support linear arithmetic. 
+
 ## Summary
 This adaptation of **Zenotravel** improves **fuel efficiency** by ensuring that:
 - **`fast-burn` is always lower than `slow-burn`** for optimal planning.
