@@ -15,10 +15,9 @@ This domain is designed to test numeric spatial reasoning and coordination, and 
 
 ---
 
-### 🔍 Domain Type: Restricted Numeric Task (RT)
+### 🔍 Domain Type: Restricted Numeric Task (SNT)
 
 This domain allows numeric preconditions with simple arithmetic expressions (e.g., `(+ (x ?b) 1)`), but only uses constant updates in effects.  
-This makes it more expressive than SNT, but not as complex as LT.
 
 ---
 
