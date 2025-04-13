@@ -2,6 +2,7 @@
 ;; Changes documented:
 ;; 1. Added new functions: total-time, slow-speed, and fast-speed.
 ;; 2. Updated fly-slow and fly-fast actions to include time calculation.
+
 (define (domain zenotravel)
   (:requirements :typing :fluents)
   
@@ -24,17 +25,19 @@
   ;; - onboard: number of passengers currently in an aircraft.
   ;; - zoom-limit: maximum allowed passengers for fast flight.
   ;; - slow-speed / fast-speed: speeds during slow and fast flights (new functions).
+
   (:functions 
+    (total-time)
     (fuel ?a - aircraft)
     (distance ?c1 - city ?c2 - city)
     (slow-burn ?a - aircraft)
     (fast-burn ?a - aircraft)
     (capacity ?a - aircraft)
-    (total-time)         ;; NEW: tracks the total travel time.
     (onboard ?a - aircraft)
     (zoom-limit ?a - aircraft)
     (slow-speed ?a - aircraft)  ;; NEW: speed during slow flight.
-    (fast-speed ?a - aircraft)) ;; NEW: speed during fast flight.
+    (fast-speed ?a - aircraft) ;; NEW: speed during fast flight.
+    ) 
   
   ;; Action: board a person onto an aircraft.
   (:action board
@@ -47,6 +50,7 @@
               (in ?p ?a)
               (increase (onboard ?a) 1)))
   
+
   ;; Action: debark a person from an aircraft.
   (:action debark
     :parameters (?p - person ?a - aircraft ?c - city)
@@ -58,6 +62,7 @@
               (located ?p ?c)
               (decrease (onboard ?a) 1)))
   
+
   ;; Action: fly-slow updates aircraft position, fuel, and now total-time.
   (:action fly-slow
     :parameters (?a - aircraft ?c1 ?c2 - city)
@@ -71,6 +76,7 @@
               ;; NEW: Increase total-time by flight duration: distance divided by slow-speed.
               (increase (total-time) (/ (distance ?c1 ?c2) (slow-speed ?a)))))
   
+
   ;; Action: fly-fast updates aircraft position, fuel, and total-time.
   (:action fly-fast
     :parameters (?a - aircraft ?c1 ?c2 - city)
@@ -85,6 +91,7 @@
               ;; NEW: Increase total-time by flight duration: distance divided by fast-speed.
               (increase (total-time) (/ (distance ?c1 ?c2) (fast-speed ?a)))))
   
+
   ;; Action: refuel replenishes fuel up to aircraft's capacity.
   (:action refuel	
     :parameters (?a - aircraft)
