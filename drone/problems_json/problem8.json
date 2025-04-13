@@ -6,196 +6,196 @@
         "y": 0,
         "z": 0,
         "visited": {
-            "0": false,
-            "1": false,
-            "2": false,
-            "3": false,
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": false,
-            "8": false,
-            "9": false,
-            "10": false,
-            "11": false,
-            "12": false,
-            "13": false,
-            "14": false,
-            "15": false,
-            "16": false,
-            "17": false,
-            "18": false,
-            "19": false,
-            "20": false,
-            "21": false,
-            "22": false,
-            "23": false,
-            "24": false,
-            "25": false,
-            "26": false,
-            "27": false,
-            "28": false,
-            "29": false,
-            "30": false,
-            "31": false
+            "x0y0z0": false,
+            "x0y0z1": false,
+            "x0y0z2": false,
+            "x0y0z3": false,
+            "x1y0z0": false,
+            "x1y0z1": false,
+            "x1y0z2": false,
+            "x1y0z3": false,
+            "x2y0z0": false,
+            "x2y0z1": false,
+            "x2y0z2": false,
+            "x2y0z3": false,
+            "x3y0z0": false,
+            "x3y0z1": false,
+            "x3y0z2": false,
+            "x3y0z3": false,
+            "x4y0z0": false,
+            "x4y0z1": false,
+            "x4y0z2": false,
+            "x4y0z3": false,
+            "x5y0z0": false,
+            "x5y0z1": false,
+            "x5y0z2": false,
+            "x5y0z3": false,
+            "x6y0z0": false,
+            "x6y0z1": false,
+            "x6y0z2": false,
+            "x6y0z3": false,
+            "x7y0z0": false,
+            "x7y0z1": false,
+            "x7y0z2": false,
+            "x7y0z3": false
         },
         "locations": {
-            "0": [
+            "x0y0z0": [
                 0,
                 0,
                 0
             ],
-            "1": [
+            "x0y0z1": [
                 0,
                 0,
                 1
             ],
-            "2": [
+            "x0y0z2": [
                 0,
                 0,
                 2
             ],
-            "3": [
+            "x0y0z3": [
                 0,
                 0,
                 3
             ],
-            "4": [
+            "x1y0z0": [
                 1,
                 0,
                 0
             ],
-            "5": [
+            "x1y0z1": [
                 1,
                 0,
                 1
             ],
-            "6": [
+            "x1y0z2": [
                 1,
                 0,
                 2
             ],
-            "7": [
+            "x1y0z3": [
                 1,
                 0,
                 3
             ],
-            "8": [
+            "x2y0z0": [
                 2,
                 0,
                 0
             ],
-            "9": [
+            "x2y0z1": [
                 2,
                 0,
                 1
             ],
-            "10": [
+            "x2y0z2": [
                 2,
                 0,
                 2
             ],
-            "11": [
+            "x2y0z3": [
                 2,
                 0,
                 3
             ],
-            "12": [
+            "x3y0z0": [
                 3,
                 0,
                 0
             ],
-            "13": [
+            "x3y0z1": [
                 3,
                 0,
                 1
             ],
-            "14": [
+            "x3y0z2": [
                 3,
                 0,
                 2
             ],
-            "15": [
+            "x3y0z3": [
                 3,
                 0,
                 3
             ],
-            "16": [
+            "x4y0z0": [
                 4,
                 0,
                 0
             ],
-            "17": [
+            "x4y0z1": [
                 4,
                 0,
                 1
             ],
-            "18": [
+            "x4y0z2": [
                 4,
                 0,
                 2
             ],
-            "19": [
+            "x4y0z3": [
                 4,
                 0,
                 3
             ],
-            "20": [
+            "x5y0z0": [
                 5,
                 0,
                 0
             ],
-            "21": [
+            "x5y0z1": [
                 5,
                 0,
                 1
             ],
-            "22": [
+            "x5y0z2": [
                 5,
                 0,
                 2
             ],
-            "23": [
+            "x5y0z3": [
                 5,
                 0,
                 3
             ],
-            "24": [
+            "x6y0z0": [
                 6,
                 0,
                 0
             ],
-            "25": [
+            "x6y0z1": [
                 6,
                 0,
                 1
             ],
-            "26": [
+            "x6y0z2": [
                 6,
                 0,
                 2
             ],
-            "27": [
+            "x6y0z3": [
                 6,
                 0,
                 3
             ],
-            "28": [
+            "x7y0z0": [
                 7,
                 0,
                 0
             ],
-            "29": [
+            "x7y0z1": [
                 7,
                 0,
                 1
             ],
-            "30": [
+            "x7y0z2": [
                 7,
                 0,
                 2
             ],
-            "31": [
+            "x7y0z3": [
                 7,
                 0,
                 3
@@ -214,6 +214,47 @@
                 0,
                 4
             ]
+        ]
+    },
+    "problem": {
+        "visited": [
+            "x0y0z0",
+            "x0y0z1",
+            "x0y0z2",
+            "x0y0z3",
+            "x1y0z0",
+            "x1y0z1",
+            "x1y0z2",
+            "x1y0z3",
+            "x2y0z0",
+            "x2y0z1",
+            "x2y0z2",
+            "x2y0z3",
+            "x3y0z0",
+            "x3y0z1",
+            "x3y0z2",
+            "x3y0z3",
+            "x4y0z0",
+            "x4y0z1",
+            "x4y0z2",
+            "x4y0z3",
+            "x5y0z0",
+            "x5y0z1",
+            "x5y0z2",
+            "x5y0z3",
+            "x6y0z0",
+            "x6y0z1",
+            "x6y0z2",
+            "x6y0z3",
+            "x7y0z0",
+            "x7y0z1",
+            "x7y0z2",
+            "x7y0z3"
+        ],
+        "position": [
+            0,
+            0,
+            0
         ]
     }
 }

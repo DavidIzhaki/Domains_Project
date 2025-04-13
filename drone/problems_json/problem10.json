@@ -6,244 +6,244 @@
         "y": 0,
         "z": 0,
         "visited": {
-            "0": false,
-            "1": false,
-            "2": false,
-            "3": false,
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": false,
-            "8": false,
-            "9": false,
-            "10": false,
-            "11": false,
-            "12": false,
-            "13": false,
-            "14": false,
-            "15": false,
-            "16": false,
-            "17": false,
-            "18": false,
-            "19": false,
-            "20": false,
-            "21": false,
-            "22": false,
-            "23": false,
-            "24": false,
-            "25": false,
-            "26": false,
-            "27": false,
-            "28": false,
-            "29": false,
-            "30": false,
-            "31": false,
-            "32": false,
-            "33": false,
-            "34": false,
-            "35": false,
-            "36": false,
-            "37": false,
-            "38": false,
-            "39": false
+            "x0y0z0": false,
+            "x0y0z1": false,
+            "x0y0z2": false,
+            "x0y0z3": false,
+            "x0y0z4": false,
+            "x1y0z0": false,
+            "x1y0z1": false,
+            "x1y0z2": false,
+            "x1y0z3": false,
+            "x1y0z4": false,
+            "x2y0z0": false,
+            "x2y0z1": false,
+            "x2y0z2": false,
+            "x2y0z3": false,
+            "x2y0z4": false,
+            "x3y0z0": false,
+            "x3y0z1": false,
+            "x3y0z2": false,
+            "x3y0z3": false,
+            "x3y0z4": false,
+            "x4y0z0": false,
+            "x4y0z1": false,
+            "x4y0z2": false,
+            "x4y0z3": false,
+            "x4y0z4": false,
+            "x5y0z0": false,
+            "x5y0z1": false,
+            "x5y0z2": false,
+            "x5y0z3": false,
+            "x5y0z4": false,
+            "x6y0z0": false,
+            "x6y0z1": false,
+            "x6y0z2": false,
+            "x6y0z3": false,
+            "x6y0z4": false,
+            "x7y0z0": false,
+            "x7y0z1": false,
+            "x7y0z2": false,
+            "x7y0z3": false,
+            "x7y0z4": false
         },
         "locations": {
-            "0": [
+            "x0y0z0": [
                 0,
                 0,
                 0
             ],
-            "1": [
+            "x0y0z1": [
                 0,
                 0,
                 1
             ],
-            "2": [
+            "x0y0z2": [
                 0,
                 0,
                 2
             ],
-            "3": [
+            "x0y0z3": [
                 0,
                 0,
                 3
             ],
-            "4": [
+            "x0y0z4": [
                 0,
                 0,
                 4
             ],
-            "5": [
+            "x1y0z0": [
                 1,
                 0,
                 0
             ],
-            "6": [
+            "x1y0z1": [
                 1,
                 0,
                 1
             ],
-            "7": [
+            "x1y0z2": [
                 1,
                 0,
                 2
             ],
-            "8": [
+            "x1y0z3": [
                 1,
                 0,
                 3
             ],
-            "9": [
+            "x1y0z4": [
                 1,
                 0,
                 4
             ],
-            "10": [
+            "x2y0z0": [
                 2,
                 0,
                 0
             ],
-            "11": [
+            "x2y0z1": [
                 2,
                 0,
                 1
             ],
-            "12": [
+            "x2y0z2": [
                 2,
                 0,
                 2
             ],
-            "13": [
+            "x2y0z3": [
                 2,
                 0,
                 3
             ],
-            "14": [
+            "x2y0z4": [
                 2,
                 0,
                 4
             ],
-            "15": [
+            "x3y0z0": [
                 3,
                 0,
                 0
             ],
-            "16": [
+            "x3y0z1": [
                 3,
                 0,
                 1
             ],
-            "17": [
+            "x3y0z2": [
                 3,
                 0,
                 2
             ],
-            "18": [
+            "x3y0z3": [
                 3,
                 0,
                 3
             ],
-            "19": [
+            "x3y0z4": [
                 3,
                 0,
                 4
             ],
-            "20": [
+            "x4y0z0": [
                 4,
                 0,
                 0
             ],
-            "21": [
+            "x4y0z1": [
                 4,
                 0,
                 1
             ],
-            "22": [
+            "x4y0z2": [
                 4,
                 0,
                 2
             ],
-            "23": [
+            "x4y0z3": [
                 4,
                 0,
                 3
             ],
-            "24": [
+            "x4y0z4": [
                 4,
                 0,
                 4
             ],
-            "25": [
+            "x5y0z0": [
                 5,
                 0,
                 0
             ],
-            "26": [
+            "x5y0z1": [
                 5,
                 0,
                 1
             ],
-            "27": [
+            "x5y0z2": [
                 5,
                 0,
                 2
             ],
-            "28": [
+            "x5y0z3": [
                 5,
                 0,
                 3
             ],
-            "29": [
+            "x5y0z4": [
                 5,
                 0,
                 4
             ],
-            "30": [
+            "x6y0z0": [
                 6,
                 0,
                 0
             ],
-            "31": [
+            "x6y0z1": [
                 6,
                 0,
                 1
             ],
-            "32": [
+            "x6y0z2": [
                 6,
                 0,
                 2
             ],
-            "33": [
+            "x6y0z3": [
                 6,
                 0,
                 3
             ],
-            "34": [
+            "x6y0z4": [
                 6,
                 0,
                 4
             ],
-            "35": [
+            "x7y0z0": [
                 7,
                 0,
                 0
             ],
-            "36": [
+            "x7y0z1": [
                 7,
                 0,
                 1
             ],
-            "37": [
+            "x7y0z2": [
                 7,
                 0,
                 2
             ],
-            "38": [
+            "x7y0z3": [
                 7,
                 0,
                 3
             ],
-            "39": [
+            "x7y0z4": [
                 7,
                 0,
                 4
@@ -262,6 +262,55 @@
                 0,
                 5
             ]
+        ]
+    },
+    "problem": {
+        "visited": [
+            "x0y0z0",
+            "x0y0z1",
+            "x0y0z2",
+            "x0y0z3",
+            "x0y0z4",
+            "x1y0z0",
+            "x1y0z1",
+            "x1y0z2",
+            "x1y0z3",
+            "x1y0z4",
+            "x2y0z0",
+            "x2y0z1",
+            "x2y0z2",
+            "x2y0z3",
+            "x2y0z4",
+            "x3y0z0",
+            "x3y0z1",
+            "x3y0z2",
+            "x3y0z3",
+            "x3y0z4",
+            "x4y0z0",
+            "x4y0z1",
+            "x4y0z2",
+            "x4y0z3",
+            "x4y0z4",
+            "x5y0z0",
+            "x5y0z1",
+            "x5y0z2",
+            "x5y0z3",
+            "x5y0z4",
+            "x6y0z0",
+            "x6y0z1",
+            "x6y0z2",
+            "x6y0z3",
+            "x6y0z4",
+            "x7y0z0",
+            "x7y0z1",
+            "x7y0z2",
+            "x7y0z3",
+            "x7y0z4"
+        ],
+        "position": [
+            0,
+            0,
+            0
         ]
     }
 }

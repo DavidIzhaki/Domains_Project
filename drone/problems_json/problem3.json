@@ -6,52 +6,52 @@
         "y": 0,
         "z": 0,
         "visited": {
-            "0": false,
-            "1": false,
-            "2": false,
-            "3": false,
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": false
+            "x0y0z0": false,
+            "x0y1z0": false,
+            "x0y2z0": false,
+            "x0y3z0": false,
+            "x0y4z0": false,
+            "x0y5z0": false,
+            "x0y6z0": false,
+            "x0y7z0": false
         },
         "locations": {
-            "0": [
+            "x0y0z0": [
                 0,
                 0,
                 0
             ],
-            "1": [
+            "x0y1z0": [
                 0,
                 1,
                 0
             ],
-            "2": [
+            "x0y2z0": [
                 0,
                 2,
                 0
             ],
-            "3": [
+            "x0y3z0": [
                 0,
                 3,
                 0
             ],
-            "4": [
+            "x0y4z0": [
                 0,
                 4,
                 0
             ],
-            "5": [
+            "x0y5z0": [
                 0,
                 5,
                 0
             ],
-            "6": [
+            "x0y6z0": [
                 0,
                 6,
                 0
             ],
-            "7": [
+            "x0y7z0": [
                 0,
                 7,
                 0
@@ -70,6 +70,23 @@
                 0,
                 1
             ]
+        ]
+    },
+    "problem": {
+        "visited": [
+            "x0y0z0",
+            "x0y1z0",
+            "x0y2z0",
+            "x0y3z0",
+            "x0y4z0",
+            "x0y5z0",
+            "x0y6z0",
+            "x0y7z0"
+        ],
+        "position": [
+            0,
+            0,
+            0
         ]
     }
 }

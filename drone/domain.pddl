@@ -87,8 +87,8 @@
     (:action decrease_z
         :parameters ()
         :precondition (and
-            (>= (battery-level) 1)
-            (>= (z) (+ (min_z) 1))
+           (>= (battery-level) 1)
+            (>= (z) (+ (min_z) 1)) 
         )
         :effect (and (decrease (z) 1)
             (decrease (battery-level) 1)

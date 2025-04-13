@@ -22,15 +22,17 @@ It is especially useful for testing:
 
 ---
 
-## 🧮 Domain Type: Linear Task (LT)
+## 🧮 Domain Type: Restricted Task (RT)
 
-This domain qualifies as a **Linear Task (LT)** because it includes:
+This domain qualifies as a **Restricted Task (RT)** because it includes numeric constraints like:
+```lisp
+  (>= (battery-level) 1)
+  (>= (z) (+ (min_z) 1))
 
-- **Arithmetic expressions** in preconditions, e.g., `(+ min_x 1)`
-- **Numeric `assign`** operations (e.g., setting battery to full)
-- **Fluent equality** for goal conditions (e.g., `(= (x) (xl ?l))`)
+```
 
-This makes it more expressive and challenging than SNT or RT domains.
+The drone's battery level is a numeric resource that must be managed and the drone must stay inside the location limits.
+This makes it more expressive and challenging than SNT.
 
 ---
 
