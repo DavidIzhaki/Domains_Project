@@ -50,39 +50,119 @@ This makes it compatible with many numeric planners, and ideal for testing **res
 
 ### Functions
 
-- `(available ?molecule)` – how much of a molecule is currently available
-- `(num-subs)` – number of substances selected
+- `(available ?molecule)` – how much of a molecule is currently available  
+- `(num-subs)` – number of substances selected  
 - Reaction-specific costs and products, e.g.:
   - `(need-for-association ...)`, `(prod-by-synthesis ...)`
   - `(duration-...)` (declared but not used in effects)
 
 ---
 
-### 🧪 Actions
+## 🧪 Actions
 
-#### ✅ `choose`
+### ✅ `choose`
 
-Marks a `simple` molecule as chosen and increments `num-subs`.
+Marks a simple molecule as chosen and no longer possible.
 
-#### 🧫 `initialize`
+```lisp
+(:action choose
+ :parameters (?x - simple)
+ :precondition (and (possible ?x))
+ :effect (and
+   (chosen ?x)
+   (not (possible ?x))
+   (increase (num-subs) 1)))
+```
 
-Adds 1 unit of availability for a chosen molecule.
+---
 
-#### 🔬 `associate`
+### 🧫 `initialize`
 
-Consumes molecules `?x1` and `?x2` to create a complex `?x3`.
+Adds 1 unit of availability for a molecule after it was chosen.
 
-#### ⚗️ `associate-with-catalyze`
+```lisp
+(:action initialize
+ :parameters (?x - simple)
+ :precondition (and (chosen ?x))
+ :effect (and
+   (increase (available ?x) 1)))
+```
 
-Like `associate`, but with a catalyzed variant.
+---
 
-#### 🧪 `self-associate-with-catalyze`
+### 🔬 `associate`
 
-Uses a single molecule to produce a complex version of itself with a catalyst.
+Consumes two molecules to produce a complex one.
 
-#### 🧬 `synthesize`
+```lisp
+(:action associate
+ :parameters (?x1 ?x2 - molecule ?x3 - complex)
+ :precondition (and
+   (>= (available ?x1) (need-for-association ?x1 ?x2 ?x3))
+   (>= (available ?x2) (need-for-association ?x2 ?x1 ?x3))
+   (association-reaction ?x1 ?x2 ?x3))
+ :effect (and
+   (decrease (available ?x1) (need-for-association ?x1 ?x2 ?x3))
+   (decrease (available ?x2) (need-for-association ?x2 ?x1 ?x3))
+   (increase (available ?x3) (prod-by-association ?x1 ?x2 ?x3))))
+```
 
-Produces one molecule from another via a synthesis reaction.
+---
+
+### ⚗️ `associate-with-catalyze`
+
+Same as `associate`, but for catalyzed reactions.
+
+```lisp
+(:action associate-with-catalyze
+ :parameters (?x1 ?x2 - molecule ?x3 - complex)
+ :precondition (and
+   (>= (available ?x1) (need-for-catalyzed-association ?x1 ?x2 ?x3))
+   (>= (available ?x2) (need-for-catalyzed-association ?x2 ?x1 ?x3))
+   (catalyzed-association-reaction ?x1 ?x2 ?x3))
+ :effect (and
+   (decrease (available ?x1) (need-for-catalyzed-association ?x1 ?x2 ?x3))
+   ;; (x2 is consumed and then re-increased — effectively a catalyst)
+   ;(decrease (available ?x2) (need-for-catalyzed-association ?x2 ?x1 ?x3))
+   ;(increase (available ?x2) (need-for-catalyzed-association ?x2 ?x1 ?x3))
+   (increase (available ?x3) (prod-by-catalyzed-association ?x1 ?x2 ?x3))))
+```
+
+---
+
+### 🧪 `self-associate-with-catalyze`
+
+Catalyzed self-association of a molecule into a complex.
+
+```lisp
+(:action self-associate-with-catalyze
+ :parameters (?x1 - molecule ?x3 - complex)
+ :precondition (and
+   (>= (available ?x1) (need-for-catalyzed-self-association ?x1 ?x3))
+   (catalyzed-self-association-reaction ?x1 ?x3))
+ :effect (and
+   (decrease (available ?x1) (need-for-catalyzed-self-association ?x1 ?x3))
+   (increase (available ?x3) (prod-by-catalyzed-self-association ?x1 ?x3))))
+```
+
+---
+
+### 🧬 `synthesize`
+
+Synthesizes one molecule from another.
+
+```lisp
+(:action synthesize
+ :parameters (?x1 ?x2 - molecule)
+ :precondition (and
+   (>= (available ?x1) (need-for-synthesis ?x1 ?x2))
+   (synthesis-reaction ?x1 ?x2))
+ :effect (and
+   ;; (x1 is used and then restored — acting like a catalyst)
+   ;(decrease (available ?x1) (need-for-synthesis ?x1 ?x2))
+   ;(increase (available ?x1) (need-for-synthesis ?x1 ?x2))
+   (increase (available ?x2) (prod-by-synthesis ?x1 ?x2))))
+```
 
 ---
 
@@ -90,9 +170,9 @@ Produces one molecule from another via a synthesis reaction.
 
 The planner’s job is to:
 
-- Select valid precursor molecules (`choose`, `initialize`)
-- Execute legal chemical reactions to transform and combine them
-- Reach a state where the required **target molecules** are available in sufficient quantity
+- Select valid precursor molecules (`choose`, `initialize`)  
+- Execute legal chemical reactions to transform and combine them  
+- Reach a state where the required **target molecules** are available in sufficient quantity  
 
 This models real-world biological pathway design and is used to simulate **biochemical synthesis chains**.
 
@@ -104,22 +184,6 @@ This models real-world biological pathway design and is used to simulate **bioch
 - **Testing numeric heuristic planners**
 - **Biological modeling of molecular systems**
 - **Teaching chemical reaction modeling with planning**
-
----
-
-## 🧪 Example Instance (Conceptual)
-
-Initial State:
-- `(possible mol-A)`
-- `(association-reaction mol-A mol-B mol-C)`
-
-Goal:
-- `(>= (available mol-C) 1)`
-
-Plan:
-1. `choose mol-A`
-2. `initialize mol-A`
-3. `associate mol-A mol-B mol-C`
 
 ---
 
