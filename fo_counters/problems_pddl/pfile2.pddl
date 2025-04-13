@@ -14,6 +14,7 @@
         (= (rate_value c0) 0)
         (= (rate_value c1) 0)
         (= (rate_value c2) 0)
+        (= (total-cost) 0)
   )
 
   (:goal (and

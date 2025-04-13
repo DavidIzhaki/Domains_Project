@@ -2,8 +2,8 @@
 (define (problem instance_10)
   (:domain fn-counters)
   (:objects
-    c0 c1 c2 c3 c4 c5 c6 c7 c8 c9 - counter
   )
+    c0 c1 c2 c3 c4 c5 c6 c7 c8 c9 - counter
 
   (:init
     (= (max_int) 20)
@@ -28,6 +28,7 @@
         (= (rate_value c7) 0)
         (= (rate_value c8) 0)
         (= (rate_value c9) 0)
+        (= (total-cost) 0)
   )
 
   (:goal (and
