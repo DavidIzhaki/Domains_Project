@@ -1,0 +1,137 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "entertainment",
+        "harmony": 3,
+        "craves": [
+          "flounder"
+        ]
+      },
+      {
+        "name": "intoxication",
+        "harmony": 1,
+        "craves": [
+          "haroset"
+        ]
+      },
+      {
+        "name": "curiosity",
+        "harmony": 1,
+        "craves": [
+          "hotdog"
+        ]
+      },
+      {
+        "name": "excitement",
+        "harmony": 1,
+        "craves": [
+          "guava"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "name": "hangover",
+        "harmony": 0,
+        "craves": [
+          "haroset"
+        ],
+        "fears": []
+      },
+      {
+        "name": "anxiety",
+        "harmony": 0,
+        "craves": [
+          "wurst"
+        ],
+        "fears": []
+      },
+      {
+        "name": "laceration",
+        "harmony": 0,
+        "craves": [
+          "wurst"
+        ],
+        "fears": []
+      },
+      {
+        "name": "boils",
+        "harmony": 0,
+        "craves": [
+          "guava"
+        ],
+        "fears": []
+      },
+      {
+        "name": "jealousy",
+        "harmony": 0,
+        "craves": [
+          "guava"
+        ],
+        "fears": []
+      },
+      {
+        "name": "angina",
+        "harmony": 0,
+        "craves": [
+          "guava"
+        ],
+        "fears": []
+      },
+      {
+        "name": "grief",
+        "harmony": 0,
+        "craves": [
+          "guava"
+        ],
+        "fears": []
+      }
+    ],
+    "foods": []
+  },
+  "problem": {
+    "eats": {
+      "apple": [
+        "guava",
+        "hotdog"
+      ],
+      "guava": [
+        "apple",
+        "haroset"
+      ],
+      "hamburger": [
+        "haroset",
+        "flounder"
+      ],
+      "flounder": [
+        "hamburger",
+        "wurst"
+      ],
+      "haroset": [
+        "guava",
+        "hamburger"
+      ],
+      "hotdog": [
+        "wurst",
+        "apple"
+      ],
+      "wurst": [
+        "flounder",
+        "hotdog"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "sciatica",
+          "food": "hamburger"
+        },
+        {
+          "emotion": "jealousy",
+          "food": "wurst"
+        }
+      ]
+    }
+  }
+}

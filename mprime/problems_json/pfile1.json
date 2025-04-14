@@ -1,0 +1,86 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "expectation",
+        "harmony": 1,
+        "craves": [
+          "tuna"
+        ]
+      },
+      {
+        "name": "rest",
+        "harmony": 3,
+        "craves": [
+          "pistachio"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "name": "depression",
+        "harmony": 0,
+        "craves": [
+          "wurst"
+        ],
+        "fears": []
+      },
+      {
+        "name": "angina",
+        "harmony": 0,
+        "craves": [
+          "chicken"
+        ],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "wurst",
+        "locale": 2
+      },
+      {
+        "name": "tuna",
+        "locale": 2
+      },
+      {
+        "name": "pistachio",
+        "locale": 5
+      },
+      {
+        "name": "chicken",
+        "locale": 2
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "wurst": [
+        "chicken",
+        "tuna",
+        "pistachio"
+      ],
+      "tuna": [
+        "pistachio",
+        "wurst"
+      ],
+      "chicken": [
+        "pistachio",
+        "wurst"
+      ],
+      "pistachio": [
+        "wurst",
+        "tuna",
+        "chicken"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "depression",
+          "food": "chicken"
+        }
+      ]
+    }
+  }
+}

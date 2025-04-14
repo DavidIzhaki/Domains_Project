@@ -1,0 +1,149 @@
+{
+  "state": {
+    "pleasures": [],
+    "pains": [
+      {
+        "name": "dread",
+        "harmony": 0,
+        "craves": [
+          "yogurt"
+        ],
+        "fears": []
+      },
+      {
+        "name": "abrasion",
+        "harmony": 0,
+        "craves": [
+          "wonderbread"
+        ],
+        "fears": []
+      },
+      {
+        "name": "grief",
+        "harmony": 0,
+        "craves": [
+          "turkey"
+        ],
+        "fears": []
+      },
+      {
+        "name": "laceration",
+        "harmony": 0,
+        "craves": [
+          "cherry"
+        ],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "scallion",
+        "locale": 10
+      },
+      {
+        "name": "marzipan",
+        "locale": 5
+      },
+      {
+        "name": "cherry",
+        "locale": 7
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "pepper": [
+        "guava",
+        "cherry"
+      ],
+      "turkey": [
+        "guava",
+        "tuna",
+        "cherry",
+        "rice"
+      ],
+      "marzipan": [
+        "cod",
+        "orange",
+        "cherry"
+      ],
+      "yogurt": [
+        "tuna",
+        "muffin",
+        "wonderbread"
+      ],
+      "cherry": [
+        "turkey",
+        "pepper",
+        "marzipan"
+      ],
+      "pork": [
+        "cod",
+        "mutton",
+        "sweetroll"
+      ],
+      "cod": [
+        "tuna",
+        "pork",
+        "marzipan"
+      ],
+      "orange": [
+        "scallion",
+        "marzipan"
+      ],
+      "mutton": [
+        "pork",
+        "wonderbread"
+      ],
+      "baguette": [
+        "guava",
+        "rice"
+      ],
+      "rice": [
+        "potato",
+        "turkey",
+        "baguette"
+      ],
+      "sweetroll": [
+        "tuna",
+        "muffin",
+        "pork"
+      ],
+      "potato": [
+        "scallion",
+        "rice"
+      ],
+      "tuna": [
+        "turkey",
+        "cod",
+        "sweetroll",
+        "yogurt"
+      ],
+      "scallion": [
+        "orange",
+        "potato"
+      ],
+      "muffin": [
+        "sweetroll",
+        "yogurt"
+      ],
+      "wonderbread": [
+        "yogurt",
+        "mutton"
+      ],
+      "guava": [
+        "baguette",
+        "pepper",
+        "turkey"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "abrasion",
+          "food": "pepper"
+        }
+      ]
+    }
+  }
+}

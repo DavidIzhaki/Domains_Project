@@ -1,0 +1,111 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "triumph",
+        "harmony": 2,
+        "craves": [
+          "chocolate"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "name": "sciatica",
+        "harmony": 0,
+        "craves": [
+          "baguette"
+        ],
+        "fears": []
+      },
+      {
+        "name": "grief",
+        "harmony": 0,
+        "craves": [
+          "baguette"
+        ],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "wonderbread",
+        "locale": 2
+      },
+      {
+        "name": "baguette",
+        "locale": 0
+      },
+      {
+        "name": "rice",
+        "locale": 1
+      },
+      {
+        "name": "chocolate",
+        "locale": 5
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "wonderbread": [
+        "flounder",
+        "arugula"
+      ],
+      "chicken": [
+        "bacon",
+        "marzipan"
+      ],
+      "arugula": [
+        "baguette",
+        "wonderbread"
+      ],
+      "chocolate": [
+        "flounder",
+        "marzipan",
+        "pepper"
+      ],
+      "pepper": [
+        "chocolate",
+        "guava"
+      ],
+      "guava": [
+        "baguette",
+        "pepper"
+      ],
+      "baguette": [
+        "arugula",
+        "guava",
+        "rice"
+      ],
+      "bacon": [
+        "chicken",
+        "rice"
+      ],
+      "rice": [
+        "bacon",
+        "baguette"
+      ],
+      "marzipan": [
+        "chicken",
+        "chocolate"
+      ],
+      "flounder": [
+        "chocolate",
+        "wonderbread"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "abrasion",
+          "food": "rice"
+        },
+        {
+          "emotion": "sciatica",
+          "food": "rice"
+        }
+      ]
+    }
+  }
+}

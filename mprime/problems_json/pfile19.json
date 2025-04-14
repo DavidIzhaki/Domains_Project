@@ -1,0 +1,154 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "aesthetics",
+        "harmony": 1,
+        "craves": [
+          "hamburger"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "name": "depression-19",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      },
+      {
+        "name": "laceration-20",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "baguette",
+        "locale": 2
+      },
+      {
+        "name": "scallion",
+        "locale": 1
+      },
+      {
+        "name": "hamburger",
+        "locale": 2
+      },
+      {
+        "name": "papaya",
+        "locale": 2
+      },
+      {
+        "name": "lobster",
+        "locale": 1
+      },
+      {
+        "name": "lemon",
+        "locale": 3
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "lobster": [
+        "marzipan",
+        "baguette",
+        "papaya"
+      ],
+      "marzipan": [
+        "lobster",
+        "mutton",
+        "rice"
+      ],
+      "rice": [
+        "lettuce",
+        "marzipan"
+      ],
+      "turkey": [
+        "potato",
+        "onion",
+        "scallop"
+      ],
+      "wurst": [
+        "ham",
+        "haroset"
+      ],
+      "mutton": [
+        "marzipan",
+        "scallop"
+      ],
+      "baguette": [
+        "lobster",
+        "lemon"
+      ],
+      "papaya": [
+        "hamburger",
+        "lobster"
+      ],
+      "hamburger": [
+        "papaya",
+        "scallion"
+      ],
+      "scallop": [
+        "turkey",
+        "yogurt",
+        "mutton"
+      ],
+      "flounder": [
+        "scallion",
+        "lemon"
+      ],
+      "haroset": [
+        "wurst",
+        "melon"
+      ],
+      "melon": [
+        "haroset",
+        "onion"
+      ],
+      "potato": [
+        "muffin",
+        "turkey"
+      ],
+      "lettuce": [
+        "rice",
+        "chocolate"
+      ],
+      "lemon": [
+        "onion",
+        "flounder",
+        "baguette"
+      ],
+      "yogurt": [
+        "scallop",
+        "chocolate"
+      ],
+      "chocolate": [
+        "lettuce",
+        "yogurt"
+      ],
+      "onion": [
+        "lemon",
+        "melon",
+        "turkey"
+      ],
+      "scallion": [
+        "flounder",
+        "hamburger"
+      ],
+      "muffin": [
+        "ham",
+        "potato"
+      ],
+      "ham": [
+        "muffin",
+        "wurst"
+      ]
+    },
+    "goal": {
+      "conditions": []
+    }
+  }
+}

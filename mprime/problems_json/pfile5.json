@@ -1,0 +1,88 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "aesthetics",
+        "harmony": 1,
+        "craves": [
+          "shrimp"
+        ]
+      }
+    ],
+    "pains": [],
+    "foods": [
+      {
+        "name": "arugula",
+        "locale": 4
+      },
+      {
+        "name": "scallop",
+        "locale": 3
+      },
+      {
+        "name": "wurst",
+        "locale": 0
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "ham": [
+        "muffin",
+        "cherry"
+      ],
+      "cherry": [
+        "shrimp",
+        "ham",
+        "arugula",
+        "muffin"
+      ],
+      "grapefruit": [
+        "scallop",
+        "wurst"
+      ],
+      "wurst": [
+        "bacon",
+        "arugula",
+        "grapefruit"
+      ],
+      "muffin": [
+        "ham",
+        "cherry",
+        "scallion",
+        "arugula"
+      ],
+      "arugula": [
+        "scallop",
+        "bacon",
+        "muffin",
+        "wurst",
+        "cherry"
+      ],
+      "bacon": [
+        "wurst",
+        "arugula"
+      ],
+      "scallion": [
+        "shrimp",
+        "muffin"
+      ],
+      "scallop": [
+        "arugula",
+        "grapefruit"
+      ],
+      "shrimp": [
+        "scallion",
+        "cherry"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "sciatica",
+          "food": "wurst"
+        }
+      ]
+    }
+  }
+}

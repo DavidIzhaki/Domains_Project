@@ -1,0 +1,171 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "satisfaction",
+        "harmony": 2,
+        "craves": [
+          "turkey"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "name": "boils",
+        "harmony": 0,
+        "craves": [
+          "endive"
+        ],
+        "fears": []
+      },
+      {
+        "name": "sciatica",
+        "harmony": 0,
+        "craves": [
+          "turkey"
+        ],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "potato",
+        "locale": 1
+      },
+      {
+        "name": "orange",
+        "locale": 0
+      },
+      {
+        "name": "marzipan",
+        "locale": 5
+      },
+      {
+        "name": "broccoli",
+        "locale": 2
+      },
+      {
+        "name": "wurst",
+        "locale": 7
+      },
+      {
+        "name": "endive",
+        "locale": 0
+      },
+      {
+        "name": "turkey",
+        "locale": 2
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "wonderbread": [
+        "guava",
+        "tofu",
+        "pea"
+      ],
+      "tofu": [
+        "chocolate",
+        "wonderbread"
+      ],
+      "pea": [
+        "cucumber",
+        "rice",
+        "wonderbread"
+      ],
+      "scallop": [
+        "lemon",
+        "chicken",
+        "potato",
+        "hotdog"
+      ],
+      "hotdog": [
+        "chicken",
+        "lemon",
+        "scallop"
+      ],
+      "orange": [
+        "marzipan",
+        "turkey"
+      ],
+      "chocolate": [
+        "cantelope",
+        "tofu"
+      ],
+      "pepper": [
+        "cantelope",
+        "guava"
+      ],
+      "cantelope": [
+        "pepper",
+        "chocolate"
+      ],
+      "rice": [
+        "pea",
+        "chicken"
+      ],
+      "lemon": [
+        "scallop",
+        "cucumber",
+        "hotdog"
+      ],
+      "wurst": [
+        "potato",
+        "haroset",
+        "bacon"
+      ],
+      "potato": [
+        "scallop",
+        "turkey",
+        "wurst"
+      ],
+      "cucumber": [
+        "lemon",
+        "pea"
+      ],
+      "guava": [
+        "pepper",
+        "wonderbread"
+      ],
+      "haroset": [
+        "wurst",
+        "endive"
+      ],
+      "turkey": [
+        "potato",
+        "orange",
+        "broccoli"
+      ],
+      "bacon": [
+        "wurst",
+        "broccoli"
+      ],
+      "broccoli": [
+        "turkey",
+        "bacon"
+      ],
+      "chicken": [
+        "rice",
+        "hotdog",
+        "scallop"
+      ],
+      "endive": [
+        "haroset",
+        "marzipan"
+      ],
+      "marzipan": [
+        "endive",
+        "orange"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "angina",
+          "food": "chocolate"
+        }
+      ]
+    }
+  }
+}

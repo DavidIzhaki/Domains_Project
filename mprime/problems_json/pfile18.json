@@ -1,0 +1,171 @@
+{
+  "state": {
+    "pleasures": [],
+    "pains": [
+      {
+        "name": "dread-2",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      },
+      {
+        "name": "sciatica-1",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      },
+      {
+        "name": "hangover-4",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      },
+      {
+        "name": "abrasion-3",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "cherry",
+        "locale": 0
+      },
+      {
+        "name": "shrimp",
+        "locale": 4
+      },
+      {
+        "name": "hamburger",
+        "locale": 2
+      },
+      {
+        "name": "kale",
+        "locale": 4
+      },
+      {
+        "name": "muffin",
+        "locale": 0
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "wurst": [
+        "pea",
+        "kale",
+        "pepper"
+      ],
+      "beef": [
+        "shrimp",
+        "cherry",
+        "scallop"
+      ],
+      "hamburger": [
+        "cherry",
+        "kale",
+        "scallop"
+      ],
+      "guava": [
+        "ham",
+        "chicken"
+      ],
+      "muffin": [
+        "pea",
+        "shrimp"
+      ],
+      "marzipan": [
+        "wonderbread",
+        "lettuce",
+        "bacon"
+      ],
+      "pea": [
+        "lamb",
+        "muffin",
+        "wurst"
+      ],
+      "lamb": [
+        "shrimp",
+        "cantelope",
+        "pepper",
+        "pea"
+      ],
+      "scallop": [
+        "beef",
+        "cantelope",
+        "hamburger",
+        "shrimp",
+        "kale",
+        "cherry"
+      ],
+      "cherry": [
+        "scallop",
+        "beef",
+        "hamburger",
+        "chicken"
+      ],
+      "ham": [
+        "guava",
+        "popover"
+      ],
+      "onion": [
+        "bacon",
+        "lettuce"
+      ],
+      "wonderbread": [
+        "lettuce",
+        "marzipan"
+      ],
+      "popover": [
+        "bacon",
+        "ham",
+        "chicken"
+      ],
+      "bacon": [
+        "onion",
+        "marzipan",
+        "popover"
+      ],
+      "pepper": [
+        "wurst",
+        "lamb",
+        "kale"
+      ],
+      "shrimp": [
+        "muffin",
+        "lamb",
+        "beef",
+        "scallop"
+      ],
+      "kale": [
+        "wurst",
+        "scallop",
+        "pepper",
+        "hamburger"
+      ],
+      "lettuce": [
+        "marzipan",
+        "wonderbread",
+        "onion"
+      ],
+      "chicken": [
+        "popover",
+        "cherry",
+        "guava"
+      ],
+      "cantelope": [
+        "scallop",
+        "lamb"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "hangover",
+          "food": "lamb"
+        }
+      ]
+    }
+  }
+}
