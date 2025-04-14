@@ -1,0 +1,144 @@
+{
+  "state": {
+    "pleasures": [],
+    "pains": [
+      {
+        "name": "jealousy",
+        "harmony": 0,
+        "craves": [
+          "pistachio"
+        ],
+        "fears": []
+      },
+      {
+        "name": "loneliness",
+        "harmony": 0,
+        "craves": [
+          "lobster"
+        ],
+        "fears": []
+      },
+      {
+        "name": "hangover",
+        "harmony": 0,
+        "craves": [
+          "bacon"
+        ],
+        "fears": []
+      },
+      {
+        "name": "grief",
+        "harmony": 0,
+        "craves": [
+          "bacon"
+        ],
+        "fears": []
+      },
+      {
+        "name": "sciatica",
+        "harmony": 0,
+        "craves": [
+          "cucumber"
+        ],
+        "fears": []
+      },
+      {
+        "name": "dread",
+        "harmony": 0,
+        "craves": [
+          "onion"
+        ],
+        "fears": []
+      }
+    ],
+    "foods": []
+  },
+  "problem": {
+    "eats": {
+      "haroset": [
+        "onion",
+        "lemon",
+        "pepper"
+      ],
+      "bacon": [
+        "ham",
+        "pepper"
+      ],
+      "okra": [
+        "cucumber",
+        "pistachio"
+      ],
+      "lemon": [
+        "cod",
+        "haroset",
+        "broccoli"
+      ],
+      "turkey": [
+        "pea",
+        "cantelope"
+      ],
+      "pepper": [
+        "bacon",
+        "haroset"
+      ],
+      "cod": [
+        "lemon",
+        "lamb",
+        "chicken",
+        "pea"
+      ],
+      "broccoli": [
+        "pistachio",
+        "lemon"
+      ],
+      "onion": [
+        "haroset",
+        "ham"
+      ],
+      "pistachio": [
+        "broccoli",
+        "okra"
+      ],
+      "cantelope": [
+        "turkey",
+        "lamb",
+        "chicken"
+      ],
+      "chicken": [
+        "lamb",
+        "cantelope",
+        "cod"
+      ],
+      "lobster": [
+        "ham",
+        "cucumber"
+      ],
+      "pea": [
+        "turkey",
+        "cod"
+      ],
+      "cucumber": [
+        "okra",
+        "lobster"
+      ],
+      "lamb": [
+        "cod",
+        "cantelope",
+        "chicken"
+      ],
+      "ham": [
+        "lobster",
+        "bacon",
+        "onion"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "jealousy",
+          "food": "chicken"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "rest",
+        "harmony": 3,
+        "craves": [
+          "pork"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "name": "hangover",
+        "harmony": 0,
+        "craves": [
+          "rice"
+        ],
+        "fears": []
+      },
+      {
+        "name": "depression",
+        "harmony": 0,
+        "craves": [
+          "flounder"
+        ],
+        "fears": []
+      },
+      {
+        "name": "abrasion",
+        "harmony": 0,
+        "craves": [
+          "pork"
+        ],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "rice",
+        "locale": 1
+      },
+      {
+        "name": "pear",
+        "locale": 2
+      },
+      {
+        "name": "flounder",
+        "locale": 4
+      },
+      {
+        "name": "okra",
+        "locale": 6
+      },
+      {
+        "name": "pork",
+        "locale": 5
+      },
+      {
+        "name": "lamb",
+        "locale": 3
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "lamb": [
+        "pork",
+        "flounder"
+      ],
+      "pork": [
+        "okra",
+        "lamb"
+      ],
+      "okra": [
+        "pear",
+        "pork"
+      ],
+      "rice": [
+        "rice",
+        "flounder",
+        "pear"
+      ],
+      "flounder": [
+        "lamb",
+        "rice"
+      ],
+      "pear": [
+        "okra",
+        "rice"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "abrasion",
+          "food": "rice"
+        }
+      ]
+    }
+  }
+}

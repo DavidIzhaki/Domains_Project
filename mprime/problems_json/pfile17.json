@@ -1,0 +1,150 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "achievement",
+        "harmony": 2,
+        "craves": [
+          "cherry"
+        ]
+      },
+      {
+        "name": "satiety",
+        "harmony": 2,
+        "craves": [
+          "bacon"
+        ]
+      },
+      {
+        "name": "curiosity",
+        "harmony": 3,
+        "craves": [
+          "muffin"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "name": "sciatica-29",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      },
+      {
+        "name": "depression-30",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "chocolate",
+        "locale": 4
+      },
+      {
+        "name": "pepper",
+        "locale": 9
+      },
+      {
+        "name": "shrimp",
+        "locale": 1
+      },
+      {
+        "name": "orange",
+        "locale": 3
+      },
+      {
+        "name": "apple",
+        "locale": 0
+      },
+      {
+        "name": "wurst",
+        "locale": 1
+      },
+      {
+        "name": "potato",
+        "locale": 9
+      },
+      {
+        "name": "melon",
+        "locale": 9
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "potato": [
+        "wurst",
+        "pepper",
+        "melon"
+      ],
+      "lettuce": [
+        "bacon",
+        "cherry"
+      ],
+      "melon": [
+        "potato",
+        "pepper",
+        "muffin"
+      ],
+      "muffin": [
+        "tofu",
+        "melon",
+        "apple"
+      ],
+      "turkey": [
+        "bacon",
+        "chicken"
+      ],
+      "orange": [
+        "shrimp",
+        "wurst"
+      ],
+      "cherry": [
+        "chicken",
+        "tofu",
+        "lettuce"
+      ],
+      "shrimp": [
+        "apple",
+        "orange"
+      ],
+      "pepper": [
+        "potato",
+        "melon",
+        "chocolate"
+      ],
+      "wurst": [
+        "potato",
+        "orange"
+      ],
+      "apple": [
+        "shrimp",
+        "chocolate",
+        "muffin"
+      ],
+      "chocolate": [
+        "apple",
+        "pepper"
+      ],
+      "tofu": [
+        "muffin",
+        "chicken",
+        "cherry"
+      ],
+      "chicken": [
+        "tofu",
+        "turkey",
+        "cherry"
+      ],
+      "bacon": [
+        "lettuce",
+        "turkey"
+      ]
+    },
+    "goal": {
+      "conditions": []
+    }
+  }
+}
