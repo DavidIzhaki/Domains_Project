@@ -1,5 +1,7 @@
 import re
 import json
+import os
+import argparse
 
 def extract_time_objects(pddl_string):
     """
@@ -49,43 +51,62 @@ def pddl_to_json(pddl_string):
     time_end = len(time_objects)  # planning horizon is the number of time points
 
     # 6. Extract demand predicates: (demand tXXXX nX)
-    # Instead of converting tXXXX to an integer, we look up its index.
-    demands = {}
+    demands = []
     for time_sym, node_sym in re.findall(r'\(demand\s+(t\d+)\s+(n\d+)\)', pddl_string, flags):
-        idx = time_index_map.get(time_sym)
-        if idx is None:
-            continue  # Skip if the time symbol wasn't found in the objects block
-        value = node_mapping.get(node_sym)
-        if value is not None:
-            demands[idx] = value
+        if time_sym in time_index_map and node_sym in node_mapping:
+            demands.append({
+                "time": time_sym,
+                "node": node_sym,
+                "value": node_mapping[node_sym]
+            })
 
+    # 7. Extract before predicates: (before tXXXX tYYYY)
+    before = []
+    for t1, t2 in re.findall(r'\(before\s+(t\d+)\s+(t\d+)\)', pddl_string, flags):
+        before.append({
+            "from": t1,
+            "to": t2
+        })
+
+    # Create the JSON structure in state-problem format
     return {
-        "funds": funds,
-        "goal_funds": goal_funds,
-        "capacity": capacity,
-        "time_end": time_end,
-        "demands": demands
+        "state": {
+            "funds": funds,
+            "stored_capacity": capacity,
+            "time_end": time_end
+        },
+        "problem": {
+            "goal_funds": goal_funds,
+            "demands": demands,
+            "before": before
+        }
     }
 
 def main():
-    # Set the path to your PDDL file. Use a raw string to handle Windows paths.
-    pddl_file_path = "problems\pfile20.pddl"
-    output_json_path = "Problem20.json"
-    
-    try:
-        with open(pddl_file_path, "r", encoding="utf-8") as f:
-            pddl_content = f.read()
-    except FileNotFoundError:
-        print("Error: PDDL file not found. Please check the file path.")
-        return
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--input_dir', required=True, help='Input directory containing PDDL files')
+    parser.add_argument('--output_dir', required=True, help='Output directory for JSON files')
+    args = parser.parse_args()
 
-    result = pddl_to_json(pddl_content)
- 
-    
-    with open(output_json_path, "w", encoding="utf-8") as f:
-        json.dump(result, f, indent=2)
-    
-    
+    # Create output directory if it doesn't exist
+    os.makedirs(args.output_dir, exist_ok=True)
+
+    # Process all PDDL files in the input directory
+    for filename in os.listdir(args.input_dir):
+        if filename.endswith('.pddl'):
+            input_path = os.path.join(args.input_dir, filename)
+            output_filename = f"{filename[:-5]}.json"
+            output_path = os.path.join(args.output_dir, output_filename)
+
+            with open(input_path, 'r', encoding='utf-8') as f:
+                pddl_content = f.read()
+
+            json_data = pddl_to_json(pddl_content)
+
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(json_data, f, indent=4)
+
+            print(f"Converted {filename} to {output_filename}")
 
 if __name__ == "__main__":
     main()

@@ -13,12 +13,9 @@ The **Expedition Domain** simulates a scenario where sleds navigate through a se
 
 ---
 
-## 🧮 Domain Type: Linear Task (LT)
+## 🧮 Domain Type: Simple Numaric Task (SNT)
 
-This domain involves:
-- **Arithmetic operations** in action preconditions and effects.
-- **Resource management** using linear expressions to check and update the supply levels.
-
+This domain is classified as SNT (Simple Numeric Task) because it uses numeric fluents updated with constant values and compares them using simple arithmetic in preconditions. All numeric effects are limited to increase or decrease by constants, which fits the SNT definition.
 ---
 
 ## ⚙️ Domain Mechanics

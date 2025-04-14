@@ -38,11 +38,11 @@
     )
     (:action go_south_west
          :parameters (?b - boat)
-         :effect (and (increase (x ?b) 2) (decrease (y ?b) 2))
+         :effect (and (decrease (x ?b) 2) (decrease (y ?b) 2))
     )
     (:action go_south_east
          :parameters (?b - boat)
-         :effect (and (decrease (x ?b) 2) (decrease (y ?b) 2))
+         :effect (and (increase (x ?b) 2) (decrease (y ?b) 2))
     )
     (:action go_south
          :parameters (?b - boat)
