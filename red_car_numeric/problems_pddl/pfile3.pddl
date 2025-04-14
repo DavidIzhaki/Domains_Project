@@ -1,82 +1,62 @@
-(define (problem 3)
-(:domain RedCar)
-(:objects
+(define (problem redcar-instance-3)
+  (:domain RedCar)
 
- red-car green-car green-over-car purple-car white-gray-car - horizontalCar
- orange-car blue-sky-car pink-car - verticalCar
+  (:objects
+    red-car - horizontalCar
+    green-car orange-car - verticalCar
+    purple-truck - horizontalTruck
+    p0 p1 p2 p3 p4 p5  - position
+  )
 
- purple-truck blue-truck yellow-truck - verticalTruck
-)
-(:init
-    (= (x red-car) 1)
-(= (y red-car) 2)
-(= (x green-car) 0)
-(= (y green-car) 0)
-(= (x green-over-car) 0)
-(= (y green-over-car) 4)
-(= (x purple-car) 3)
-(= (y purple-car) 3)
-(= (x white-gray-car) 0)
-(= (y white-gray-car) 5)
-(= (x orange-car) 4)
-(= (y orange-car) 0)
-(= (x blue-sky-car) 5)
-(= (y blue-sky-car) 0)
-(= (x pink-car) 0)
-(= (y pink-car) 2)
-(= (x purple-truck) 5)
-(= (y purple-truck) 2)
-(= (x blue-truck) 2)
-(= (y blue-truck) 3)
-(= (x yellow-truck) 3)
-(= (y yellow-truck) 0)
+  (:init
+    ;; Vehicle position
+    (= (pos-x red-car) 0)
+    (= (pos-y red-car) 2)
+
+    (= (pos-x green-car) 2)
+    (= (pos-y green-car) 2)
     
+    (= (pos-x orange-car) 3)
+    (= (pos-y orange-car) 2)
+    (= (pos-x purple-truck) 2)
+    (= (pos-y purple-truck) 4)
+  
     ;; Grid boundaries
     (= (min_x) 0)
-    (= (max_x) 6)
+    (= (max_x) 5)
     (= (min_y) 0)
-    (= (max_y) 6)
+    (= (max_y) 5)
+    (= (total-cost) 0)
+
+    ;; Map positions to numeric coordinates
+    (= (pos-cell-x p0) 0)
+    (= (pos-cell-x p1) 1)
+    (= (pos-cell-x p2) 2)
+    (= (pos-cell-x p3) 3)
+    (= (pos-cell-x p4) 4)
+    (= (pos-cell-x p5) 5)
+
+
+    (= (pos-cell-y p0) 0)
+    (= (pos-cell-y p1) 1)
+    (= (pos-cell-y p2) 2)
+    (= (pos-cell-y p3) 3)
+    (= (pos-cell-y p4) 4)
+    (= (pos-cell-y p5) 5)
+
+    ;; Clear cells (as predicates!)
     
-    ;; Clear cells
-    (= (clear 0 0) 0)
-(= (clear 1 0) 0)
-(= (clear 2 0) 1)
-(= (clear 3 0) 0)
-(= (clear 4 0) 0)
-(= (clear 5 0) 0)
-(= (clear 0 1) 1)
-(= (clear 1 1) 1)
-(= (clear 2 1) 1)
-(= (clear 3 1) 0)
-(= (clear 4 1) 0)
-(= (clear 5 1) 0)
-(= (clear 0 2) 0)
-(= (clear 1 2) 0)
-(= (clear 2 2) 0)
-(= (clear 3 2) 0)
-(= (clear 4 2) 1)
-(= (clear 5 2) 0)
-(= (clear 0 3) 0)
-(= (clear 1 3) 1)
-(= (clear 2 3) 0)
-(= (clear 3 3) 0)
-(= (clear 4 3) 0)
-(= (clear 5 3) 0)
-(= (clear 0 4) 0)
-(= (clear 1 4) 0)
-(= (clear 2 4) 0)
-(= (clear 3 4) 1)
-(= (clear 4 4) 1)
-(= (clear 5 4) 0)
-(= (clear 0 5) 0)
-(= (clear 1 5) 0)
-(= (clear 2 5) 0)
-(= (clear 3 5) 1)
-(= (clear 4 5) 1)
-(= (clear 5 5) 1)
-)
-(:goal (and 
-    (= (x red-car) (- (max_x) 2))
-    (= (y red-car) 2)
-))
+    (clear p0 p0) (clear p1 p0) (clear p2 p0) (clear p3 p0) (clear p4 p0) (clear p5 p0)
+    (clear p0 p1) (clear p1 p1) (clear p2 p1) (clear p3 p1) (clear p4 p1) (clear p5 p1)             
+                                                             (clear p4 p2) (clear p5 p2)
+    (clear p0 p3) (clear p1 p3)                              (clear p4 p3) (clear p5 p3)
+    (clear p0 p4) (clear p1 p4)                                            (clear p5 p4)
+    (clear p0 p5) (clear p1 p5) (clear p2 p5) (clear p3 p5) (clear p4 p5) (clear p5 p5)
+  )
+
+  (:goal (and 
+    (= (pos-x red-car) 4)  
+    (= (pos-y red-car) 2)
+  ))
+  (:metric minimize (total-cost))
 )
