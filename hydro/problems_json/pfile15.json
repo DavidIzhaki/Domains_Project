@@ -1,8 +1,7 @@
 {
     "state": {
         "funds": 1000,
-        "stored_capacity": 30,
-        "time_end": 51
+        "stored_capacity": 30
     },
     "problem": {
         "goal_funds": 1600,

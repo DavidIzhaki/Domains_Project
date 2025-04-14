@@ -48,7 +48,6 @@ def pddl_to_json(pddl_string):
     # 5. Extract the list of time objects and create a mapping from time symbol to sequential index.
     time_objects = extract_time_objects(pddl_string)
     time_index_map = { time_sym: idx for idx, time_sym in enumerate(time_objects) }
-    time_end = len(time_objects)  # planning horizon is the number of time points
 
     # 6. Extract demand predicates: (demand tXXXX nX)
     demands = []
@@ -72,8 +71,7 @@ def pddl_to_json(pddl_string):
     return {
         "state": {
             "funds": funds,
-            "stored_capacity": capacity,
-            "time_end": time_end
+            "stored_capacity": capacity
         },
         "problem": {
             "goal_funds": goal_funds,
