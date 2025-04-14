@@ -1,0 +1,142 @@
+{
+  "state": {
+    "farms": [
+      {
+        "name": "farm0",
+        "value": 1
+      },
+      {
+        "name": "farm1",
+        "value": 500
+      },
+      {
+        "name": "farm2",
+        "value": 0
+      },
+      {
+        "name": "farm3",
+        "value": 0
+      },
+      {
+        "name": "farm4",
+        "value": 0
+      },
+      {
+        "name": "farm5",
+        "value": 1
+      },
+      {
+        "name": "farm6",
+        "value": 1
+      },
+      {
+        "name": "farm7",
+        "value": 0
+      },
+      {
+        "name": "farm8",
+        "value": 0
+      },
+      {
+        "name": "farm9",
+        "value": 0
+      }
+    ]
+  },
+  "problem": {
+    "adj": {
+      "farm0": [
+        "farm1",
+        "farm5"
+      ],
+      "farm1": [
+        "farm0",
+        "farm2",
+        "farm6"
+      ],
+      "farm2": [
+        "farm1",
+        "farm3",
+        "farm7"
+      ],
+      "farm3": [
+        "farm8",
+        "farm2",
+        "farm4"
+      ],
+      "farm4": [
+        "farm9",
+        "farm3"
+      ],
+      "farm5": [
+        "farm0",
+        "farm6"
+      ],
+      "farm6": [
+        "farm1",
+        "farm5",
+        "farm7"
+      ],
+      "farm7": [
+        "farm8",
+        "farm2",
+        "farm6"
+      ],
+      "farm8": [
+        "farm9",
+        "farm3",
+        "farm7"
+      ],
+      "farm9": [
+        "farm8",
+        "farm4"
+      ]
+    },
+    "goal": {
+      "farms": [
+        {
+          "farm_name": "farm0",
+          "farm_constant": 1.7
+        },
+        {
+          "farm_name": "farm1",
+          "farm_constant": 1.0
+        },
+        {
+          "farm_name": "farm2",
+          "farm_constant": 1.3
+        },
+        {
+          "farm_name": "farm3",
+          "farm_constant": 1.1
+        },
+        {
+          "farm_name": "farm4",
+          "farm_constant": 1.4
+        },
+        {
+          "farm_name": "farm5",
+          "farm_constant": 1.9
+        },
+        {
+          "farm_name": "farm6",
+          "farm_constant": 1.3
+        },
+        {
+          "farm_name": "farm7",
+          "farm_constant": 1.4
+        },
+        {
+          "farm_name": "farm8",
+          "farm_constant": 1.4
+        },
+        {
+          "farm_name": "farm9",
+          "farm_constant": 1.1
+        }
+      ],
+      "operator": ">=",
+      "value": 700
+    }
+  }
+}
