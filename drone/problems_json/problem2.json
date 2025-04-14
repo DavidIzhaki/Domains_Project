@@ -6,28 +6,28 @@
         "y": 0,
         "z": 0,
         "visited": {
-            "0": false,
-            "1": false,
-            "2": false,
-            "3": false
+            "x0y0z0": false,
+            "x0y0z1": false,
+            "x0y0z2": false,
+            "x0y0z3": false
         },
         "locations": {
-            "0": [
+            "x0y0z0": [
                 0,
                 0,
                 0
             ],
-            "1": [
+            "x0y0z1": [
                 0,
                 0,
                 1
             ],
-            "2": [
+            "x0y0z2": [
                 0,
                 0,
                 2
             ],
-            "3": [
+            "x0y0z3": [
                 0,
                 0,
                 3
@@ -46,6 +46,19 @@
                 0,
                 4
             ]
+        ]
+    },
+    "problem": {
+        "visited": [
+            "x0y0z0",
+            "x0y0z1",
+            "x0y0z2",
+            "x0y0z3"
+        ],
+        "position": [
+            0,
+            0,
+            0
         ]
     }
 }

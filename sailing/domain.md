@@ -15,6 +15,24 @@ This domain models **direction-based movement and location-based rescues**, usef
 
 ---
 
+## 🧮 Domain Type: Simple Numeric Task (SNT)
+
+This domain includes simple numeric expressions in both **preconditions** and **effects**, such as:
+
+Preconditions using expressions like:
+```lisp
+(>= (+ (x ?b) (y ?b)) (d ?t))
+```
+
+Effects using variable-dependent updates:
+```lisp
+(increase (x ?b) 1.5)
+```
+
+These operations fits the definition of a Simple Numeric Task (SNT) domain.
+
+---
+
 ## ⚙️ Domain Mechanics
 
 ### Predicates
@@ -154,23 +172,6 @@ Rescues a person when the boat is within a specific area defined by coordinate c
 
 ---
 
-## 🧮 Domain Type: Linear Numeric Task (LT)
-
-This domain includes complex numeric expressions in both **preconditions** and **effects**, such as:
-
-Preconditions using expressions like:
-```lisp
-(>= (+ (x ?b) (y ?b)) (d ?t))
-```
-
-Effects using variable-dependent updates:
-```lisp
-(increase (x ?b) 1.5)
-```
-
-These operations involve general linear updates to numeric fluents, making this a **Linear Numeric Task (LT)** - the most expressive of the three numeric planning task categories.
-
----
 
 ## 🔍 What the Planner Tries to Do
 

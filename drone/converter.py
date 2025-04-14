@@ -44,16 +44,34 @@ def parse_locations(pddl_text):
     
     for idx, match in enumerate(matches):
         loc_name, x, y, z = match.groups()
-        locations[str(idx)] = [int(x), int(y), int(z)]
+        locations[loc_name] = [int(x), int(y), int(z)]
     
     return locations
+
+def parse_goal(pddl_text):
+    """Extract goal conditions from the PDDL text"""
+    goal_match = re.search(r'\(:goal\s*\(and\s*(.*?)\)\s*\)', pddl_text, re.DOTALL)
+    if not goal_match:
+        return {}
+    
+    goal_text = goal_match.group(1)
+    visited = re.findall(r'\(visited\s+(x\d+y\d+z\d+)\)', goal_text)
+    position_match = re.search(r'\(=\s*\(x\)\s*(\d+)\)\s*\(=\s*\(y\)\s*(\d+)\)\s*\(=\s*\(z\)\s*(\d+)\)', goal_text)
+    
+    goal = {
+        "visited": visited,
+        "position": [int(position_match.group(1)), int(position_match.group(2)), int(position_match.group(3))] if position_match else [0, 0, 0]
+    }
+    
+    return goal
 
 def convert_pddl_to_json(pddl_text):
     """Convert PDDL problem instance to JSON format"""
     bounds = parse_bounds(pddl_text)
     battery_info = parse_battery(pddl_text)
     locations = parse_locations(pddl_text)
-    visited = {str(i): False for i in range(len(locations))}
+    visited = {loc: False for loc in locations.keys()}
+    goal = parse_goal(pddl_text)
     
     json_data = {
         "state": {
@@ -68,11 +86,11 @@ def convert_pddl_to_json(pddl_text):
                 [bounds['min_y'], bounds['max_y']],
                 [bounds['min_z'], bounds['max_z']]
             ]
-        }
+        },
+        "problem": goal
     }
     
     return json_data
-
 
 def main():
     parser = argparse.ArgumentParser()

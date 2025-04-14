@@ -141,18 +141,16 @@ Loads an item from the tray into a free arm.
 
 ---
 
-## 🧮 Domain Type: Restricted Numeric Task (RT)
+## 🧮 Domain Type: Linear Task (LT)
 
-This domain includes numeric constraints using arithmetic in **preconditions**, like:
+This domain includes numeric calculations using arithmetic in **effects**, like:
 
 ```lisp
-(<= (+ (current_load ?b) (weight ?i)) (load_limit ?b))
+(decrease (current_load ?b) (weight ?i))
 
 ```
 
-However, effects only include constant `increase` / `decrease` operations on numeric fluents, and do not involve general linear updates.
-
-This makes it a **Restricted Numeric Task (RT)** — more expressive than SNT, but simpler than LT.
+Notice that weight is a numaric fluent so it matches the LT definition.
 
 ---
 
