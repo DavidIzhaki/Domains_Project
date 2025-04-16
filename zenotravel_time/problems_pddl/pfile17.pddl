@@ -1,4 +1,4 @@
-(define (problem zenotravel-problem-18)
+(define (problem zenotravel-problem-17)
   (:domain zenotravel)
   (:objects
     plane1 - aircraft
@@ -136,7 +136,7 @@
     (located person24 city6)
     (located person25 city5)
     
-    ;; Distances between cities
+    ;; Distances
     (= (distance city0 city0) 0)
     (= (distance city0 city1) 588)
     (= (distance city0 city2) 953)
@@ -247,6 +247,10 @@
     (= (distance city4 city15) 997)
     (= (distance city4 city16) 660)
     (= (distance city4 city17) 563)
+    (= (distance city4 city18) 740)
+    (= (distance city4 city19) 684)
+    (= (distance city4 city20) 636)
+    (= (distance city4 city21) 555)
     
     (= (distance city5 city0) 956)
     (= (distance city5 city1) 583)
@@ -312,6 +316,10 @@
     (= (distance city7 city15) 778)
     (= (distance city7 city16) 501)
     (= (distance city7 city17) 742)
+    (= (distance city7 city18) 871)
+    (= (distance city7 city19) 824)
+    (= (distance city7 city20) 764)
+    (= (distance city7 city21) 642)
     
     (= (distance city8 city0) 518)
     (= (distance city8 city1) 956)
@@ -331,10 +339,8 @@
     (= (distance city8 city15) 818)
     (= (distance city8 city16) 705)
     (= (distance city8 city17) 857)
-    
     (= (distance city8 city18) 598)
     (= (distance city8 city19) 501)
-    
     (= (distance city8 city20) 810)
     (= (distance city8 city21) 941)
     
@@ -356,10 +362,8 @@
     (= (distance city9 city15) 829)
     (= (distance city9 city16) 622)
     (= (distance city9 city17) 646)
-    
     (= (distance city9 city18) 771)
     (= (distance city9 city19) 906)
-    
     (= (distance city9 city20) 641)
     (= (distance city9 city21) 550)
     
@@ -380,9 +384,9 @@
     (= (distance city10 city14) 732)
     (= (distance city10 city15) 648)
     (= (distance city10 city16) 565)
-    (= (distance city10 city17) 514)
-    (= (distance city10 city18) 608)
-    (= (distance city10 city19) 757)
+    (= (distance city10 city17) 740)
+    (= (distance city10 city18) 628)
+    (= (distance city10 city19) 929)
     (= (distance city10 city20) 557)
     (= (distance city10 city21) 534)
     
@@ -429,8 +433,6 @@
     (= (distance city12 city17) 531)
     (= (distance city12 city18) 759)
     (= (distance city12 city19) 745)
-    (= (distance city12 city20) 939)
-    (= (distance city12 city21) 698)
     
     (= (distance city13 city0) 749)
     (= (distance city13 city1) 572)
@@ -628,7 +630,7 @@
     (= (distance city21 city20) 965)
     (= (distance city21 city21) 0)
     
-    (= (total-time) 0)
+    (= (total-time-used) 0)
   )
   (:goal (and
     (located plane1 city11)
@@ -659,5 +661,5 @@
     (located person24 city13)
     (located person25 city2)
   ))
-    (:metric minimize (total-time))
+    (:metric minimize (total-time-used))
 )

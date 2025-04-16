@@ -29,11 +29,11 @@
     (= (distance city2 city1) 631)
     (= (distance city2 city2) 0)
     
-    (= (total-time) 0)             ;; NEW: initialize total time
+    (= (total-time-used) 0)            ;; NEW: initialize total time
     (= (slow-speed plane1) 300)      ;; NEW: slow flight speed for plane1
     (= (fast-speed plane1) 600))      ;; NEW: fast flight speed for plane1
   (:goal (and
            (located plane1 city2)
            (located person1 city1)
            (located person3 city2)))
-  (:metric minimize (total-time)))
+  (:metric minimize (total-time-used)))
