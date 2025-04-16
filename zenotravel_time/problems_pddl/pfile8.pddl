@@ -85,7 +85,7 @@
     (= (distance city4 city2) 978)
     (= (distance city4 city3) 803)
     (= (distance city4 city4) 0)
-    (= (total-time) 0)  ;; NEW: Initialize total time
+    (= (total-time-used) 0)  ;; NEW: Initialize total time
   )
   (:goal (and
            (located plane1 city2)
@@ -97,5 +97,5 @@
            (located person6 city3)
            (located person7 city4)
            (located person8 city3)))
-    (:metric minimize (total-time))
+    (:metric minimize (total-time-used))
 )

@@ -1,4 +1,4 @@
-(define (problem ZTRAVEL-5-40)
+(define (problem zenotravel-problem-19)
   (:domain zenotravel)
   (:objects
     plane1 - aircraft
@@ -6,15 +6,15 @@
     plane3 - aircraft
     plane4 - aircraft
     plane5 - aircraft
-    person1  - person
-    person2  - person
-    person3  - person
-    person4  - person
-    person5  - person
-    person6  - person
-    person7  - person
-    person8  - person
-    person9  - person
+    person1 - person
+    person2 - person
+    person3 - person
+    person4 - person
+    person5 - person
+    person6 - person
+    person7 - person
+    person8 - person
+    person9 - person
     person10 - person
     person11 - person
     person12 - person
@@ -31,31 +31,16 @@
     person23 - person
     person24 - person
     person25 - person
-    person26 - person
-    person27 - person
-    person28 - person
-    person29 - person
-    person30 - person
-    person31 - person
-    person32 - person
-    person33 - person
-    person34 - person
-    person35 - person
-    person36 - person
-    person37 - person
-    person38 - person
-    person39 - person
-    person40 - person
-    city0  - city
-    city1  - city
-    city2  - city
-    city3  - city
-    city4  - city
-    city5  - city
-    city6  - city
-    city7  - city
-    city8  - city
-    city9  - city
+    city0 - city
+    city1 - city
+    city2 - city
+    city3 - city
+    city4 - city
+    city5 - city
+    city6 - city
+    city7 - city
+    city8 - city
+    city9 - city
     city10 - city
     city11 - city
     city12 - city
@@ -75,108 +60,101 @@
     city26 - city
     city27 - city
     city28 - city
-    city29 - city
-    city30 - city
-    city31 - city
-    city32 - city
-    city33 - city
-    city34 - city
-  )
+    city29 - city)
   (:init
-    ;; Aircraft initializations with speed assignments
-    (located plane1 city18)
-    (= (capacity plane1) 462)
-    (= (fuel plane1) 181)
-    (= (slow-burn plane1) 4)
-    (= (fast-burn plane1) 14)
+    ;; Plane 1
+    (located plane1 city19)
+    (= (capacity plane1) 123)
+    (= (fuel plane1) 28)
+    (= (slow-burn plane1) 1)
+    (= (fast-burn plane1) 3)
     (= (onboard plane1) 0)
-    (= (zoom-limit plane1) 4)
+    (= (zoom-limit plane1) 8)
     (= (slow-speed plane1) 300)
     (= (fast-speed plane1) 600)
     
-    (located plane2 city29)
-    (= (capacity plane2) 665)
-    (= (fuel plane2) 155)
-    (= (slow-burn plane2) 5)
-    (= (fast-burn plane2) 12)
+    ;; Plane 2
+    (located plane2 city6)
+    (= (capacity plane2) 338)
+    (= (fuel plane2) 82)
+    (= (slow-burn plane2) 3)
+    (= (fast-burn plane2) 7)
     (= (onboard plane2) 0)
-    (= (zoom-limit plane2) 6)
+    (= (zoom-limit plane2) 5)
     (= (slow-speed plane2) 350)
     (= (fast-speed plane2) 700)
     
-    (located plane3 city0)
-    (= (capacity plane3) 305)
-    (= (fuel plane3) 53)
-    (= (slow-burn plane3) 2)
-    (= (fast-burn plane3) 6)
+    ;; Plane 3
+    (located plane3 city24)
+    (= (capacity plane3) 122)
+    (= (fuel plane3) 6)
+    (= (slow-burn plane3) 1)
+    (= (fast-burn plane3) 3)
     (= (onboard plane3) 0)
-    (= (zoom-limit plane3) 10)
+    (= (zoom-limit plane3) 5)
     (= (slow-speed plane3) 320)
     (= (fast-speed plane3) 640)
     
-    (located plane4 city15)
-    (= (capacity plane4) 496)
-    (= (fuel plane4) 92)
-    (= (slow-burn plane4) 4)
-    (= (fast-burn plane4) 14)
+    ;; Plane 4
+    (located plane4 city26)
+    (= (capacity plane4) 706)
+    (= (fuel plane4) 88)
+    (= (slow-burn plane4) 5)
+    (= (fast-burn plane4) 11)
     (= (onboard plane4) 0)
-    (= (zoom-limit plane4) 1)
+    (= (zoom-limit plane4) 6)
     (= (slow-speed plane4) 250)
     (= (fast-speed plane4) 500)
     
-    (located plane5 city5)
-    (= (capacity plane5) 432)
-    (= (fuel plane5) 15)
-    (= (slow-burn plane5) 3)
-    (= (fast-burn plane5) 9)
+    ;; Plane 5
+    (located plane5 city25)
+    (= (capacity plane5) 121)
+    (= (fuel plane5) 27)
+    (= (slow-burn plane5) 1)
+    (= (fast-burn plane5) 2)
     (= (onboard plane5) 0)
-    (= (zoom-limit plane5) 1)
+    (= (zoom-limit plane5) 8)
     (= (slow-speed plane5) 300)
     (= (fast-speed plane5) 600)
     
-    ;; Persons' initial locations
-    (located person1  city19)
-    (located person2  city17)
-    (located person3  city10)
-    (located person4  city25)
-    (located person5  city12)
-    (located person6  city20)
-    (located person7  city22)
-    (located person8  city26)
-    (located person9  city30)
-    (located person10 city16)
-    (located person11 city7)
-    (located person12 city16)
-    (located person13 city13)
-    (located person14 city33)
-    (located person15 city6)
-    (located person16 city26)
+    ;; Persons
+    (located person1 city11)
+    (located person2 city22)
+    (located person3 city16)
+    (located person4 city13)
+    (located person5 city21)
+    (located person6 city2)
+    (located person7 city20)
+    (located person8 city12)
+    (located person9 city29)
+    (located person10 city0)
+    (located person11 city4)
+    (located person12 city13)
+    (located person13 city11)
+    (located person14 city19)
+    (located person15 city21)
+    (located person16 city16)
     (located person17 city22)
-    (located person18 city23)
-    (located person19 city14)
-    (located person20 city5)
-    (located person21 city32)
-    (located person22 city2)
-    (located person23 city4)
-    (located person24 city2)
-    (located person25 city25)
-    (located person26 city19)
-    (located person27 city13)
-    (located person28 city6)
-    (located person29 city16)
-    (located person30 city34)
-    (located person31 city32)
-    (located person32 city29)
-    (located person33 city8)
-    (located person34 city13)
-    (located person35 city0)
-    (located person36 city17)
-    (located person37 city14)
-    (located person38 city15)
-    (located person39 city10)
-    (located person40 city30)
+    (located person18 city24)
+    (located person19 city26)
+    (located person20 city28)
+    (located person21 city23)
+    (located person22 city16)
+    (located person23 city2)
+    (located person24 city24)
+    (located person25 city20)
+    (located person26 city28)
+    (located person27 city25)
+    (located person28 city25)
+    (located person29 city3)
+    (located person30 city29)
+    (located person31 city20)
+    (located person32 city21)
+    (located person33 city22)
+    (located person34 city11)
+    (located person35 city2)
     
-    ;; Distance assignments between cities
+   ;; Distance assignments between cities
     ;; Distances from city0:
     (= (distance city0 city0) 0)
     (= (distance city0 city1) 33)
@@ -208,11 +186,7 @@
     (= (distance city0 city27) 42)
     (= (distance city0 city28) 26)
     (= (distance city0 city29) 38)
-    (= (distance city0 city30) 31)
-    (= (distance city0 city31) 40)
-    (= (distance city0 city32) 47)
-    (= (distance city0 city33) 45)
-    (= (distance city0 city34) 30)
+
     
     ;; Distances from city1:
     (= (distance city1 city0) 33)
@@ -245,11 +219,7 @@
     (= (distance city1 city27) 49)
     (= (distance city1 city28) 49)
     (= (distance city1 city29) 31)
-    (= (distance city1 city30) 46)
-    (= (distance city1 city31) 45)
-    (= (distance city1 city32) 37)
-    (= (distance city1 city33) 45)
-    (= (distance city1 city34) 27)
+  
     
     ;; Distances from city2:
     (= (distance city2 city0) 38)
@@ -282,11 +252,7 @@
     (= (distance city2 city27) 39)
     (= (distance city2 city28) 44)
     (= (distance city2 city29) 46)
-    (= (distance city2 city30) 34)
-    (= (distance city2 city31) 32)
-    (= (distance city2 city32) 41)
-    (= (distance city2 city33) 37)
-    (= (distance city2 city34) 45)
+
     
     ;; Distances from city3:
     (= (distance city3 city0) 40)
@@ -319,11 +285,7 @@
     (= (distance city3 city27) 41)
     (= (distance city3 city28) 35)
     (= (distance city3 city29) 30)
-    (= (distance city3 city30) 26)
-    (= (distance city3 city31) 42)
-    (= (distance city3 city32) 46)
-    (= (distance city3 city33) 38)
-    (= (distance city3 city34) 37)
+
     
     ;; Distances from city4:
     (= (distance city4 city0) 27)
@@ -356,11 +318,7 @@
     (= (distance city4 city27) 31)
     (= (distance city4 city28) 47)
     (= (distance city4 city29) 41)
-    (= (distance city4 city30) 36)
-    (= (distance city4 city31) 49)
-    (= (distance city4 city32) 34)
-    (= (distance city4 city33) 33)
-    (= (distance city4 city34) 38)
+
     
     ;; Distances from city5:
     (= (distance city5 city0) 37)
@@ -393,11 +351,7 @@
     (= (distance city5 city27) 41)
     (= (distance city5 city28) 26)
     (= (distance city5 city29) 37)
-    (= (distance city5 city30) 39)
-    (= (distance city5 city31) 43)
-    (= (distance city5 city32) 49)
-    (= (distance city5 city33) 38)
-    (= (distance city5 city34) 28)
+
     
     ;; Distances from city6:
     (= (distance city6 city0) 44)
@@ -430,11 +384,7 @@
     (= (distance city6 city27) 25)
     (= (distance city6 city28) 27)
     (= (distance city6 city29) 35)
-    (= (distance city6 city30) 41)
-    (= (distance city6 city31) 29)
-    (= (distance city6 city32) 47)
-    (= (distance city6 city33) 31)
-    (= (distance city6 city34) 47)
+
     
     ;; Distances from city7:
     (= (distance city7 city0) 49)
@@ -467,11 +417,7 @@
     (= (distance city7 city27) 26)
     (= (distance city7 city28) 37)
     (= (distance city7 city29) 30)
-    (= (distance city7 city30) 30)
-    (= (distance city7 city31) 38)
-    (= (distance city7 city32) 33)
-    (= (distance city7 city33) 40)
-    (= (distance city7 city34) 30)
+
     
     ;; Distances from city8:
     (= (distance city8 city0) 49)
@@ -504,11 +450,7 @@
     (= (distance city8 city27) 27)
     (= (distance city8 city28) 43)
     (= (distance city8 city29) 40)
-    (= (distance city8 city30) 49)
-    (= (distance city8 city31) 42)
-    (= (distance city8 city32) 41)
-    (= (distance city8 city33) 37)
-    (= (distance city8 city34) 48)
+
     
     ;; Distances from city9:
     (= (distance city9 city0) 36)
@@ -541,11 +483,7 @@
     (= (distance city9 city27) 27)
     (= (distance city9 city28) 44)
     (= (distance city9 city29) 28)
-    (= (distance city9 city30) 41)
-    (= (distance city9 city31) 39)
-    (= (distance city9 city32) 37)
-    (= (distance city9 city33) 43)
-    (= (distance city9 city34) 32)
+
     
     ;; Distances from city10:
     (= (distance city10 city0) 40)
@@ -578,11 +516,7 @@
     (= (distance city10 city27) 30)
     (= (distance city10 city28) 43)
     (= (distance city10 city29) 32)
-    (= (distance city10 city30) 32)
-    (= (distance city10 city31) 49)
-    (= (distance city10 city32) 44)
-    (= (distance city10 city33) 34)
-    (= (distance city10 city34) 26)
+
     
     ;; Distances from city11:
     (= (distance city11 city0) 48)
@@ -615,11 +549,7 @@
     (= (distance city11 city27) 40)
     (= (distance city11 city28) 40)
     (= (distance city11 city29) 32)
-    (= (distance city11 city30) 38)
-    (= (distance city11 city31) 42)
-    (= (distance city11 city32) 39)
-    (= (distance city11 city33) 41)
-    (= (distance city11 city34) 28)
+
     
     ;; Distances from city12:
     (= (distance city12 city0) 34)
@@ -652,11 +582,7 @@
     (= (distance city12 city27) 35)
     (= (distance city12 city28) 29)
     (= (distance city12 city29) 44)
-    (= (distance city12 city30) 47)
-    (= (distance city12 city31) 26)
-    (= (distance city12 city32) 31)
-    (= (distance city12 city33) 32)
-    (= (distance city12 city34) 39)
+
     
     ;; Distances from city13:
     (= (distance city13 city0) 44)
@@ -689,11 +615,7 @@
     (= (distance city13 city27) 47)
     (= (distance city13 city28) 41)
     (= (distance city13 city29) 31)
-    (= (distance city13 city30) 33)
-    (= (distance city13 city31) 36)
-    (= (distance city13 city32) 32)
-    (= (distance city13 city33) 36)
-    (= (distance city13 city34) 34)
+
     
     ;; Distances from city14:
     (= (distance city14 city0) 43)
@@ -726,11 +648,7 @@
     (= (distance city14 city27) 32)
     (= (distance city14 city28) 35)
     (= (distance city14 city29) 35)
-    (= (distance city14 city30) 29)
-    (= (distance city14 city31) 33)
-    (= (distance city14 city32) 37)
-    (= (distance city14 city33) 29)
-    (= (distance city14 city34) 25)
+ 
     
     ;; Distances from city15:
     (= (distance city15 city0) 26)
@@ -763,11 +681,7 @@
     (= (distance city15 city27) 40)
     (= (distance city15 city28) 45)
     (= (distance city15 city29) 48)
-    (= (distance city15 city30) 28)
-    (= (distance city15 city31) 41)
-    (= (distance city15 city32) 41)
-    (= (distance city15 city33) 41)
-    (= (distance city15 city34) 44)
+ 
     
     ;; Distances from city16:
     (= (distance city16 city0) 27)
@@ -800,11 +714,7 @@
     (= (distance city16 city27) 36)
     (= (distance city16 city28) 41)
     (= (distance city16 city29) 39)
-    (= (distance city16 city30) 27)
-    (= (distance city16 city31) 35)
-    (= (distance city16 city32) 39)
-    (= (distance city16 city33) 34)
-    (= (distance city16 city34) 36)
+
     
     ;; Distances from city17:
     (= (distance city17 city0) 39)
@@ -837,11 +747,7 @@
     (= (distance city17 city27) 28)
     (= (distance city17 city28) 45)
     (= (distance city17 city29) 30)
-    (= (distance city17 city30) 48)
-    (= (distance city17 city31) 37)
-    (= (distance city17 city32) 49)
-    (= (distance city17 city33) 45)
-    (= (distance city17 city34) 27)
+
     
     ;; Distances from city18:
     (= (distance city18 city0) 43)
@@ -874,11 +780,7 @@
     (= (distance city18 city27) 31)
     (= (distance city18 city28) 47)
     (= (distance city18 city29) 47)
-    (= (distance city18 city30) 46)
-    (= (distance city18 city31) 31)
-    (= (distance city18 city32) 33)
-    (= (distance city18 city33) 43)
-    (= (distance city18 city34) 34)
+
     
     ;; Distances from city19:
     (= (distance city19 city0) 42)
@@ -911,11 +813,7 @@
     (= (distance city19 city27) 25)
     (= (distance city19 city28) 38)
     (= (distance city19 city29) 33)
-    (= (distance city19 city30) 49)
-    (= (distance city19 city31) 25)
-    (= (distance city19 city32) 32)
-    (= (distance city19 city33) 44)
-    (= (distance city19 city34) 28)
+
     
     ;; Distances from city20:
     (= (distance city20 city0) 45)
@@ -948,11 +846,7 @@
     (= (distance city20 city27) 38)
     (= (distance city20 city28) 30)
     (= (distance city20 city29) 31)
-    (= (distance city20 city30) 36)
-    (= (distance city20 city31) 27)
-    (= (distance city20 city32) 27)
-    (= (distance city20 city33) 42)
-    (= (distance city20 city34) 36)
+
     
     ;; Distances from city21:
     (= (distance city21 city0) 45)
@@ -985,12 +879,7 @@
     (= (distance city21 city27) 28)
     (= (distance city21 city28) 26)
     (= (distance city21 city29) 35)
-    (= (distance city21 city30) 31)
-    (= (distance city21 city31) 27)
-    (= (distance city21 city32) 49)
-    (= (distance city21 city33) 39)
-    (= (distance city21 city34) 26)
-    
+ 
     ;; Distances from city22:
     (= (distance city22 city0) 44)
     (= (distance city22 city1) 25)
@@ -1022,11 +911,7 @@
     (= (distance city22 city27) 32)
     (= (distance city22 city28) 44)
     (= (distance city22 city29) 35)
-    (= (distance city22 city30) 25)
-    (= (distance city22 city31) 38)
-    (= (distance city22 city32) 34)
-    (= (distance city22 city33) 39)
-    (= (distance city22 city34) 43)
+  
     
     ;; Distances from city23:
     (= (distance city23 city0) 44)
@@ -1091,11 +976,7 @@
     (= (distance city24 city27) 48)
     (= (distance city24 city28) 31)
     (= (distance city24 city29) 47)
-    (= (distance city24 city30) 47)
-    (= (distance city24 city31) 45)
-    (= (distance city24 city32) 48)
-    (= (distance city24 city33) 47)
-    (= (distance city24 city34) 43)
+ 
     
     ;; Distances from city25:
     (= (distance city25 city0) 41)
@@ -1128,11 +1009,7 @@
     (= (distance city25 city27) 26)
     (= (distance city25 city28) 25)
     (= (distance city25 city29) 38)
-    (= (distance city25 city30) 37)
-    (= (distance city25 city31) 26)
-    (= (distance city25 city32) 27)
-    (= (distance city25 city33) 47)
-    (= (distance city25 city34) 40)
+   
     
     ;; Distances from city26:
     (= (distance city26 city0) 32)
@@ -1165,11 +1042,7 @@
     (= (distance city26 city27) 45)
     (= (distance city26 city28) 38)
     (= (distance city26 city29) 42)
-    (= (distance city26 city30) 41)
-    (= (distance city26 city31) 31)
-    (= (distance city26 city32) 36)
-    (= (distance city26 city33) 49)
-    (= (distance city26 city34) 45)
+  
     
     ;; Distances from city27:
     (= (distance city27 city0) 42)
@@ -1234,11 +1107,7 @@
     (= (distance city28 city27) 32)
     (= (distance city28 city28) 0)
     (= (distance city28 city29) 28)
-    (= (distance city28 city30) 31)
-    (= (distance city28 city31) 41)
-    (= (distance city28 city32) 49)
-    (= (distance city28 city33) 29)
-    (= (distance city28 city34) 39)
+
     
     ;; Distances from city29:
     (= (distance city29 city0) 38)
@@ -1271,238 +1140,47 @@
     (= (distance city29 city27) 46)
     (= (distance city29 city28) 28)
     (= (distance city29 city29) 0)
-    (= (distance city29 city30) 42)
-    (= (distance city29 city31) 49)
-    (= (distance city29 city32) 40)
-    (= (distance city29 city33) 42)
-    (= (distance city29 city34) 37)
-    
-    ;; Distances from city30:
-    (= (distance city30 city0) 31)
-    (= (distance city30 city1) 46)
-    (= (distance city30 city2) 34)
-    (= (distance city30 city3) 26)
-    (= (distance city30 city4) 36)
-    (= (distance city30 city5) 39)
-    (= (distance city30 city6) 41)
-    (= (distance city30 city7) 30)
-    (= (distance city30 city8) 49)
-    (= (distance city30 city9) 41)
-    (= (distance city30 city10) 32)
-    (= (distance city30 city11) 38)
-    (= (distance city30 city12) 47)
-    (= (distance city30 city13) 33)
-    (= (distance city30 city14) 29)
-    (= (distance city30 city15) 28)
-    (= (distance city30 city16) 27)
-    (= (distance city30 city17) 48)
-    (= (distance city30 city18) 46)
-    (= (distance city30 city19) 49)
-    (= (distance city30 city20) 36)
-    (= (distance city30 city21) 31)
-    (= (distance city30 city22) 25)
-    (= (distance city30 city23) 38)
-    (= (distance city30 city24) 47)
-    (= (distance city30 city25) 37)
-    (= (distance city30 city26) 41)
-    (= (distance city30 city27) 39)
-    (= (distance city30 city28) 31)
-    (= (distance city30 city29) 42)
-    (= (distance city30 city30) 0)
-    (= (distance city30 city31) 28)
-    (= (distance city30 city32) 43)
-    (= (distance city30 city33) 39)
-    (= (distance city30 city34) 25)
-    
-    ;; Distances from city31:
-    (= (distance city31 city0) 40)
-    (= (distance city31 city1) 45)
-    (= (distance city31 city2) 32)
-    (= (distance city31 city3) 42)
-    (= (distance city31 city4) 49)
-    (= (distance city31 city5) 43)
-    (= (distance city31 city6) 29)
-    (= (distance city31 city7) 38)
-    (= (distance city31 city8) 42)
-    (= (distance city31 city9) 39)
-    (= (distance city31 city10) 49)
-    (= (distance city31 city11) 42)
-    (= (distance city31 city12) 26)
-    (= (distance city31 city13) 36)
-    (= (distance city31 city14) 33)
-    (= (distance city31 city15) 41)
-    (= (distance city31 city16) 35)
-    (= (distance city31 city17) 37)
-    (= (distance city31 city18) 31)
-    (= (distance city31 city19) 25)
-    (= (distance city31 city20) 27)
-    (= (distance city31 city21) 27)
-    (= (distance city31 city22) 38)
-    (= (distance city31 city23) 46)
-    (= (distance city31 city24) 45)
-    (= (distance city31 city25) 26)
-    (= (distance city31 city26) 31)
-    (= (distance city31 city27) 45)
-    (= (distance city31 city28) 41)
-    (= (distance city31 city29) 49)
-    (= (distance city31 city30) 28)
-    (= (distance city31 city31) 0)
-    (= (distance city31 city32) 34)
-    (= (distance city31 city33) 35)
-    (= (distance city31 city34) 38)
-    
-    ;; Distances from city32:
-    (= (distance city32 city0) 47)
-    (= (distance city32 city1) 37)
-    (= (distance city32 city2) 41)
-    (= (distance city32 city3) 46)
-    (= (distance city32 city4) 34)
-    (= (distance city32 city5) 49)
-    (= (distance city32 city6) 47)
-    (= (distance city32 city7) 33)
-    (= (distance city32 city8) 41)
-    (= (distance city32 city9) 37)
-    (= (distance city32 city10) 44)
-    (= (distance city32 city11) 39)
-    (= (distance city32 city12) 31)
-    (= (distance city32 city13) 32)
-    (= (distance city32 city14) 37)
-    (= (distance city32 city15) 41)
-    (= (distance city32 city16) 39)
-    (= (distance city32 city17) 49)
-    (= (distance city32 city18) 33)
-    (= (distance city32 city19) 32)
-    (= (distance city32 city20) 27)
-    (= (distance city32 city21) 49)
-    (= (distance city32 city22) 34)
-    (= (distance city32 city23) 46)
-    (= (distance city32 city24) 48)
-    (= (distance city32 city25) 27)
-    (= (distance city32 city26) 36)
-    (= (distance city32 city27) 46)
-    (= (distance city32 city28) 49)
-    (= (distance city32 city29) 40)
-    
-    ;; Distances from city33:
-    (= (distance city33 city0) 45)
-    (= (distance city33 city1) 45)
-    (= (distance city33 city2) 37)
-    (= (distance city33 city3) 38)
-    (= (distance city33 city4) 33)
-    (= (distance city33 city5) 38)
-    (= (distance city33 city6) 31)
-    (= (distance city33 city7) 40)
-    (= (distance city33 city8) 37)
-    (= (distance city33 city9) 43)
-    (= (distance city33 city10) 34)
-    (= (distance city33 city11) 41)
-    (= (distance city33 city12) 32)
-    (= (distance city33 city13) 36)
-    (= (distance city33 city14) 29)
-    (= (distance city33 city15) 41)
-    (= (distance city33 city16) 34)
-    (= (distance city33 city17) 45)
-    (= (distance city33 city18) 43)
-    (= (distance city33 city19) 44)
-    (= (distance city33 city20) 42)
-    (= (distance city33 city21) 39)
-    (= (distance city33 city22) 39)
-    (= (distance city33 city23) 43)
-    (= (distance city33 city24) 47)
-    (= (distance city33 city25) 47)
-    (= (distance city33 city26) 49)
-    (= (distance city33 city27) 34)
-    (= (distance city33 city28) 29)
-    (= (distance city33 city29) 42)
-    (= (distance city33 city30) 39)
-    (= (distance city33 city31) 35)
-    (= (distance city33 city32) 26)
-    (= (distance city33 city33) 0)
-    (= (distance city33 city34) 45)
-    
-    ;; Distances from city34:
-    (= (distance city34 city0) 30)
-    (= (distance city34 city1) 27)
-    (= (distance city34 city2) 45)
-    (= (distance city34 city3) 37)
-    (= (distance city34 city4) 38)
-    (= (distance city34 city5) 28)
-    (= (distance city34 city6) 47)
-    (= (distance city34 city7) 30)
-    (= (distance city34 city8) 48)
-    (= (distance city34 city9) 32)
-    (= (distance city34 city10) 26)
-    (= (distance city34 city11) 28)
-    (= (distance city34 city12) 39)
-    (= (distance city34 city13) 34)
-    (= (distance city34 city14) 25)
-    (= (distance city34 city15) 44)
-    (= (distance city34 city16) 36)
-    (= (distance city34 city17) 27)
-    (= (distance city34 city18) 34)
-    (= (distance city34 city19) 28)
-    (= (distance city34 city20) 36)
-    (= (distance city34 city21) 26)
-    (= (distance city34 city22) 43)
-    (= (distance city34 city23) 38)
-    (= (distance city34 city24) 43)
-    (= (distance city34 city25) 40)
-    (= (distance city34 city26) 45)
-    (= (distance city34 city27) 43)
-    (= (distance city34 city28) 39)
-    (= (distance city34 city29) 37)
-    (= (distance city34 city30) 25)
-    (= (distance city34 city31) 38)
-    (= (distance city34 city32) 27)
-    (= (distance city34 city33) 45)
-    (= (distance city34 city34) 0)
-    
-
-    (= (total-time) 0)
+   
+    (= (total-time-used) 0)
   )
   (:goal (and
-    (located plane1 city2)
-    (located plane4 city28)
-    (located plane5 city3)
-    (located person1  city14)
-    (located person2  city31)
-    (located person3  city31)
-    (located person4  city24)
-    (located person5  city6)
-    (located person6  city1)
-    (located person7  city32)
-    (located person8  city16)
-    (located person9  city9)
-    (located person10 city14)
-    (located person11 city33)
-    (located person12 city16)
-    (located person13 city26)
-    (located person14 city17)
-    (located person15 city29)
-    (located person16 city15)
-    (located person17 city3)
-    (located person18 city29)
-    (located person19 city25)
-    (located person20 city6)
-    (located person21 city14)
-    (located person22 city30)
-    (located person23 city8)
-    (located person24 city7)
-    (located person25 city14)
-    (located person26 city5)
-    (located person28 city16)
-    (located person29 city31)
+    (located plane1 city11)
+    (located plane2 city8)
+    (located person1 city10)
+    (located person2 city1)
+    (located person3 city13)
+    (located person4 city9)
+    (located person5 city0)
+    (located person6 city16)
+    (located person7 city0)
+    (located person8 city0)
+    (located person9 city17)
+    (located person10 city13)
+    (located person11 city13)
+    (located person12 city17)
+    (located person13 city3)
+    (located person14 city0)
+    (located person15 city13)
+    (located person16 city19)
+    (located person17 city0)
+    (located person18 city4)
+    (located person19 city17)
+    (located person20 city14)
+    (located person21 city17)
+    (located person22 city4)
+    (located person23 city12)
+    (located person24 city13)
+    (located person25 city2)
+    (located person26 city6)
+    (located person27 city11)
+    (located person28 city2)
+    (located person29 city9)
     (located person30 city2)
-    (located person31 city34)
-    (located person32 city2)
-    (located person33 city7)
-    (located person34 city9)
-    (located person35 city34)
-    (located person36 city18)
-    (located person37 city32)
-    (located person38 city4)
-    (located person39 city20)
-    (located person40 city20)
+    (located person31 city11 )  
+    (located person32 city12 )  
+    (located person33 city3 ) 
+    (located person34 city4 )  
+    (located person35 city12 )  
   ))
-  (:metric minimize (total-time))
+  (:metric minimize (total-time-used))
 )

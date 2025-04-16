@@ -180,7 +180,7 @@ def parse_metric(pddl):
         return {"fuel": 1, "time": 1}
 
     # Look for terms of the form: (* number (total-time)) and (* number (total-fuel-used))
-    time_terms = re.findall(r"\(\*\s*(\d+)\s+\(total-time\)\)", metric_block, re.IGNORECASE)
+    time_terms = re.findall(r"\(\*\s*(\d+)\s+\(total-time-used\)\)", metric_block, re.IGNORECASE)
     fuel_terms = re.findall(r"\(\*\s*(\d+)\s+\(total-fuel-used\)\)", metric_block, re.IGNORECASE)
 
     # If no numeric term is found but the keyword exists, default coefficient to 1.
