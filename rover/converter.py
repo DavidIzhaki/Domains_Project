@@ -39,7 +39,7 @@ def parse_pddl(pddl_text):
 
     goal_text = goal_text.replace("\n", " ").replace("\t", " ").strip()
     goal_text = " ".join(goal_text.replace("\n", " ").replace("\t", " ").split())
-    print("🧪 Goal Text:", goal_text)
+    # print("Goal Text:", goal_text)
 
     goal = {"conditions": []}
     goal["conditions"] += [
@@ -57,7 +57,6 @@ def parse_pddl(pddl_text):
 
     state = {
         "rovers": {},
-        "stores": {},
         "cameras": {},
         "waypoints": {},
         "landers": {},
@@ -85,12 +84,16 @@ def parse_pddl(pddl_text):
 
     for store in stores:
         r_id = re.search(rf'\(store_of {store} (\S+)\)', init_text)
-        state["stores"][store] = {
-            "id": store,
-            "rover_id": r_id.group(1) if r_id else None,
-            "empty": f"(empty {store})" in init_text,
-            "full": f"(full {store})" in init_text
-        }
+        if r_id:
+            rover_id = r_id.group(1)
+            if rover_id in state["rovers"]:
+                state["rovers"][rover_id]["store"] = {
+                    "id": store,
+                    "rover_id": rover_id,
+                    "empty": f"(empty {store})" in init_text,
+                    "full": f"(full {store})" in init_text
+                }
+
 
     for camera in cameras:
         r_id = re.search(rf'\(on_board {camera} (\S+)\)', init_text)

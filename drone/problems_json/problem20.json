@@ -1,7 +1,6 @@
 {
     "state": {
         "battery_level": 47,
-        "battery_capacity": 47,
         "x": 0,
         "y": 0,
         "z": 0,
@@ -306,7 +305,24 @@
             "x9y9z0": false,
             "x9y9z1": false,
             "x9y9z2": false
-        },
+        }
+    },
+    "problem": {
+        "battery_capacity": 47,
+        "bounds": [
+            [
+                0,
+                10
+            ],
+            [
+                0,
+                10
+            ],
+            [
+                0,
+                3
+            ]
+        ],
         "locations": {
             "x0y0z0": [
                 0,
@@ -1809,22 +1825,6 @@
                 2
             ]
         },
-        "bounds": [
-            [
-                0,
-                10
-            ],
-            [
-                0,
-                10
-            ],
-            [
-                0,
-                3
-            ]
-        ]
-    },
-    "problem": {
         "visited": [
             "x0y0z0",
             "x0y0z1",
