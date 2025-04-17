@@ -1,0 +1,131 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "intoxication",
+        "harmony": 2,
+        "craves": [
+          "wurst"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "name": "loneliness",
+        "harmony": 0,
+        "craves": [
+          "wurst"
+        ],
+        "fears": []
+      },
+      {
+        "name": "anxiety",
+        "harmony": 0,
+        "craves": [
+          "shrimp"
+        ],
+        "fears": []
+      },
+      {
+        "name": "hangover",
+        "harmony": 0,
+        "craves": [
+          "shrimp"
+        ],
+        "fears": []
+      },
+      {
+        "name": "anger",
+        "harmony": 0,
+        "craves": [
+          "muffin"
+        ],
+        "fears": []
+      },
+      {
+        "name": "angina",
+        "harmony": 0,
+        "craves": [
+          "muffin"
+        ],
+        "fears": []
+      },
+      {
+        "name": "boils",
+        "harmony": 0,
+        "craves": [
+          "broccoli"
+        ],
+        "fears": []
+      },
+      {
+        "name": "grief",
+        "harmony": 0,
+        "craves": [
+          "lamb"
+        ],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "wurst",
+        "locale": 1
+      },
+      {
+        "name": "shrimp",
+        "locale": 6
+      },
+      {
+        "name": "muffin",
+        "locale": 2
+      },
+      {
+        "name": "broccoli",
+        "locale": 7
+      },
+      {
+        "name": "lamb",
+        "locale": 7
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "lamb": [
+        "shrimp",
+        "wurst",
+        "broccoli"
+      ],
+      "shrimp": [
+        "wurst",
+        "lamb"
+      ],
+      "wurst": [
+        "muffin",
+        "lamb",
+        "shrimp"
+      ],
+      "broccoli": [
+        "lamb",
+        "muffin"
+      ],
+      "muffin": [
+        "wurst",
+        "broccoli"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "anger",
+          "food": "lamb"
+        },
+        {
+          "emotion": "boils",
+          "food": "lamb"
+        }
+      ]
+    }
+  }
+}

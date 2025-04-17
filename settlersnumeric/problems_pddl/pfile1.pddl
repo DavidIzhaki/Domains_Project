@@ -1,3 +1,4 @@
+
 (define (problem settlers)
 (:domain civ)
 (:objects
@@ -140,4 +141,3 @@
 
 (:metric minimize (+ (+ (* 0 (pollution)) (* 3 (resource-use))) (* 3 (labour))))
 )
-

@@ -1,0 +1,100 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "satisfaction",
+        "harmony": 2,
+        "craves": [
+          "broccoli"
+        ]
+      },
+      {
+        "name": "excitement",
+        "harmony": 3,
+        "craves": [
+          "turkey"
+        ]
+      },
+      {
+        "name": "intoxication",
+        "harmony": 2,
+        "craves": [
+          "tuna"
+        ]
+      },
+      {
+        "name": "lubricity",
+        "harmony": 2,
+        "craves": [
+          "sweetroll"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "name": "hangover",
+        "harmony": 0,
+        "craves": [
+          "scallop"
+        ],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "scallop",
+        "locale": 0
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "scallop": [
+        "cherry",
+        "sweetroll"
+      ],
+      "tuna": [
+        "broccoli",
+        "turkey"
+      ],
+      "sweetroll": [
+        "scallop",
+        "shrimp"
+      ],
+      "cherry": [
+        "shrimp",
+        "scallop"
+      ],
+      "shrimp": [
+        "sweetroll",
+        "cherry",
+        "chocolate"
+      ],
+      "broccoli": [
+        "chocolate",
+        "tuna"
+      ],
+      "chocolate": [
+        "shrimp",
+        "turkey",
+        "broccoli"
+      ],
+      "turkey": [
+        "chocolate",
+        "tuna"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "loneliness",
+          "food": "shrimp"
+        },
+        {
+          "emotion": "grief",
+          "food": "shrimp"
+        }
+      ]
+    }
+  }
+}

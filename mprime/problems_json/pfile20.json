@@ -1,0 +1,168 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "intoxication",
+        "harmony": 3,
+        "craves": [
+          "ham"
+        ]
+      },
+      {
+        "name": "love",
+        "harmony": 2,
+        "craves": [
+          "mutton"
+        ]
+      },
+      {
+        "name": "aesthetics",
+        "harmony": 3,
+        "craves": [
+          "cucumber"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "name": "abrasion-21",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "lettuce",
+        "locale": 2
+      },
+      {
+        "name": "lemon",
+        "locale": 2
+      },
+      {
+        "name": "ham",
+        "locale": 5
+      },
+      {
+        "name": "pistachio",
+        "locale": 1
+      },
+      {
+        "name": "mutton",
+        "locale": 0
+      },
+      {
+        "name": "cucumber",
+        "locale": 2
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "bacon": [
+        "scallion",
+        "yogurt"
+      ],
+      "pea": [
+        "hotdog",
+        "potato"
+      ],
+      "lemon": [
+        "cucumber",
+        "scallop",
+        "ham",
+        "mutton"
+      ],
+      "hotdog": [
+        "pea",
+        "lobster"
+      ],
+      "flounder": [
+        "yogurt",
+        "scallion"
+      ],
+      "papaya": [
+        "cod",
+        "scallion"
+      ],
+      "chocolate": [
+        "wurst",
+        "baguette"
+      ],
+      "yogurt": [
+        "shrimp",
+        "bacon",
+        "flounder"
+      ],
+      "scallion": [
+        "shrimp",
+        "scallop",
+        "papaya",
+        "bacon",
+        "flounder"
+      ],
+      "lettuce": [
+        "pistachio",
+        "mutton",
+        "scallop"
+      ],
+      "mutton": [
+        "cucumber",
+        "pistachio",
+        "lettuce",
+        "lemon"
+      ],
+      "shrimp": [
+        "scallion",
+        "potato",
+        "yogurt",
+        "cod"
+      ],
+      "cod": [
+        "shrimp",
+        "papaya"
+      ],
+      "pistachio": [
+        "lettuce",
+        "mutton"
+      ],
+      "scallop": [
+        "lettuce",
+        "baguette",
+        "lemon",
+        "scallion"
+      ],
+      "potato": [
+        "pea",
+        "wurst",
+        "shrimp"
+      ],
+      "baguette": [
+        "chocolate",
+        "scallop",
+        "lobster"
+      ],
+      "ham": [
+        "cucumber",
+        "lemon"
+      ],
+      "wurst": [
+        "potato",
+        "chocolate"
+      ],
+      "lobster": [
+        "baguette",
+        "hotdog"
+      ],
+      "cucumber": [
+        "mutton",
+        "ham",
+        "lemon"
+      ]
+    },
+    "goal": {
+      "conditions": []
+    }
+  }
+}

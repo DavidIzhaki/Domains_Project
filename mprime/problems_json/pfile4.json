@@ -1,0 +1,155 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "triumph",
+        "harmony": 3,
+        "craves": [
+          "onion"
+        ]
+      },
+      {
+        "name": "love",
+        "harmony": 2,
+        "craves": [
+          "popover"
+        ]
+      },
+      {
+        "name": "satisfaction",
+        "harmony": 2,
+        "craves": [
+          "scallion"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "name": "abrasion",
+        "harmony": 0,
+        "craves": [
+          "wurst"
+        ],
+        "fears": []
+      },
+      {
+        "name": "anxiety",
+        "harmony": 0,
+        "craves": [
+          "wurst"
+        ],
+        "fears": []
+      },
+      {
+        "name": "dread",
+        "harmony": 0,
+        "craves": [
+          "wurst"
+        ],
+        "fears": []
+      },
+      {
+        "name": "loneliness",
+        "harmony": 0,
+        "craves": [
+          "scallion"
+        ],
+        "fears": []
+      },
+      {
+        "name": "grief",
+        "harmony": 0,
+        "craves": [
+          "scallion"
+        ],
+        "fears": []
+      },
+      {
+        "name": "boils",
+        "harmony": 0,
+        "craves": [
+          "scallion"
+        ],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "wurst",
+        "locale": 10
+      },
+      {
+        "name": "guava",
+        "locale": 9
+      },
+      {
+        "name": "muffin",
+        "locale": 2
+      },
+      {
+        "name": "pork",
+        "locale": 5
+      },
+      {
+        "name": "onion",
+        "locale": 12
+      },
+      {
+        "name": "popover",
+        "locale": 9
+      },
+      {
+        "name": "scallion",
+        "locale": 5
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "wurst": [
+        "guava",
+        "onion"
+      ],
+      "pork": [
+        "muffin",
+        "onion"
+      ],
+      "scallion": [
+        "muffin",
+        "popover",
+        "guava"
+      ],
+      "muffin": [
+        "scallion",
+        "pork",
+        "onion"
+      ],
+      "onion": [
+        "wurst",
+        "muffin",
+        "pork",
+        "popover"
+      ],
+      "popover": [
+        "onion",
+        "scallion"
+      ],
+      "guava": [
+        "scallion",
+        "wurst"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "grief",
+          "food": "guava"
+        },
+        {
+          "emotion": "boils",
+          "food": "guava"
+        }
+      ]
+    }
+  }
+}

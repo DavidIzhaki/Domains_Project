@@ -160,6 +160,7 @@
         (= (available iron vehicle5) 0)
         (= (available ore vehicle5) 0)
         (= (space-in vehicle5) 0)
+
 )
 (:goal (and
 	(has-coal-stack location2)

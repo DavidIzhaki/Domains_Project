@@ -7,9 +7,9 @@
         },
         "horizontalcars": [
             {
+                "name": "red-car",
                 "x": 0,
-                "y": 2,
-                "name": "red-car"
+                "y": 2
             }
         ],
         "verticalcars": [],

@@ -7,54 +7,59 @@
         },
         "horizontalcars": [
             {
-                "x": 3,
-                "y": 2,
-                "name": "red-car"
-            },
-            {
+                "name": "red-car",
                 "x": 0,
-                "y": 0,
-                "name": "green-car"
+                "y": 2
             },
             {
-                "x": 1,
-                "y": 4,
-                "name": "purple-car"
+                "name": "blue-car",
+                "x": 2,
+                "y": 0
             },
             {
-                "x": 4,
-                "y": 3,
-                "name": "blue-sky-car"
+                "name": "purple-car",
+                "x": 2,
+                "y": 1
             }
         ],
         "verticalcars": [
             {
-                "x": 4,
-                "y": 0,
-                "name": "orange-car"
+                "name": "green-car",
+                "x": 0,
+                "y": 0
             },
             {
-                "x": 0,
-                "y": 4,
-                "name": "pink-car"
+                "name": "orange-car",
+                "x": 1,
+                "y": 0
+            },
+            {
+                "name": "white-car",
+                "x": 4,
+                "y": 3
+            },
+            {
+                "name": "pink-car",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "name": "green-over-car",
+                "x": 2,
+                "y": 2
+            },
+            {
+                "name": "yellow-over-car",
+                "x": 2,
+                "y": 4
             }
         ],
         "horizontaltrucks": [],
         "verticaltrucks": [
             {
-                "x": 5,
-                "y": 0,
-                "name": "purple-truck"
-            },
-            {
-                "x": 2,
-                "y": 0,
-                "name": "yellow-truck"
-            },
-            {
+                "name": "yellow-truck",
                 "x": 3,
-                "y": 3,
-                "name": "blue-truck"
+                "y": 2
             }
         ]
     }

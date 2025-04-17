@@ -208,6 +208,7 @@
 	(potential vehicle13)
 	(potential vehicle14)
 
+
         (= (available timber vehicle0) 0)
         (= (available wood vehicle0) 0)
         (= (available coal vehicle0) 0)
@@ -327,6 +328,7 @@
         (= (available iron vehicle14) 0)
         (= (available ore vehicle14) 0)
         (= (space-in vehicle14) 0)
+
 )
 (:goal (and
 	(has-ironworks location1)
