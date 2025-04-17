@@ -1,0 +1,154 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "curiosity",
+        "harmony": 2,
+        "craves": [
+          "grapefruit"
+        ]
+      },
+      {
+        "name": "triumph",
+        "harmony": 3,
+        "craves": [
+          "bacon"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "name": "dread",
+        "harmony": 0,
+        "craves": [
+          "beef"
+        ],
+        "fears": []
+      },
+      {
+        "name": "boils-2",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      },
+      {
+        "name": "anxiety-1",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "hotdog",
+        "locale": 0
+      },
+      {
+        "name": "wonderbread",
+        "locale": 2
+      },
+      {
+        "name": "bacon",
+        "locale": 4
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "lamb": [
+        "flounder",
+        "papaya",
+        "hotdog",
+        "okra"
+      ],
+      "papaya": [
+        "lamb",
+        "ham"
+      ],
+      "scallop": [
+        "ham",
+        "pistachio"
+      ],
+      "sweetroll": [
+        "okra",
+        "cherry"
+      ],
+      "pistachio": [
+        "apple",
+        "onion",
+        "scallop",
+        "cherry"
+      ],
+      "onion": [
+        "pistachio",
+        "apple",
+        "flounder"
+      ],
+      "haroset": [
+        "grapefruit",
+        "bacon"
+      ],
+      "bacon": [
+        "lobster",
+        "haroset",
+        "wonderbread"
+      ],
+      "grapefruit": [
+        "haroset",
+        "hotdog",
+        "beef"
+      ],
+      "lobster": [
+        "bacon",
+        "beef"
+      ],
+      "apple": [
+        "onion",
+        "pistachio"
+      ],
+      "cherry": [
+        "pistachio",
+        "sweetroll"
+      ],
+      "hotdog": [
+        "wonderbread",
+        "chicken",
+        "lamb",
+        "grapefruit"
+      ],
+      "chicken": [
+        "beef",
+        "hotdog"
+      ],
+      "ham": [
+        "papaya",
+        "scallop"
+      ],
+      "flounder": [
+        "lamb",
+        "onion"
+      ],
+      "beef": [
+        "lobster",
+        "chicken",
+        "grapefruit"
+      ],
+      "okra": [
+        "sweetroll",
+        "lamb"
+      ],
+      "wonderbread": [
+        "bacon",
+        "hotdog"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "laceration",
+          "food": "chicken"
+        }
+      ]
+    }
+  }
+}

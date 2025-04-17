@@ -149,6 +149,7 @@
 	(potential vehicle5)
 	(potential vehicle6)
 
+
         (= (available timber vehicle0) 0)
         (= (available wood vehicle0) 0)
         (= (available coal vehicle0) 0)
@@ -204,6 +205,7 @@
         (= (available iron vehicle6) 0)
         (= (available ore vehicle6) 0)
         (= (space-in vehicle6) 0)
+
 )
 (:goal (and
 	(>= (housing location2) 1)

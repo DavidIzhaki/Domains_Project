@@ -1,0 +1,102 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "expectation",
+        "harmony": 2,
+        "craves": [
+          "okra"
+        ]
+      },
+      {
+        "name": "learning",
+        "harmony": 2,
+        "craves": [
+          "snickers"
+        ]
+      }
+    ],
+    "pains": [],
+    "foods": []
+  },
+  "problem": {
+    "eats": {
+      "lobster": [
+        "bacon",
+        "haroset"
+      ],
+      "lemon": [
+        "ham",
+        "cantelope",
+        "beef"
+      ],
+      "wonderbread": [
+        "bacon",
+        "okra",
+        "marzipan",
+        "snickers"
+      ],
+      "okra": [
+        "snickers",
+        "wonderbread"
+      ],
+      "beef": [
+        "lemon",
+        "lamb",
+        "marzipan"
+      ],
+      "haroset": [
+        "flounder",
+        "lamb",
+        "lobster"
+      ],
+      "marzipan": [
+        "tofu",
+        "cantelope",
+        "wonderbread",
+        "beef"
+      ],
+      "onion": [
+        "tofu",
+        "snickers"
+      ],
+      "bacon": [
+        "wonderbread",
+        "lobster"
+      ],
+      "lamb": [
+        "beef",
+        "haroset"
+      ],
+      "snickers": [
+        "wonderbread",
+        "okra",
+        "onion"
+      ],
+      "tofu": [
+        "marzipan",
+        "onion"
+      ],
+      "cantelope": [
+        "lemon",
+        "marzipan"
+      ],
+      "flounder": [
+        "ham",
+        "haroset"
+      ],
+      "ham": [
+        "lemon",
+        "flounder"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "abrasion",
+          "food": "lobster"
+        }
+      ]
+    }
+  }
+}

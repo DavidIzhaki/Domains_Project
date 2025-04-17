@@ -168,6 +168,7 @@
 	(potential vehicle6)
 	(potential vehicle7)
 
+
         (= (available timber vehicle0) 0)
         (= (available wood vehicle0) 0)
         (= (available coal vehicle0) 0)
@@ -231,6 +232,7 @@
         (= (available iron vehicle7) 0)
         (= (available ore vehicle7) 0)
         (= (space-in vehicle7) 0)
+
 )
 (:goal (and
 	(connected-by-rail location7 location8)

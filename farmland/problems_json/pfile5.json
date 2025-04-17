@@ -1,0 +1,64 @@
+{
+  "state": {
+    "farms": [
+      {
+        "name": "farm0",
+        "value": 700
+      },
+      {
+        "name": "farm1",
+        "value": 1
+      },
+      {
+        "name": "farm2",
+        "value": 0
+      },
+      {
+        "name": "farm3",
+        "value": 0
+      }
+    ]
+  },
+  "problem": {
+    "adj": {
+      "farm0": [
+        "farm1",
+        "farm2"
+      ],
+      "farm1": [
+        "farm0",
+        "farm3"
+      ],
+      "farm2": [
+        "farm0",
+        "farm3"
+      ],
+      "farm3": [
+        "farm1",
+        "farm2"
+      ]
+    },
+    "goal": {
+      "farms": [
+        {
+          "farm_name": "farm0",
+          "farm_constant": 1.0
+        },
+        {
+          "farm_name": "farm1",
+          "farm_constant": 1.7
+        },
+        {
+          "farm_name": "farm2",
+          "farm_constant": 1.3
+        },
+        {
+          "farm_name": "farm3",
+          "farm_constant": 1.1
+        }
+      ],
+      "operator": ">=",
+      "value": 980
+    }
+  }
+}

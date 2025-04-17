@@ -1,0 +1,115 @@
+{
+  "state": {
+    "pleasures": [],
+    "pains": [
+      {
+        "name": "grief-31",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      },
+      {
+        "name": "loneliness-32",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      },
+      {
+        "name": "hangover-9",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      },
+      {
+        "name": "abrasion-29",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "marzipan",
+        "locale": 1
+      },
+      {
+        "name": "popover",
+        "locale": 2
+      },
+      {
+        "name": "hamburger",
+        "locale": 1
+      },
+      {
+        "name": "guava",
+        "locale": 1
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "wurst": [
+        "lemon",
+        "snickers",
+        "muffin",
+        "flounder"
+      ],
+      "snickers": [
+        "wurst",
+        "apple",
+        "marzipan",
+        "popover"
+      ],
+      "popover": [
+        "hamburger",
+        "snickers"
+      ],
+      "guava": [
+        "marzipan",
+        "onion"
+      ],
+      "okra": [
+        "hamburger",
+        "onion"
+      ],
+      "apple": [
+        "snickers",
+        "flounder",
+        "lemon"
+      ],
+      "lemon": [
+        "muffin",
+        "wurst",
+        "apple"
+      ],
+      "flounder": [
+        "wurst",
+        "apple"
+      ],
+      "onion": [
+        "guava",
+        "okra"
+      ],
+      "hamburger": [
+        "popover",
+        "okra"
+      ],
+      "muffin": [
+        "wurst",
+        "lemon"
+      ],
+      "marzipan": [
+        "guava",
+        "snickers"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "sciatica",
+          "food": "apple"
+        }
+      ]
+    }
+  }
+}

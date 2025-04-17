@@ -246,6 +246,7 @@
         (= (available iron vehicle6) 0)
         (= (available ore vehicle6) 0)
         (= (space-in vehicle6) 0)
+
 )
 (:goal (and
 	;(>= (housing location7) 1)

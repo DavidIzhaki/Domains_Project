@@ -1,0 +1,119 @@
+{
+  "state": {
+    "pleasures": [
+      {
+        "name": "satiety",
+        "harmony": 1,
+        "craves": [
+          "onion"
+        ]
+      },
+      {
+        "name": "stimulation",
+        "harmony": 2,
+        "craves": [
+          "flounder"
+        ]
+      },
+      {
+        "name": "curiosity",
+        "harmony": 2,
+        "craves": [
+          "cherry"
+        ]
+      },
+      {
+        "name": "entertainment",
+        "harmony": 3,
+        "craves": [
+          "ham"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "name": "prostatitis-3",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      },
+      {
+        "name": "boils-4",
+        "harmony": 0,
+        "craves": [],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "beef",
+        "locale": 4
+      },
+      {
+        "name": "onion",
+        "locale": 3
+      },
+      {
+        "name": "tuna",
+        "locale": 2
+      },
+      {
+        "name": "flounder",
+        "locale": 2
+      },
+      {
+        "name": "cherry",
+        "locale": 4
+      },
+      {
+        "name": "muffin",
+        "locale": 2
+      },
+      {
+        "name": "ham",
+        "locale": 4
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "onion": [
+        "muffin",
+        "cherry",
+        "beef"
+      ],
+      "tuna": [
+        "muffin",
+        "ham",
+        "flounder",
+        "beef"
+      ],
+      "muffin": [
+        "ham",
+        "tuna",
+        "onion"
+      ],
+      "flounder": [
+        "tuna",
+        "cherry"
+      ],
+      "beef": [
+        "tuna",
+        "onion",
+        "cherry"
+      ],
+      "cherry": [
+        "flounder",
+        "onion",
+        "beef"
+      ],
+      "ham": [
+        "tuna",
+        "muffin"
+      ]
+    },
+    "goal": {
+      "conditions": []
+    }
+  }
+}

@@ -288,6 +288,7 @@
 	(potential vehicle8)
 	(potential vehicle9)
 
+
         (= (available timber vehicle0) 0)
         (= (available wood vehicle0) 0)
         (= (available coal vehicle0) 0)
@@ -367,6 +368,7 @@
         (= (available iron vehicle9) 0)
         (= (available ore vehicle9) 0)
         (= (space-in vehicle9) 0)
+
 )
 (:goal (and
 	(has-sawmill location9)

@@ -1,137 +1,138 @@
+#!/usr/bin/env python3
 import os
 import re
 import json
-import sys
-from collections import OrderedDict
-
-def remove_comments(text):
-    """Remove lines that start with ';'."""
-    return "\n".join(line for line in text.splitlines() if not line.strip().startswith(";"))
-
-def parse_grid_from_cubes(content):
-    """
-    Finds all cube tokens matching 'cube-x<num>-y<num>' in the entire content.
-    Computes grid dimensions as:
-       col_size = max_x + 1,
-       row_size = max_y + 1.
-    If no cubes are found, defaults to 6x6.
-    """
-    cubes = re.findall(r'cube-x(\d+)-y(\d+)', content, re.IGNORECASE)
-    if not cubes:
-        return 6, 6
-    max_x = max(int(x) for x, _ in cubes)
-    max_y = max(int(y) for _, y in cubes)
-    return max_y + 1, max_x + 1
-
-def extract_section(content, section_start, section_end):
-    """
-    Extracts a section from content starting with section_start until section_end.
-    If section_end is not found, returns content from section_start to the end.
-    """
-    start = content.find(section_start)
-    if start == -1:
-        raise ValueError(f"Section '{section_start}' not found.")
-    end = content.find(section_end, start)
-    if end == -1:
-        return content[start:]
-    return content[start:end]
-
-def extract_init_section(content):
-    """Extracts the init section between '(:init' and '(:goal'."""
-    return extract_section(content, "(:init", "(:goal")
-
-def parse_at_predicates(init_text):
-    """
-    Finds all at predicates of the form:
-      (at-car-horizontal <vehicle> cube-x<num>-y<num> ...)
-      (at-car-vertical <vehicle> cube-x<num>-y<num> ...)
-      (at-truck-horizontal <vehicle> cube-x<num>-y<num> ...)
-      (at-truck-vertical <vehicle> cube-x<num>-y<num> ...)
-    and extracts the vehicle name and the x, y coordinates from the first cube.
-    Returns a list of dictionaries with keys: name, x, y, and type.
-    """
-    pattern = re.compile(
-        r'\((at-car-horizontal|at-car-vertical|at-truck-horizontal|at-truck-vertical)\s+(\S+)\s+(cube-x(\d+)-y(\d+))',
-        re.IGNORECASE)
-    vehicles = []
-    for m in pattern.finditer(init_text):
-        veh_type = m.group(1).lower()  # e.g., "at-car-horizontal"
-        name = m.group(2)
-        x = int(m.group(4))
-        y = int(m.group(5))
-        vehicles.append({"name": name, "x": x, "y": y, "type": veh_type})
-    return vehicles
-
-def partition_vehicles(vehicles):
-    """
-    Partitions vehicles into four lists by type and removes the temporary "type" field.
-    Returns a tuple of lists:
-       (horizontalcars, verticalcars, horizontaltrucks, verticaltrucks)
-    Each vehicle is stored as an OrderedDict with keys in the order: "x", "y", "name".
-    """
-    horizontalcars = []
-    verticalcars = []
-    horizontaltrucks = []
-    verticaltrucks = []
-    for v in vehicles:
-        v_type = v.pop("type")
-        entry = OrderedDict([("x", v["x"]), ("y", v["y"]), ("name", v["name"])])
-        if v_type == "at-car-horizontal":
-            horizontalcars.append(entry)
-        elif v_type == "at-car-vertical":
-            verticalcars.append(entry)
-        elif v_type == "at-truck-horizontal":
-            horizontaltrucks.append(entry)
-        elif v_type == "at-truck-vertical":
-            verticaltrucks.append(entry)
-    return horizontalcars, verticalcars, horizontaltrucks, verticaltrucks
+import argparse
 
 def parse_pddl_file(filepath):
     with open(filepath, 'r') as f:
         content = f.read()
-    content_clean = remove_comments(content)
-    
-    # Compute grid dimensions from all cubes in the file.
-    row_size, col_size = parse_grid_from_cubes(content_clean)
-    
-    # Extract the init section.
-    init_section = extract_init_section(content_clean)
-    
-    # Parse the at predicates in the init section.
-    vehicles = parse_at_predicates(init_section)
-    horizontalcars, verticalcars, horizontaltrucks, verticaltrucks = partition_vehicles(vehicles)
-    
-    grid = {"row_size": row_size, "col_size": col_size, "cells": {}}
-    state = {
-        "grid": grid,
-        "horizontalcars": horizontalcars,
-        "verticalcars": verticalcars,
-        "horizontaltrucks": horizontaltrucks,
-        "verticaltrucks": verticaltrucks
-    }
-    return {"state": state}
 
-def main(input_dir, output_dir):
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-    i = 1
-    for filename in os.listdir(input_dir):
-       
-        if filename.endswith('.pddl'):
-            filepath = os.path.join(input_dir, filename)
-            try:
-                result = parse_pddl_file(filepath)
-                out_filename =  f"pfile{i}.json"
-                out_filepath = os.path.join(output_dir, out_filename)
-                with open(out_filepath, 'w') as out_file:
-                    json.dump(result, out_file, indent=4)
-                print(f"Converted {filename} to {out_filename}")
-            except Exception as e:
-                print(f"Error processing {filename}: {e}")
-            i += 1
+    # 1) GRID BOUNDARIES (from the init block)
+    def find_int(var):
+        m = re.search(r"\(=\s*\(" + re.escape(var) + r"\)\s+(\d+)\)", content)
+        return int(m.group(1)) if m else None
+
+    min_x = find_int("min_x"); max_x = find_int("max_x")
+    min_y = find_int("min_y"); max_y = find_int("max_y")
+    if None in (min_x, max_x, min_y, max_y):
+        raise ValueError(f"Missing grid bounds in {filepath}")
+    col_size = max_x - min_x + 1
+    row_size = max_y - min_y + 1
+
+    # 2) OBJECTS SECTION (between "(:objects" and "(:init")
+    start = content.find("(:objects")
+    end   = content.find("(:init", start)
+    objects_text = content[start:end] if start != -1 and end != -1 else ""
+
+    # 3) EXTRACT CAR/TRUCK NAMES using space‑only separators and multiline anchors:
+    horizontal_car_names = []
+    for grp in re.findall(
+        r"^[ \t]*([\w-]+(?:[ \t]+[\w-]+)*)[ \t]*-[ \t]*horizontalCar\b",
+        objects_text,
+        re.MULTILINE
+    ):
+        horizontal_car_names.extend(grp.split())
+
+    vertical_car_names = []
+    for grp in re.findall(
+        r"^[ \t]*([\w-]+(?:[ \t]+[\w-]+)*)[ \t]*-[ \t]*verticalCar\b",
+        objects_text,
+        re.MULTILINE
+    ):
+        vertical_car_names.extend(grp.split())
+
+    horizontal_truck_names = []
+    for grp in re.findall(
+        r"^[ \t]*([\w-]+(?:[ \t]+[\w-]+)*)[ \t]*-[ \t]*horizontalTruck\b",
+        objects_text,
+        re.MULTILINE
+    ):
+        horizontal_truck_names.extend(grp.split())
+
+    vertical_truck_names = []
+    for grp in re.findall(
+        r"^[ \t]*([\w-]+(?:[ \t]+[\w-]+)*)[ \t]*-[ \t]*verticalTruck\b",
+        objects_text,
+        re.MULTILINE
+    ):
+        vertical_truck_names.extend(grp.split())
+
+    # ─── NEW: extract only the init block, up to but not including (:goal) ───
+    init_start = content.find("(:init")
+    if init_start == -1:
+        raise ValueError(f"Missing (:init block in {filepath}")
+    goal_start = content.find("(:goal", init_start)
+    init_text = content[init_start : (goal_start if goal_start != -1 else None)]
+    # ─────────────────────────────────────────────────────────────────────────
+
+    # 4) POSITIONS (now only from init_text)
+    pos_x = {
+        n: int(x)
+        for n, x in re.findall(r"\(=\s*\(pos-x\s+([\w-]+)\)\s+(\d+)\)", init_text)
+    }
+    pos_y = {
+        n: int(y)
+        for n, y in re.findall(r"\(=\s*\(pos-y\s+([\w-]+)\)\s+(\d+)\)", init_text)
+    }
+
+    # 5) BUILD VEHICLE LISTS
+    horizontalcars = [
+        {"name": n, "x": pos_x[n], "y": pos_y[n]}
+        for n in horizontal_car_names
+        if n in pos_x and n in pos_y
+    ]
+    verticalcars = [
+        {"name": n, "x": pos_x[n], "y": pos_y[n]}
+        for n in vertical_car_names
+        if n in pos_x and n in pos_y
+    ]
+    horizontaltrucks = [
+        {"name": n, "x": pos_x[n], "y": pos_y[n]}
+        for n in horizontal_truck_names
+        if n in pos_x and n in pos_y
+    ]
+    verticaltrucks = [
+        {"name": n, "x": pos_x[n], "y": pos_y[n]}
+        for n in vertical_truck_names
+        if n in pos_x and n in pos_y
+    ]
+
+    # 6) FINAL JSON
+    return {
+        "state": {
+            "grid": {
+                "row_size": row_size,
+                "col_size": col_size,
+                "cells": {}
+            },
+            "horizontalcars":  horizontalcars,
+            "verticalcars":    verticalcars,
+            "horizontaltrucks": horizontaltrucks,
+            "verticaltrucks":   verticaltrucks
+        }
+    }
+
+def convert_directory(input_dir, output_dir):
+    os.makedirs(output_dir, exist_ok=True)
+    for fn in os.listdir(input_dir):
+        if not fn.endswith('.pddl'):
+            continue
+        inpath  = os.path.join(input_dir, fn)
+        outpath = os.path.join(output_dir, fn[:-5] + '.json')
+        try:
+            j = parse_pddl_file(inpath)
+            with open(outpath, 'w') as f:
+                json.dump(j, f, indent=4)
+            print(f"Converted {fn} → {os.path.basename(outpath)}")
+        except Exception as e:
+            print(f"❌ {fn}: {e}")
 
 if __name__ == '__main__':
-    if len(sys.argv) < 3:
-        print("Usage: python convert_from_cubes.py <input_dir> <output_dir>")
-    else:
-        main(sys.argv[1], sys.argv[2])
+    parser = argparse.ArgumentParser(
+        description="Convert RedCar PDDL problems to JSON (horiz/vert cars)."
+    )
+    parser.add_argument('input_dir',  help='PDDL problem files directory')
+    parser.add_argument('output_dir', help='Where to write JSON files')
+    args = parser.parse_args()
+    convert_directory(args.input_dir, args.output_dir)

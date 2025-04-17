@@ -1,0 +1,40 @@
+{
+  "state": {
+    "farms": [
+      {
+        "name": "farm0",
+        "value": 400
+      },
+      {
+        "name": "farm1",
+        "value": 1
+      }
+    ],
+    "number_of_cars": 0,
+    "cost": 0
+  },
+  "problem": {
+    "adj": {
+      "farm0": [
+        "farm1"
+      ],
+      "farm1": [
+        "farm0"
+      ]
+    },
+    "goal": {
+      "farms": [
+        {
+          "farm_name": "farm0",
+          "farm_constant": 1.0
+        },
+        {
+          "farm_name": "farm1",
+          "farm_constant": 1.7
+        }
+      ],
+      "operator": ">=",
+      "value": 560
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "state": {
+    "pleasures": [],
+    "pains": [
+      {
+        "name": "depression",
+        "harmony": 0,
+        "craves": [
+          "marzipan"
+        ],
+        "fears": []
+      },
+      {
+        "name": "boils",
+        "harmony": 0,
+        "craves": [
+          "haroset"
+        ],
+        "fears": []
+      },
+      {
+        "name": "hangover",
+        "harmony": 0,
+        "craves": [
+          "pistachio"
+        ],
+        "fears": []
+      },
+      {
+        "name": "jealousy",
+        "harmony": 0,
+        "craves": [
+          "snickers"
+        ],
+        "fears": []
+      }
+    ],
+    "foods": [
+      {
+        "name": "scallop",
+        "locale": 4
+      },
+      {
+        "name": "pistachio",
+        "locale": 1
+      },
+      {
+        "name": "snickers",
+        "locale": 1
+      },
+      {
+        "name": "hamburger",
+        "locale": 5
+      },
+      {
+        "name": "rice",
+        "locale": 4
+      }
+    ]
+  },
+  "problem": {
+    "eats": {
+      "haroset": [
+        "hamburger",
+        "marzipan",
+        "endive",
+        "rice"
+      ],
+      "flounder": [
+        "papaya",
+        "pepper"
+      ],
+      "hamburger": [
+        "haroset",
+        "marzipan",
+        "scallop",
+        "snickers"
+      ],
+      "rice": [
+        "haroset",
+        "scallop",
+        "pistachio",
+        "endive"
+      ],
+      "marzipan": [
+        "haroset",
+        "hamburger",
+        "turkey"
+      ],
+      "endive": [
+        "haroset",
+        "pistachio",
+        "rice"
+      ],
+      "pepper": [
+        "snickers",
+        "flounder"
+      ],
+      "turkey": [
+        "marzipan",
+        "papaya",
+        "pistachio"
+      ],
+      "papaya": [
+        "flounder",
+        "turkey"
+      ],
+      "pistachio": [
+        "rice",
+        "endive",
+        "turkey"
+      ],
+      "scallop": [
+        "hamburger",
+        "rice"
+      ],
+      "snickers": [
+        "hamburger",
+        "pepper"
+      ]
+    },
+    "goal": {
+      "conditions": [
+        {
+          "emotion": "boils",
+          "food": "papaya"
+        }
+      ]
+    }
+  }
+}
