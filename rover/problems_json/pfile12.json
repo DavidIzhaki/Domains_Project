@@ -1,0 +1,447 @@
+{
+  "state": {
+    "rovers": {
+      "rover2": {
+        "id": "rover2",
+        "location": "waypoint3",
+        "energy": 50,
+        "equipped_for_soil_analysis": true,
+        "equipped_for_rock_analysis": false,
+        "equipped_for_imaging": true,
+        "available": true
+      },
+      "rover1": {
+        "id": "rover1",
+        "location": "waypoint3",
+        "energy": 50,
+        "equipped_for_soil_analysis": true,
+        "equipped_for_rock_analysis": true,
+        "equipped_for_imaging": true,
+        "available": true
+      },
+      "rover0": {
+        "id": "rover0",
+        "location": "waypoint1",
+        "energy": 50,
+        "equipped_for_soil_analysis": true,
+        "equipped_for_rock_analysis": false,
+        "equipped_for_imaging": true,
+        "available": true
+      },
+      "rover3": {
+        "id": "rover3",
+        "location": "waypoint7",
+        "energy": 50,
+        "equipped_for_soil_analysis": true,
+        "equipped_for_rock_analysis": false,
+        "equipped_for_imaging": true,
+        "available": true
+      }
+    },
+    "stores": {
+      "rover0store": {
+        "id": "rover0store",
+        "rover_id": "rover0",
+        "empty": true,
+        "full": false
+      },
+      "rover1store": {
+        "id": "rover1store",
+        "rover_id": "rover1",
+        "empty": true,
+        "full": false
+      },
+      "rover3store": {
+        "id": "rover3store",
+        "rover_id": "rover3",
+        "empty": true,
+        "full": false
+      },
+      "rover2store": {
+        "id": "rover2store",
+        "rover_id": "rover2",
+        "empty": true,
+        "full": false
+      }
+    },
+    "cameras": {
+      "camera0": {
+        "id": "camera0",
+        "rover_id": "rover1",
+        "calibration_target": "objective1",
+        "supported_modes": [
+          "high_res",
+          "low_res"
+        ],
+        "calibrated_objective": null
+      },
+      "camera1": {
+        "id": "camera1",
+        "rover_id": "rover2",
+        "calibration_target": "objective0",
+        "supported_modes": [
+          "colour",
+          "high_res"
+        ],
+        "calibrated_objective": null
+      },
+      "camera3": {
+        "id": "camera3",
+        "rover_id": "rover0",
+        "calibration_target": "objective1",
+        "supported_modes": [
+          "colour"
+        ],
+        "calibrated_objective": null
+      },
+      "camera2": {
+        "id": "camera2",
+        "rover_id": "rover3",
+        "calibration_target": "objective0",
+        "supported_modes": [
+          "high_res"
+        ],
+        "calibrated_objective": null
+      }
+    },
+    "waypoints": {
+      "waypoint7": {
+        "id": "waypoint7",
+        "has_soil_sample": false,
+        "has_rock_sample": true,
+        "in_sun": true
+      },
+      "waypoint5": {
+        "id": "waypoint5",
+        "has_soil_sample": false,
+        "has_rock_sample": false,
+        "in_sun": true
+      },
+      "waypoint3": {
+        "id": "waypoint3",
+        "has_soil_sample": true,
+        "has_rock_sample": false,
+        "in_sun": false
+      },
+      "waypoint0": {
+        "id": "waypoint0",
+        "has_soil_sample": true,
+        "has_rock_sample": true,
+        "in_sun": true
+      },
+      "waypoint6": {
+        "id": "waypoint6",
+        "has_soil_sample": true,
+        "has_rock_sample": true,
+        "in_sun": true
+      },
+      "waypoint4": {
+        "id": "waypoint4",
+        "has_soil_sample": false,
+        "has_rock_sample": true,
+        "in_sun": false
+      },
+      "waypoint2": {
+        "id": "waypoint2",
+        "has_soil_sample": false,
+        "has_rock_sample": true,
+        "in_sun": false
+      },
+      "waypoint1": {
+        "id": "waypoint1",
+        "has_soil_sample": true,
+        "has_rock_sample": true,
+        "in_sun": false
+      }
+    },
+    "landers": {
+      "general": {
+        "id": "general",
+        "location": "waypoint1",
+        "channel_free": true
+      }
+    },
+    "soil_analysis": {},
+    "rock_analysis": {},
+    "images": {},
+    "communicated_soil_data": [],
+    "communicated_rock_data": [],
+    "communicated_image_data": {},
+    "recharges": 0
+  },
+  "problem": {
+    "goal": {
+      "conditions": [
+        {
+          "SoilDataCommunicated": {
+            "waypoint": "waypoint6"
+          }
+        },
+        {
+          "SoilDataCommunicated": {
+            "waypoint": "waypoint0"
+          }
+        },
+        {
+          "SoilDataCommunicated": {
+            "waypoint": "waypoint1"
+          }
+        },
+        {
+          "SoilDataCommunicated": {
+            "waypoint": "waypoint3"
+          }
+        },
+        {
+          "RockDataCommunicated": {
+            "waypoint": "waypoint6"
+          }
+        },
+        {
+          "RockDataCommunicated": {
+            "waypoint": "waypoint0"
+          }
+        },
+        {
+          "RockDataCommunicated": {
+            "waypoint": "waypoint4"
+          }
+        },
+        {
+          "RockDataCommunicated": {
+            "waypoint": "waypoint7"
+          }
+        },
+        {
+          "ImageDataCommunicated": {
+            "objective": "objective1",
+            "mode": "high_res"
+          }
+        }
+      ]
+    },
+    "objectives": {
+      "objective2": {
+        "id": "objective2",
+        "visible_from": [
+          "waypoint5",
+          "waypoint3",
+          "waypoint0",
+          "waypoint6",
+          "waypoint4",
+          "waypoint2",
+          "waypoint1"
+        ]
+      },
+      "objective1": {
+        "id": "objective1",
+        "visible_from": [
+          "waypoint0",
+          "waypoint2",
+          "waypoint1"
+        ]
+      },
+      "objective0": {
+        "id": "objective0",
+        "visible_from": [
+          "waypoint5",
+          "waypoint3",
+          "waypoint0",
+          "waypoint4",
+          "waypoint2",
+          "waypoint1"
+        ]
+      }
+    },
+    "can_traverse": {
+      "rover2": {
+        "waypoint7": [
+          "waypoint3"
+        ],
+        "waypoint5": [
+          "waypoint3"
+        ],
+        "waypoint3": [
+          "waypoint7",
+          "waypoint5",
+          "waypoint0",
+          "waypoint6",
+          "waypoint2",
+          "waypoint1"
+        ],
+        "waypoint0": [
+          "waypoint3",
+          "waypoint4"
+        ],
+        "waypoint6": [
+          "waypoint3"
+        ],
+        "waypoint4": [
+          "waypoint0"
+        ],
+        "waypoint2": [
+          "waypoint3"
+        ],
+        "waypoint1": [
+          "waypoint3"
+        ]
+      },
+      "rover1": {
+        "waypoint7": [
+          "waypoint3",
+          "waypoint2",
+          "waypoint1"
+        ],
+        "waypoint5": [
+          "waypoint6"
+        ],
+        "waypoint3": [
+          "waypoint7",
+          "waypoint0"
+        ],
+        "waypoint0": [
+          "waypoint3",
+          "waypoint6"
+        ],
+        "waypoint6": [
+          "waypoint5",
+          "waypoint0",
+          "waypoint4"
+        ],
+        "waypoint4": [
+          "waypoint6"
+        ],
+        "waypoint2": [
+          "waypoint7"
+        ],
+        "waypoint1": [
+          "waypoint7"
+        ]
+      },
+      "rover0": {
+        "waypoint7": [
+          "waypoint0"
+        ],
+        "waypoint5": [
+          "waypoint1"
+        ],
+        "waypoint3": [
+          "waypoint2",
+          "waypoint1"
+        ],
+        "waypoint0": [
+          "waypoint7",
+          "waypoint6",
+          "waypoint1"
+        ],
+        "waypoint6": [
+          "waypoint0"
+        ],
+        "waypoint4": [
+          "waypoint1"
+        ],
+        "waypoint2": [
+          "waypoint3"
+        ],
+        "waypoint1": [
+          "waypoint5",
+          "waypoint3",
+          "waypoint0",
+          "waypoint4"
+        ]
+      },
+      "rover3": {
+        "waypoint7": [
+          "waypoint5",
+          "waypoint3",
+          "waypoint0",
+          "waypoint1"
+        ],
+        "waypoint5": [
+          "waypoint7"
+        ],
+        "waypoint3": [
+          "waypoint7",
+          "waypoint6"
+        ],
+        "waypoint0": [
+          "waypoint7",
+          "waypoint4"
+        ],
+        "waypoint6": [
+          "waypoint3"
+        ],
+        "waypoint4": [
+          "waypoint0"
+        ],
+        "waypoint2": [
+          "waypoint1"
+        ],
+        "waypoint1": [
+          "waypoint7",
+          "waypoint2"
+        ]
+      }
+    },
+    "visible": {
+      "waypoint7": [
+        "waypoint5",
+        "waypoint3",
+        "waypoint0",
+        "waypoint2",
+        "waypoint1"
+      ],
+      "waypoint5": [
+        "waypoint7",
+        "waypoint3",
+        "waypoint6",
+        "waypoint4",
+        "waypoint2",
+        "waypoint1"
+      ],
+      "waypoint3": [
+        "waypoint7",
+        "waypoint5",
+        "waypoint0",
+        "waypoint6",
+        "waypoint2",
+        "waypoint1"
+      ],
+      "waypoint0": [
+        "waypoint7",
+        "waypoint3",
+        "waypoint6",
+        "waypoint4",
+        "waypoint1"
+      ],
+      "waypoint6": [
+        "waypoint5",
+        "waypoint3",
+        "waypoint0",
+        "waypoint4",
+        "waypoint2"
+      ],
+      "waypoint4": [
+        "waypoint5",
+        "waypoint0",
+        "waypoint6",
+        "waypoint1"
+      ],
+      "waypoint2": [
+        "waypoint7",
+        "waypoint5",
+        "waypoint3",
+        "waypoint6",
+        "waypoint1"
+      ],
+      "waypoint1": [
+        "waypoint7",
+        "waypoint5",
+        "waypoint3",
+        "waypoint0",
+        "waypoint4",
+        "waypoint2"
+      ]
+    }
+  }
+}
