@@ -8,16 +8,13 @@
         "equipped_for_soil_analysis": false,
         "equipped_for_rock_analysis": true,
         "equipped_for_imaging": true,
-        "available": true
-      },
-      "rover3": {
-        "id": "rover3",
-        "location": "waypoint18",
-        "energy": 50,
-        "equipped_for_soil_analysis": false,
-        "equipped_for_rock_analysis": true,
-        "equipped_for_imaging": true,
-        "available": true
+        "available": true,
+        "store": {
+          "id": "rover1store",
+          "rover_id": "rover1",
+          "empty": true,
+          "full": false
+        }
       },
       "rover5": {
         "id": "rover5",
@@ -26,25 +23,13 @@
         "equipped_for_soil_analysis": false,
         "equipped_for_rock_analysis": true,
         "equipped_for_imaging": true,
-        "available": true
-      },
-      "rover4": {
-        "id": "rover4",
-        "location": "waypoint3",
-        "energy": 50,
-        "equipped_for_soil_analysis": true,
-        "equipped_for_rock_analysis": false,
-        "equipped_for_imaging": true,
-        "available": true
-      },
-      "rover2": {
-        "id": "rover2",
-        "location": "waypoint0",
-        "energy": 50,
-        "equipped_for_soil_analysis": true,
-        "equipped_for_rock_analysis": false,
-        "equipped_for_imaging": true,
-        "available": true
+        "available": true,
+        "store": {
+          "id": "rover5store",
+          "rover_id": "rover5",
+          "empty": true,
+          "full": false
+        }
       },
       "rover0": {
         "id": "rover0",
@@ -53,75 +38,61 @@
         "equipped_for_soil_analysis": true,
         "equipped_for_rock_analysis": true,
         "equipped_for_imaging": true,
-        "available": true
-      }
-    },
-    "stores": {
-      "rover4store": {
-        "id": "rover4store",
-        "rover_id": "rover4",
-        "empty": true,
-        "full": false
+        "available": true,
+        "store": {
+          "id": "rover0store",
+          "rover_id": "rover0",
+          "empty": true,
+          "full": false
+        }
       },
-      "rover0store": {
-        "id": "rover0store",
-        "rover_id": "rover0",
-        "empty": true,
-        "full": false
+      "rover3": {
+        "id": "rover3",
+        "location": "waypoint18",
+        "energy": 50,
+        "equipped_for_soil_analysis": false,
+        "equipped_for_rock_analysis": true,
+        "equipped_for_imaging": true,
+        "available": true,
+        "store": {
+          "id": "rover3store",
+          "rover_id": "rover3",
+          "empty": true,
+          "full": false
+        }
       },
-      "rover1store": {
-        "id": "rover1store",
-        "rover_id": "rover1",
-        "empty": true,
-        "full": false
+      "rover4": {
+        "id": "rover4",
+        "location": "waypoint3",
+        "energy": 50,
+        "equipped_for_soil_analysis": true,
+        "equipped_for_rock_analysis": false,
+        "equipped_for_imaging": true,
+        "available": true,
+        "store": {
+          "id": "rover4store",
+          "rover_id": "rover4",
+          "empty": true,
+          "full": false
+        }
       },
-      "rover3store": {
-        "id": "rover3store",
-        "rover_id": "rover3",
-        "empty": true,
-        "full": false
-      },
-      "rover2store": {
-        "id": "rover2store",
-        "rover_id": "rover2",
-        "empty": true,
-        "full": false
-      },
-      "rover5store": {
-        "id": "rover5store",
-        "rover_id": "rover5",
-        "empty": true,
-        "full": false
+      "rover2": {
+        "id": "rover2",
+        "location": "waypoint0",
+        "energy": 50,
+        "equipped_for_soil_analysis": true,
+        "equipped_for_rock_analysis": false,
+        "equipped_for_imaging": true,
+        "available": true,
+        "store": {
+          "id": "rover2store",
+          "rover_id": "rover2",
+          "empty": true,
+          "full": false
+        }
       }
     },
     "cameras": {
-      "camera0": {
-        "id": "camera0",
-        "rover_id": "rover1",
-        "calibration_target": "objective4",
-        "supported_modes": [
-          "high_res"
-        ],
-        "calibrated_objective": null
-      },
-      "camera3": {
-        "id": "camera3",
-        "rover_id": "rover3",
-        "calibration_target": "objective6",
-        "supported_modes": [
-          "colour"
-        ],
-        "calibrated_objective": null
-      },
-      "camera5": {
-        "id": "camera5",
-        "rover_id": "rover0",
-        "calibration_target": "objective2",
-        "supported_modes": [
-          "colour"
-        ],
-        "calibrated_objective": null
-      },
       "camera4": {
         "id": "camera4",
         "rover_id": "rover3",
@@ -142,6 +113,16 @@
         ],
         "calibrated_objective": null
       },
+      "camera2": {
+        "id": "camera2",
+        "rover_id": "rover4",
+        "calibration_target": "objective0",
+        "supported_modes": [
+          "colour",
+          "high_res"
+        ],
+        "calibrated_objective": null
+      },
       "camera6": {
         "id": "camera6",
         "rover_id": "rover5",
@@ -152,18 +133,65 @@
         ],
         "calibrated_objective": null
       },
-      "camera2": {
-        "id": "camera2",
-        "rover_id": "rover4",
-        "calibration_target": "objective0",
+      "camera3": {
+        "id": "camera3",
+        "rover_id": "rover3",
+        "calibration_target": "objective6",
         "supported_modes": [
-          "colour",
+          "colour"
+        ],
+        "calibrated_objective": null
+      },
+      "camera0": {
+        "id": "camera0",
+        "rover_id": "rover1",
+        "calibration_target": "objective4",
+        "supported_modes": [
           "high_res"
+        ],
+        "calibrated_objective": null
+      },
+      "camera5": {
+        "id": "camera5",
+        "rover_id": "rover0",
+        "calibration_target": "objective2",
+        "supported_modes": [
+          "colour"
         ],
         "calibrated_objective": null
       }
     },
     "waypoints": {
+      "waypoint0": {
+        "id": "waypoint0",
+        "has_soil_sample": true,
+        "has_rock_sample": false,
+        "in_sun": false
+      },
+      "waypoint8": {
+        "id": "waypoint8",
+        "has_soil_sample": true,
+        "has_rock_sample": false,
+        "in_sun": false
+      },
+      "waypoint18": {
+        "id": "waypoint18",
+        "has_soil_sample": true,
+        "has_rock_sample": true,
+        "in_sun": true
+      },
+      "waypoint6": {
+        "id": "waypoint6",
+        "has_soil_sample": false,
+        "has_rock_sample": true,
+        "in_sun": false
+      },
+      "waypoint17": {
+        "id": "waypoint17",
+        "has_soil_sample": true,
+        "has_rock_sample": true,
+        "in_sun": false
+      },
       "waypoint15": {
         "id": "waypoint15",
         "has_soil_sample": true,
@@ -182,11 +210,11 @@
         "has_rock_sample": true,
         "in_sun": true
       },
-      "waypoint4": {
-        "id": "waypoint4",
-        "has_soil_sample": false,
-        "has_rock_sample": true,
-        "in_sun": true
+      "waypoint14": {
+        "id": "waypoint14",
+        "has_soil_sample": true,
+        "has_rock_sample": false,
+        "in_sun": false
       },
       "waypoint2": {
         "id": "waypoint2",
@@ -194,26 +222,8 @@
         "has_rock_sample": true,
         "in_sun": false
       },
-      "waypoint18": {
-        "id": "waypoint18",
-        "has_soil_sample": true,
-        "has_rock_sample": true,
-        "in_sun": true
-      },
-      "waypoint10": {
-        "id": "waypoint10",
-        "has_soil_sample": true,
-        "has_rock_sample": false,
-        "in_sun": true
-      },
-      "waypoint0": {
-        "id": "waypoint0",
-        "has_soil_sample": true,
-        "has_rock_sample": false,
-        "in_sun": false
-      },
-      "waypoint1": {
-        "id": "waypoint1",
+      "waypoint7": {
+        "id": "waypoint7",
         "has_soil_sample": false,
         "has_rock_sample": true,
         "in_sun": false
@@ -230,41 +240,11 @@
         "has_rock_sample": true,
         "in_sun": false
       },
-      "waypoint19": {
-        "id": "waypoint19",
-        "has_soil_sample": true,
-        "has_rock_sample": false,
-        "in_sun": false
-      },
-      "waypoint14": {
-        "id": "waypoint14",
-        "has_soil_sample": true,
-        "has_rock_sample": false,
-        "in_sun": false
-      },
-      "waypoint7": {
-        "id": "waypoint7",
-        "has_soil_sample": false,
-        "has_rock_sample": true,
-        "in_sun": false
-      },
-      "waypoint17": {
-        "id": "waypoint17",
-        "has_soil_sample": true,
-        "has_rock_sample": true,
-        "in_sun": false
-      },
       "waypoint16": {
         "id": "waypoint16",
         "has_soil_sample": false,
         "has_rock_sample": false,
         "in_sun": true
-      },
-      "waypoint8": {
-        "id": "waypoint8",
-        "has_soil_sample": true,
-        "has_rock_sample": false,
-        "in_sun": false
       },
       "waypoint3": {
         "id": "waypoint3",
@@ -272,11 +252,29 @@
         "has_rock_sample": false,
         "in_sun": true
       },
-      "waypoint6": {
-        "id": "waypoint6",
+      "waypoint19": {
+        "id": "waypoint19",
+        "has_soil_sample": true,
+        "has_rock_sample": false,
+        "in_sun": false
+      },
+      "waypoint10": {
+        "id": "waypoint10",
+        "has_soil_sample": true,
+        "has_rock_sample": false,
+        "in_sun": true
+      },
+      "waypoint1": {
+        "id": "waypoint1",
         "has_soil_sample": false,
         "has_rock_sample": true,
         "in_sun": false
+      },
+      "waypoint4": {
+        "id": "waypoint4",
+        "has_soil_sample": false,
+        "has_rock_sample": true,
+        "in_sun": true
       },
       "waypoint12": {
         "id": "waypoint12",
@@ -368,130 +366,148 @@
       "objective6": {
         "id": "objective6",
         "visible_from": [
-          "waypoint5",
-          "waypoint9",
-          "waypoint4",
-          "waypoint2",
-          "waypoint10",
           "waypoint0",
-          "waypoint1",
-          "waypoint7",
           "waypoint8",
-          "waypoint3",
-          "waypoint6"
-        ]
-      },
-      "objective3": {
-        "id": "objective3",
-        "visible_from": [
-          "waypoint15",
-          "waypoint5",
-          "waypoint9",
-          "waypoint4",
-          "waypoint2",
-          "waypoint18",
-          "waypoint10",
-          "waypoint0",
-          "waypoint1",
-          "waypoint11",
-          "waypoint13",
-          "waypoint19",
-          "waypoint14",
-          "waypoint7",
-          "waypoint17",
-          "waypoint16",
-          "waypoint8",
-          "waypoint3",
           "waypoint6",
-          "waypoint12"
-        ]
-      },
-      "objective2": {
-        "id": "objective2",
-        "visible_from": [
           "waypoint5",
           "waypoint9",
-          "waypoint4",
           "waypoint2",
-          "waypoint10",
-          "waypoint0",
-          "waypoint1",
-          "waypoint11",
-          "waypoint13",
-          "waypoint14",
           "waypoint7",
-          "waypoint8",
           "waypoint3",
-          "waypoint6",
-          "waypoint12"
-        ]
-      },
-      "objective5": {
-        "id": "objective5",
-        "visible_from": [
-          "waypoint2",
-          "waypoint0",
-          "waypoint1"
+          "waypoint10",
+          "waypoint1",
+          "waypoint4"
         ]
       },
       "objective4": {
         "id": "objective4",
         "visible_from": [
+          "waypoint0",
+          "waypoint8",
+          "waypoint6",
           "waypoint15",
           "waypoint5",
           "waypoint9",
-          "waypoint4",
+          "waypoint14",
           "waypoint2",
-          "waypoint10",
-          "waypoint0",
-          "waypoint1",
+          "waypoint7",
           "waypoint11",
           "waypoint13",
-          "waypoint14",
-          "waypoint7",
-          "waypoint8",
           "waypoint3",
+          "waypoint10",
+          "waypoint1",
+          "waypoint4",
+          "waypoint12"
+        ]
+      },
+      "objective1": {
+        "id": "objective1",
+        "visible_from": [
+          "waypoint0",
+          "waypoint8",
           "waypoint6",
+          "waypoint5",
+          "waypoint9",
+          "waypoint2",
+          "waypoint7",
+          "waypoint11",
+          "waypoint3",
+          "waypoint10",
+          "waypoint1",
+          "waypoint4",
           "waypoint12"
         ]
       },
       "objective0": {
         "id": "objective0",
         "visible_from": [
+          "waypoint0",
+          "waypoint8",
+          "waypoint6",
           "waypoint5",
           "waypoint9",
-          "waypoint4",
           "waypoint2",
-          "waypoint10",
-          "waypoint0",
-          "waypoint1",
           "waypoint7",
-          "waypoint8",
           "waypoint3",
-          "waypoint6"
+          "waypoint10",
+          "waypoint1",
+          "waypoint4"
         ]
       },
-      "objective1": {
-        "id": "objective1",
+      "objective5": {
+        "id": "objective5",
         "visible_from": [
+          "waypoint0",
+          "waypoint2",
+          "waypoint1"
+        ]
+      },
+      "objective3": {
+        "id": "objective3",
+        "visible_from": [
+          "waypoint0",
+          "waypoint8",
+          "waypoint18",
+          "waypoint6",
+          "waypoint17",
+          "waypoint15",
           "waypoint5",
           "waypoint9",
-          "waypoint4",
+          "waypoint14",
           "waypoint2",
-          "waypoint10",
-          "waypoint0",
-          "waypoint1",
-          "waypoint11",
           "waypoint7",
-          "waypoint8",
+          "waypoint11",
+          "waypoint13",
+          "waypoint16",
           "waypoint3",
+          "waypoint19",
+          "waypoint10",
+          "waypoint1",
+          "waypoint4",
+          "waypoint12"
+        ]
+      },
+      "objective2": {
+        "id": "objective2",
+        "visible_from": [
+          "waypoint0",
+          "waypoint8",
           "waypoint6",
+          "waypoint5",
+          "waypoint9",
+          "waypoint14",
+          "waypoint2",
+          "waypoint7",
+          "waypoint11",
+          "waypoint13",
+          "waypoint3",
+          "waypoint10",
+          "waypoint1",
+          "waypoint4",
           "waypoint12"
         ]
       }
     },
     "can_traverse": {
       "rover1": {
+        "waypoint0": [
+          "waypoint9",
+          "waypoint2",
+          "waypoint13",
+          "waypoint16"
+        ],
+        "waypoint8": [
+          "waypoint10"
+        ],
+        "waypoint18": [
+          "waypoint9"
+        ],
+        "waypoint6": [
+          "waypoint3"
+        ],
+        "waypoint17": [
+          "waypoint19"
+        ],
         "waypoint15": [
           "waypoint14"
         ],
@@ -499,38 +515,26 @@
           "waypoint7"
         ],
         "waypoint9": [
-          "waypoint4",
-          "waypoint18",
-          "waypoint10",
           "waypoint0",
-          "waypoint19",
+          "waypoint18",
           "waypoint14",
           "waypoint7",
           "waypoint3",
+          "waypoint19",
+          "waypoint10",
+          "waypoint4",
           "waypoint12"
         ],
-        "waypoint4": [
-          "waypoint9",
-          "waypoint11"
+        "waypoint14": [
+          "waypoint15",
+          "waypoint9"
         ],
         "waypoint2": [
           "waypoint0"
         ],
-        "waypoint18": [
+        "waypoint7": [
+          "waypoint5",
           "waypoint9"
-        ],
-        "waypoint10": [
-          "waypoint9",
-          "waypoint8"
-        ],
-        "waypoint0": [
-          "waypoint9",
-          "waypoint2",
-          "waypoint13",
-          "waypoint16"
-        ],
-        "waypoint1": [
-          "waypoint12"
         ],
         "waypoint11": [
           "waypoint4"
@@ -538,268 +542,279 @@
         "waypoint13": [
           "waypoint0"
         ],
-        "waypoint19": [
-          "waypoint9",
-          "waypoint17"
-        ],
-        "waypoint14": [
-          "waypoint15",
-          "waypoint9"
-        ],
-        "waypoint7": [
-          "waypoint5",
-          "waypoint9"
-        ],
-        "waypoint17": [
-          "waypoint19"
-        ],
         "waypoint16": [
           "waypoint0"
         ],
-        "waypoint8": [
-          "waypoint10"
-        ],
         "waypoint3": [
-          "waypoint9",
-          "waypoint6"
+          "waypoint6",
+          "waypoint9"
         ],
-        "waypoint6": [
-          "waypoint3"
+        "waypoint19": [
+          "waypoint17",
+          "waypoint9"
+        ],
+        "waypoint10": [
+          "waypoint8",
+          "waypoint9"
+        ],
+        "waypoint1": [
+          "waypoint12"
+        ],
+        "waypoint4": [
+          "waypoint9",
+          "waypoint11"
         ],
         "waypoint12": [
           "waypoint9",
           "waypoint1"
         ]
       },
-      "rover3": {
+      "rover5": {
+        "waypoint0": [
+          "waypoint18",
+          "waypoint17",
+          "waypoint13",
+          "waypoint1",
+          "waypoint12"
+        ],
+        "waypoint8": [
+          "waypoint12"
+        ],
+        "waypoint18": [
+          "waypoint0"
+        ],
+        "waypoint6": [
+          "waypoint1"
+        ],
+        "waypoint17": [
+          "waypoint0"
+        ],
         "waypoint15": [
           "waypoint1"
         ],
         "waypoint5": [
-          "waypoint9"
+          "waypoint12"
         ],
         "waypoint9": [
-          "waypoint5",
-          "waypoint0",
-          "waypoint8",
-          "waypoint3"
+          "waypoint12"
         ],
-        "waypoint4": [
-          "waypoint18"
+        "waypoint14": [
+          "waypoint12"
         ],
         "waypoint2": [
-          "waypoint0",
-          "waypoint14"
+          "waypoint1"
         ],
-        "waypoint18": [
-          "waypoint4",
+        "waypoint7": [
+          "waypoint3",
+          "waypoint10",
+          "waypoint1"
+        ],
+        "waypoint11": [
+          "waypoint1"
+        ],
+        "waypoint13": [
           "waypoint0",
-          "waypoint11"
+          "waypoint16"
+        ],
+        "waypoint16": [
+          "waypoint13"
+        ],
+        "waypoint3": [
+          "waypoint7"
+        ],
+        "waypoint19": [
+          "waypoint12"
         ],
         "waypoint10": [
           "waypoint7"
         ],
-        "waypoint0": [
-          "waypoint9",
+        "waypoint1": [
+          "waypoint0",
+          "waypoint6",
+          "waypoint15",
           "waypoint2",
-          "waypoint18",
-          "waypoint1",
-          "waypoint17",
+          "waypoint7",
+          "waypoint11"
+        ],
+        "waypoint4": [
           "waypoint12"
         ],
-        "waypoint1": [
-          "waypoint15",
+        "waypoint12": [
           "waypoint0",
-          "waypoint7",
+          "waypoint8",
+          "waypoint5",
+          "waypoint9",
+          "waypoint14",
+          "waypoint19",
+          "waypoint4"
+        ]
+      },
+      "rover0": {
+        "waypoint0": [
+          "waypoint2",
+          "waypoint13",
+          "waypoint12"
+        ],
+        "waypoint8": [
+          "waypoint9"
+        ],
+        "waypoint18": [
+          "waypoint2"
+        ],
+        "waypoint6": [
+          "waypoint15",
+          "waypoint2",
+          "waypoint19",
+          "waypoint1"
+        ],
+        "waypoint17": [],
+        "waypoint15": [
           "waypoint6"
         ],
-        "waypoint11": [
-          "waypoint18",
-          "waypoint16"
+        "waypoint5": [
+          "waypoint9",
+          "waypoint10"
         ],
-        "waypoint13": [
-          "waypoint16"
-        ],
-        "waypoint19": [
-          "waypoint12"
+        "waypoint9": [
+          "waypoint8",
+          "waypoint5",
+          "waypoint2",
+          "waypoint4"
         ],
         "waypoint14": [
           "waypoint2"
         ],
+        "waypoint2": [
+          "waypoint0",
+          "waypoint18",
+          "waypoint6",
+          "waypoint9",
+          "waypoint14",
+          "waypoint7"
+        ],
         "waypoint7": [
-          "waypoint10",
+          "waypoint2",
+          "waypoint11",
+          "waypoint3"
+        ],
+        "waypoint11": [
+          "waypoint7"
+        ],
+        "waypoint13": [
+          "waypoint0",
+          "waypoint16"
+        ],
+        "waypoint16": [
+          "waypoint13"
+        ],
+        "waypoint3": [
+          "waypoint7"
+        ],
+        "waypoint19": [
+          "waypoint6"
+        ],
+        "waypoint10": [
+          "waypoint5"
+        ],
+        "waypoint1": [
+          "waypoint6"
+        ],
+        "waypoint4": [
+          "waypoint9"
+        ],
+        "waypoint12": [
+          "waypoint0"
+        ]
+      },
+      "rover3": {
+        "waypoint0": [
+          "waypoint18",
+          "waypoint17",
+          "waypoint9",
+          "waypoint2",
+          "waypoint1",
+          "waypoint12"
+        ],
+        "waypoint8": [
+          "waypoint9"
+        ],
+        "waypoint18": [
+          "waypoint0",
+          "waypoint11",
+          "waypoint4"
+        ],
+        "waypoint6": [
           "waypoint1"
         ],
         "waypoint17": [
           "waypoint0"
         ],
+        "waypoint15": [
+          "waypoint1"
+        ],
+        "waypoint5": [
+          "waypoint9"
+        ],
+        "waypoint9": [
+          "waypoint0",
+          "waypoint8",
+          "waypoint5",
+          "waypoint3"
+        ],
+        "waypoint14": [
+          "waypoint2"
+        ],
+        "waypoint2": [
+          "waypoint0",
+          "waypoint14"
+        ],
+        "waypoint7": [
+          "waypoint10",
+          "waypoint1"
+        ],
+        "waypoint11": [
+          "waypoint18",
+          "waypoint16"
+        ],
+        "waypoint13": [
+          "waypoint16"
+        ],
         "waypoint16": [
           "waypoint11",
           "waypoint13"
         ],
-        "waypoint8": [
-          "waypoint9"
-        ],
         "waypoint3": [
           "waypoint9"
         ],
-        "waypoint6": [
-          "waypoint1"
+        "waypoint19": [
+          "waypoint12"
+        ],
+        "waypoint10": [
+          "waypoint7"
+        ],
+        "waypoint1": [
+          "waypoint0",
+          "waypoint6",
+          "waypoint15",
+          "waypoint7"
+        ],
+        "waypoint4": [
+          "waypoint18"
         ],
         "waypoint12": [
           "waypoint0",
           "waypoint19"
         ]
       },
-      "rover5": {
-        "waypoint15": [
-          "waypoint1"
-        ],
-        "waypoint5": [
-          "waypoint12"
-        ],
-        "waypoint9": [
-          "waypoint12"
-        ],
-        "waypoint4": [
-          "waypoint12"
-        ],
-        "waypoint2": [
-          "waypoint1"
-        ],
-        "waypoint18": [
-          "waypoint0"
-        ],
-        "waypoint10": [
-          "waypoint7"
-        ],
-        "waypoint0": [
-          "waypoint18",
-          "waypoint1",
-          "waypoint13",
-          "waypoint17",
-          "waypoint12"
-        ],
-        "waypoint1": [
-          "waypoint15",
-          "waypoint2",
-          "waypoint0",
-          "waypoint11",
-          "waypoint7",
-          "waypoint6"
-        ],
-        "waypoint11": [
-          "waypoint1"
-        ],
-        "waypoint13": [
-          "waypoint0",
-          "waypoint16"
-        ],
-        "waypoint19": [
-          "waypoint12"
-        ],
-        "waypoint14": [
-          "waypoint12"
-        ],
-        "waypoint7": [
-          "waypoint10",
-          "waypoint1",
-          "waypoint3"
-        ],
-        "waypoint17": [
-          "waypoint0"
-        ],
-        "waypoint16": [
-          "waypoint13"
-        ],
-        "waypoint8": [
-          "waypoint12"
-        ],
-        "waypoint3": [
-          "waypoint7"
-        ],
-        "waypoint6": [
-          "waypoint1"
-        ],
-        "waypoint12": [
-          "waypoint5",
-          "waypoint9",
-          "waypoint4",
-          "waypoint0",
-          "waypoint19",
-          "waypoint14",
-          "waypoint8"
-        ]
-      },
       "rover4": {
-        "waypoint15": [
-          "waypoint1",
-          "waypoint3"
-        ],
-        "waypoint5": [
-          "waypoint6"
-        ],
-        "waypoint9": [
-          "waypoint4",
-          "waypoint0",
-          "waypoint19",
-          "waypoint8",
-          "waypoint3"
-        ],
-        "waypoint4": [
-          "waypoint9"
-        ],
-        "waypoint2": [
-          "waypoint14"
-        ],
-        "waypoint18": [
-          "waypoint11"
-        ],
-        "waypoint10": [
-          "waypoint16",
-          "waypoint3"
-        ],
         "waypoint0": [
           "waypoint9"
-        ],
-        "waypoint1": [
-          "waypoint15"
-        ],
-        "waypoint11": [
-          "waypoint18",
-          "waypoint17",
-          "waypoint3"
-        ],
-        "waypoint13": [
-          "waypoint3"
-        ],
-        "waypoint19": [
-          "waypoint9"
-        ],
-        "waypoint14": [
-          "waypoint2",
-          "waypoint6"
-        ],
-        "waypoint7": [
-          "waypoint3"
-        ],
-        "waypoint17": [
-          "waypoint11"
-        ],
-        "waypoint16": [
-          "waypoint10"
         ],
         "waypoint8": [
           "waypoint9"
         ],
-        "waypoint3": [
-          "waypoint15",
-          "waypoint9",
-          "waypoint10",
-          "waypoint11",
-          "waypoint13",
-          "waypoint7",
-          "waypoint6"
+        "waypoint18": [
+          "waypoint11"
         ],
         "waypoint6": [
           "waypoint5",
@@ -807,351 +822,334 @@
           "waypoint3",
           "waypoint12"
         ],
+        "waypoint17": [
+          "waypoint11"
+        ],
+        "waypoint15": [
+          "waypoint3",
+          "waypoint1"
+        ],
+        "waypoint5": [
+          "waypoint6"
+        ],
+        "waypoint9": [
+          "waypoint0",
+          "waypoint8",
+          "waypoint3",
+          "waypoint19",
+          "waypoint4"
+        ],
+        "waypoint14": [
+          "waypoint6",
+          "waypoint2"
+        ],
+        "waypoint2": [
+          "waypoint14"
+        ],
+        "waypoint7": [
+          "waypoint3"
+        ],
+        "waypoint11": [
+          "waypoint18",
+          "waypoint17",
+          "waypoint3"
+        ],
+        "waypoint13": [
+          "waypoint3"
+        ],
+        "waypoint16": [
+          "waypoint10"
+        ],
+        "waypoint3": [
+          "waypoint6",
+          "waypoint15",
+          "waypoint9",
+          "waypoint7",
+          "waypoint11",
+          "waypoint13",
+          "waypoint10"
+        ],
+        "waypoint19": [
+          "waypoint9"
+        ],
+        "waypoint10": [
+          "waypoint16",
+          "waypoint3"
+        ],
+        "waypoint1": [
+          "waypoint15"
+        ],
+        "waypoint4": [
+          "waypoint9"
+        ],
         "waypoint12": [
           "waypoint6"
         ]
       },
       "rover2": {
-        "waypoint15": [
+        "waypoint0": [
+          "waypoint18",
+          "waypoint17",
+          "waypoint9",
+          "waypoint13",
+          "waypoint16",
           "waypoint1"
         ],
-        "waypoint5": [
-          "waypoint9"
-        ],
-        "waypoint9": [
-          "waypoint5",
-          "waypoint4",
-          "waypoint10",
-          "waypoint0",
-          "waypoint19",
-          "waypoint14",
-          "waypoint7",
-          "waypoint3"
-        ],
-        "waypoint4": [
-          "waypoint9"
-        ],
-        "waypoint2": [
-          "waypoint1"
-        ],
+        "waypoint8": [],
         "waypoint18": [
           "waypoint0"
         ],
-        "waypoint10": [
-          "waypoint9"
-        ],
-        "waypoint0": [
-          "waypoint9",
-          "waypoint18",
-          "waypoint1",
-          "waypoint13",
-          "waypoint17",
-          "waypoint16"
-        ],
-        "waypoint1": [
-          "waypoint15",
-          "waypoint2",
-          "waypoint0",
-          "waypoint11",
-          "waypoint6",
-          "waypoint12"
-        ],
-        "waypoint11": [
+        "waypoint6": [
           "waypoint1"
-        ],
-        "waypoint13": [
-          "waypoint0"
-        ],
-        "waypoint19": [
-          "waypoint9"
-        ],
-        "waypoint14": [
-          "waypoint9"
-        ],
-        "waypoint7": [
-          "waypoint9"
         ],
         "waypoint17": [
           "waypoint0"
         ],
+        "waypoint15": [
+          "waypoint1"
+        ],
+        "waypoint5": [
+          "waypoint9"
+        ],
+        "waypoint9": [
+          "waypoint0",
+          "waypoint5",
+          "waypoint14",
+          "waypoint7",
+          "waypoint3",
+          "waypoint19",
+          "waypoint10",
+          "waypoint4"
+        ],
+        "waypoint14": [
+          "waypoint9"
+        ],
+        "waypoint2": [
+          "waypoint1"
+        ],
+        "waypoint7": [
+          "waypoint9"
+        ],
+        "waypoint11": [
+          "waypoint1"
+        ],
+        "waypoint13": [
+          "waypoint0"
+        ],
         "waypoint16": [
           "waypoint0"
         ],
-        "waypoint8": [],
         "waypoint3": [
           "waypoint9"
         ],
-        "waypoint6": [
-          "waypoint1"
+        "waypoint19": [
+          "waypoint9"
         ],
-        "waypoint12": [
-          "waypoint1"
-        ]
-      },
-      "rover0": {
-        "waypoint15": [
-          "waypoint6"
+        "waypoint10": [
+          "waypoint9"
         ],
-        "waypoint5": [
-          "waypoint9",
-          "waypoint10"
-        ],
-        "waypoint9": [
-          "waypoint5",
-          "waypoint4",
+        "waypoint1": [
+          "waypoint0",
+          "waypoint6",
+          "waypoint15",
           "waypoint2",
-          "waypoint8"
+          "waypoint11",
+          "waypoint12"
         ],
         "waypoint4": [
           "waypoint9"
         ],
-        "waypoint2": [
-          "waypoint9",
-          "waypoint18",
-          "waypoint0",
-          "waypoint14",
-          "waypoint7",
-          "waypoint6"
-        ],
-        "waypoint18": [
-          "waypoint2"
-        ],
-        "waypoint10": [
-          "waypoint5"
-        ],
-        "waypoint0": [
-          "waypoint2",
-          "waypoint13",
-          "waypoint12"
-        ],
-        "waypoint1": [
-          "waypoint6"
-        ],
-        "waypoint11": [
-          "waypoint7"
-        ],
-        "waypoint13": [
-          "waypoint0",
-          "waypoint16"
-        ],
-        "waypoint19": [
-          "waypoint6"
-        ],
-        "waypoint14": [
-          "waypoint2"
-        ],
-        "waypoint7": [
-          "waypoint2",
-          "waypoint11",
-          "waypoint3"
-        ],
-        "waypoint17": [],
-        "waypoint16": [
-          "waypoint13"
-        ],
-        "waypoint8": [
-          "waypoint9"
-        ],
-        "waypoint3": [
-          "waypoint7"
-        ],
-        "waypoint6": [
-          "waypoint15",
-          "waypoint2",
-          "waypoint1",
-          "waypoint19"
-        ],
         "waypoint12": [
-          "waypoint0"
+          "waypoint1"
         ]
       }
     },
     "visible": {
-      "waypoint15": [
-        "waypoint1",
-        "waypoint19",
-        "waypoint14",
-        "waypoint3",
-        "waypoint6"
-      ],
-      "waypoint5": [
+      "waypoint0": [
+        "waypoint18",
+        "waypoint17",
         "waypoint9",
-        "waypoint4",
-        "waypoint10",
-        "waypoint11",
-        "waypoint14",
-        "waypoint7",
-        "waypoint6",
-        "waypoint12"
-      ],
-      "waypoint9": [
-        "waypoint5",
-        "waypoint4",
         "waypoint2",
-        "waypoint18",
-        "waypoint10",
-        "waypoint0",
-        "waypoint19",
-        "waypoint14",
-        "waypoint7",
-        "waypoint8",
-        "waypoint3",
-        "waypoint6",
-        "waypoint12"
-      ],
-      "waypoint4": [
-        "waypoint5",
-        "waypoint9",
-        "waypoint18",
-        "waypoint11",
         "waypoint13",
+        "waypoint16",
+        "waypoint1",
         "waypoint12"
       ],
-      "waypoint2": [
+      "waypoint8": [
         "waypoint9",
-        "waypoint18",
-        "waypoint0",
-        "waypoint1",
         "waypoint14",
-        "waypoint7",
-        "waypoint16",
-        "waypoint6"
+        "waypoint10",
+        "waypoint12"
       ],
       "waypoint18": [
-        "waypoint9",
-        "waypoint4",
-        "waypoint2",
         "waypoint0",
-        "waypoint11"
-      ],
-      "waypoint10": [
-        "waypoint5",
-        "waypoint9",
-        "waypoint7",
-        "waypoint16",
-        "waypoint8",
-        "waypoint3"
-      ],
-      "waypoint0": [
         "waypoint9",
         "waypoint2",
-        "waypoint18",
-        "waypoint1",
-        "waypoint13",
-        "waypoint17",
-        "waypoint16",
-        "waypoint12"
-      ],
-      "waypoint1": [
-        "waypoint15",
-        "waypoint2",
-        "waypoint0",
         "waypoint11",
-        "waypoint7",
-        "waypoint6",
-        "waypoint12"
+        "waypoint4"
       ],
-      "waypoint11": [
-        "waypoint5",
-        "waypoint4",
-        "waypoint18",
-        "waypoint1",
-        "waypoint7",
-        "waypoint17",
-        "waypoint16",
-        "waypoint3",
-        "waypoint12"
-      ],
-      "waypoint13": [
-        "waypoint4",
-        "waypoint0",
-        "waypoint19",
-        "waypoint16",
-        "waypoint3",
-        "waypoint6"
-      ],
-      "waypoint19": [
+      "waypoint6": [
         "waypoint15",
+        "waypoint5",
         "waypoint9",
-        "waypoint13",
         "waypoint14",
-        "waypoint17",
-        "waypoint16",
-        "waypoint6",
-        "waypoint12"
-      ],
-      "waypoint14": [
-        "waypoint15",
-        "waypoint5",
-        "waypoint9",
         "waypoint2",
+        "waypoint13",
+        "waypoint3",
         "waypoint19",
-        "waypoint8",
-        "waypoint6",
-        "waypoint12"
-      ],
-      "waypoint7": [
-        "waypoint5",
-        "waypoint9",
-        "waypoint2",
-        "waypoint10",
         "waypoint1",
-        "waypoint11",
-        "waypoint3"
+        "waypoint12"
       ],
       "waypoint17": [
         "waypoint0",
         "waypoint11",
         "waypoint19"
       ],
-      "waypoint16": [
-        "waypoint2",
-        "waypoint10",
-        "waypoint0",
+      "waypoint15": [
+        "waypoint6",
+        "waypoint14",
+        "waypoint3",
+        "waypoint19",
+        "waypoint1"
+      ],
+      "waypoint5": [
+        "waypoint6",
+        "waypoint9",
+        "waypoint14",
+        "waypoint7",
         "waypoint11",
-        "waypoint13",
+        "waypoint10",
+        "waypoint4",
+        "waypoint12"
+      ],
+      "waypoint9": [
+        "waypoint0",
+        "waypoint8",
+        "waypoint18",
+        "waypoint6",
+        "waypoint5",
+        "waypoint14",
+        "waypoint2",
+        "waypoint7",
+        "waypoint3",
+        "waypoint19",
+        "waypoint10",
+        "waypoint4",
+        "waypoint12"
+      ],
+      "waypoint14": [
+        "waypoint8",
+        "waypoint6",
+        "waypoint15",
+        "waypoint5",
+        "waypoint9",
+        "waypoint2",
         "waypoint19",
         "waypoint12"
       ],
-      "waypoint8": [
+      "waypoint2": [
+        "waypoint0",
+        "waypoint18",
+        "waypoint6",
         "waypoint9",
-        "waypoint10",
         "waypoint14",
+        "waypoint7",
+        "waypoint16",
+        "waypoint1"
+      ],
+      "waypoint7": [
+        "waypoint5",
+        "waypoint9",
+        "waypoint2",
+        "waypoint11",
+        "waypoint3",
+        "waypoint10",
+        "waypoint1"
+      ],
+      "waypoint11": [
+        "waypoint18",
+        "waypoint17",
+        "waypoint5",
+        "waypoint7",
+        "waypoint16",
+        "waypoint3",
+        "waypoint1",
+        "waypoint4",
+        "waypoint12"
+      ],
+      "waypoint13": [
+        "waypoint0",
+        "waypoint6",
+        "waypoint16",
+        "waypoint3",
+        "waypoint19",
+        "waypoint4"
+      ],
+      "waypoint16": [
+        "waypoint0",
+        "waypoint2",
+        "waypoint11",
+        "waypoint13",
+        "waypoint19",
+        "waypoint10",
         "waypoint12"
       ],
       "waypoint3": [
+        "waypoint6",
         "waypoint15",
         "waypoint9",
-        "waypoint10",
+        "waypoint7",
         "waypoint11",
         "waypoint13",
-        "waypoint7",
-        "waypoint6"
+        "waypoint10"
       ],
-      "waypoint6": [
+      "waypoint19": [
+        "waypoint6",
+        "waypoint17",
         "waypoint15",
+        "waypoint9",
+        "waypoint14",
+        "waypoint13",
+        "waypoint16",
+        "waypoint12"
+      ],
+      "waypoint10": [
+        "waypoint8",
         "waypoint5",
         "waypoint9",
+        "waypoint7",
+        "waypoint16",
+        "waypoint3"
+      ],
+      "waypoint1": [
+        "waypoint0",
+        "waypoint6",
+        "waypoint15",
         "waypoint2",
-        "waypoint1",
+        "waypoint7",
+        "waypoint11",
+        "waypoint12"
+      ],
+      "waypoint4": [
+        "waypoint18",
+        "waypoint5",
+        "waypoint9",
+        "waypoint11",
         "waypoint13",
-        "waypoint19",
-        "waypoint14",
-        "waypoint3",
         "waypoint12"
       ],
       "waypoint12": [
+        "waypoint0",
+        "waypoint8",
+        "waypoint6",
         "waypoint5",
         "waypoint9",
-        "waypoint4",
-        "waypoint0",
-        "waypoint1",
-        "waypoint11",
-        "waypoint19",
         "waypoint14",
+        "waypoint11",
         "waypoint16",
-        "waypoint8",
-        "waypoint6"
+        "waypoint19",
+        "waypoint1",
+        "waypoint4"
       ]
     }
   }

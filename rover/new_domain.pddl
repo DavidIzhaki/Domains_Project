@@ -178,7 +178,7 @@
       (visible ?x ?y)
       (available ?r)
       (channel_free ?l)
-      (not (communicated_soil_data ?p)) ;; 🛡️ guard against duplicate
+      (not (communicated_soil_data ?p)) ;;  guard against duplicate
       (>= (energy ?r) 4)
     )
     :effect (and
@@ -197,7 +197,7 @@
       (visible ?x ?y)
       (available ?r)
       (channel_free ?l)
-      (not (communicated_rock_data ?p)) ;; 🛡️ guard against duplicate
+      (not (communicated_rock_data ?p)) ;;  guard against duplicate
       (>= (energy ?r) 4)
     )
     :effect (and
@@ -216,7 +216,7 @@
       (visible ?x ?y)
       (available ?r)
       (channel_free ?l)
-      (not (communicated_image_data ?o ?m)) ;; 🛡️ guard against duplicate
+      (not (communicated_image_data ?o ?m)) ;;  guard against duplicate
       (>= (energy ?r) 6)
     )
     :effect (and
