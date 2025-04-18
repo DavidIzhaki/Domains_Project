@@ -17,18 +17,21 @@ def extract_init_section(pddl_text):
 def parse_bots(pddl_text, room_map):
     """Parse bot properties including location and load."""
     bots = []
-    bot_matches = re.finditer(r'\(at-bot (bot\d+) (room\w+)\)', pddl_text)
-    load_limit_matches = re.finditer(r'\(= \(load_limit (bot\d+)\) (\d+)\)', pddl_text)
-    current_load_matches = re.finditer(r'\(= \(current_load (bot\d+)\) (\d+)\)', pddl_text)
+    bot_matches = re.finditer(r'\(at-bot (\w+) (room\w+)\)', pddl_text)
+    load_limit_matches = re.finditer(r'\(= \(load_limit (\w+)\) (\d+)\)', pddl_text)
+    current_load_matches = re.finditer(r'\(= \(current_load (\w+)\) (\d+)\)', pddl_text)
 
     bot_dict = {}
     for match in bot_matches:
         bot_id, room_id = match.groups()
+        # Determine index by extracting trailing number, or fallback to order
+        match_number = re.search(r'(\d+)$', bot_id)
+        index = int(match_number.group(1)) if match_number else len(bot_dict) + 1
         bot_dict[bot_id] = {
             "location": room_map[room_id],
             "load_limit": 0,
             "current_load": 0,
-            "index": int(bot_id[3:]),
+            "index": index,
             "arms": [{"is_free": True, "side": idx} for idx in range(2)]
         }
 
@@ -75,7 +78,6 @@ def parse_rooms_and_goals(pddl_text, room_map):
     room_connection_matches = re.finditer(r'\(door (room\w+) (room\w+)\)', pddl_text)
     goal_matches = re.finditer(r'\(at (item\d+) (room\w+)\)', pddl_text)
 
-    # Initialize connections using "roomX" format based on mapped indices
     for room_name, index in room_map.items():
         connections[f"room{index}"] = []
 
@@ -86,7 +88,6 @@ def parse_rooms_and_goals(pddl_text, room_map):
         connections[f"room{index1}"].append(index2)
         connections[f"room{index2}"].append(index1)
 
-    # Ensure connections are unique
     for room_key in connections.keys():
         connections[room_key] = list(set(connections[room_key]))
 
@@ -96,12 +97,11 @@ def parse_rooms_and_goals(pddl_text, room_map):
 
     return connections, goal_locations
 
-
 def convert_pddl_to_json(pddl_text):
     """Convert PDDL to JSON structure."""
     room_map = map_rooms(pddl_text)
     init_section = extract_init_section(pddl_text)
-    bots = parse_bots(init_section, room_map)
+    bots = parse_bots(pddl_text, room_map)
     items = parse_items(init_section, room_map)
     connections, goal_locations = parse_rooms_and_goals(pddl_text, room_map)
 
@@ -109,7 +109,7 @@ def convert_pddl_to_json(pddl_text):
         "state": {
             "bots": bots,
             "items": items,
-            "cost": 0  # Assuming initial cost is always zero
+            "cost": 0
         },
         "problem": {
             "goal_locations": goal_locations,
@@ -121,14 +121,12 @@ def convert_pddl_to_json(pddl_text):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input_dir', required=True, help='Input directory containing PDDL files')
-    parser.add_argument('--output_dir', required=True, help='Output directory for JSON files')
+    parser.add_argument('--input_dir', default='problems_pddl', help='Input directory (default: problems_pddl)')
+    parser.add_argument('--output_dir', default='problems_json', help='Output directory (default: problems_json)')
     args = parser.parse_args()
 
-    # Create output directory if it doesn't exist
     os.makedirs(args.output_dir, exist_ok=True)
 
-    # Process all PDDL files in input directory
     for filename in os.listdir(args.input_dir):
         if filename.endswith('.pddl'):
             input_path = os.path.join(args.input_dir, filename)
