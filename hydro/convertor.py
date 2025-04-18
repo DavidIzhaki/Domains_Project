@@ -25,6 +25,7 @@ def extract_current_time(pddl_string):
     return None
 
 def pddl_to_json(pddl_string):
+    """Convert PDDL text to structured JSON with demand and before as vectors."""
     flags = re.IGNORECASE
 
     node_mapping = {}
@@ -47,15 +48,16 @@ def pddl_to_json(pddl_string):
     current_time = extract_current_time(pddl_string)
     current_time_index = time_index_map.get(current_time, 0)
 
-    # Convert demands to a map instead of array of objects
-    demands = {}
+    # Determine length for the vectors
+    time_len = len(time_index_map)
+    demands = [0] * time_len
+    before = [None] * time_len
+
     for time_sym, node_sym in re.findall(r'\(demand\s+(t\d+)\s+(n\d+)\)', pddl_string, flags):
         if time_sym in time_index_map and node_sym in node_mapping:
             t_idx = time_index_map[time_sym]
             demands[t_idx] = node_mapping[node_sym]
 
-    # Convert before to a map instead of array of objects
-    before = {}
     for t1, t2 in re.findall(r'\(before\s+(t\d+)\s+(t\d+)\)', pddl_string, flags):
         if t1 in time_index_map and t2 in time_index_map:
             from_idx = time_index_map[t1]
@@ -80,8 +82,61 @@ def convert_file(input_path, output_path):
     with open(input_path, 'r', encoding='utf-8') as f:
         pddl_content = f.read()
     json_data = pddl_to_json(pddl_content)
+
+    # Trim trailing nulls from "before"
+    while json_data["problem"]["before"] and json_data["problem"]["before"][-1] is None:
+        json_data["problem"]["before"].pop()
+
+    # Trim trailing zeros from "demand"
+    while json_data["problem"]["demand"] and json_data["problem"]["demand"][-1] == 0:
+        json_data["problem"]["demand"].pop()
+
+    # Use custom encoder for compact demand & before
+    class CompactVectorEncoder(json.JSONEncoder):
+        def encode(self, o):
+            import re
+
+            pretty = super().encode(o)
+
+            pretty = re.sub(
+                r'"demand": \[\s*([^\]]+?)\s*\]',
+                lambda m: f'"demand": [{",".join(x.strip() for x in m.group(1).split(","))}]',
+                pretty,
+                flags=re.DOTALL
+            )
+            pretty = re.sub(
+                r'"before": \[\s*([^\]]+?)\s*\]',
+                lambda m: f'"before": [{",".join(x.strip() for x in m.group(1).split(","))}]',
+                pretty,
+                flags=re.DOTALL
+            )
+
+            return pretty
+
+
+    # Step 1: Write normal pretty JSON
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(json_data, f, indent=4)
+
+    # Step 2: Post-process to compact demand & before arrays
+    with open(output_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    import re
+
+    def compact_array_field(field_name, content):
+        return re.sub(
+            rf'"{field_name}": \[\s*((?:\s*\d+,?\s*)+?)\s*\]',
+            lambda m: f'"{field_name}": [{",".join(x.strip() for x in m.group(1).split(","))}]',
+            content,
+            flags=re.DOTALL
+        )
+
+    content = compact_array_field("demand", content)
+    content = compact_array_field("before", content)
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(content)
 
 def main():
 
