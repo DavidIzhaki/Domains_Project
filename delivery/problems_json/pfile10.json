@@ -1,6 +1,23 @@
 {
     "state": {
-        "bots": [],
+        "bots": [
+            {
+                "location": 0,
+                "load_limit": 8,
+                "current_load": 0,
+                "index": 1,
+                "arms": [
+                    {
+                        "is_free": true,
+                        "side": 0
+                    },
+                    {
+                        "is_free": true,
+                        "side": 1
+                    }
+                ]
+            }
+        ],
         "items": [
             {
                 "location": 0,

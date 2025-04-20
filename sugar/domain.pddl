@@ -1,3 +1,4 @@
+
 ;; The objective of this domain is to model a problem having to do
 ;; with producing sugar through industrial processes, refining it from raw cane.
 ;; 
@@ -17,33 +18,27 @@
 
 	(:predicates
 		(available ?m - mill)
-		(has-resource ?r - raw-cane ?m - mill)
 		(produce ?m - mill ?b - brand)
 		(current-process ?m - mill ?b - brand)
 		(change-process ?b1 ?b2 - brand)
 		(place-order ?r - raw-cane ?m - mill)
-		(transport-to ?r - raw-cane  ?m - mill)
 		(at-location ?d - loader  ?l - location)
 		(connected ?l1 ?l2 - location)
-		(busy ?m - mill)
 		(ready-crane ?c - crane)
 		(service-crane ?c - crane)
 	)
 
 	(:functions
 		(mill-cost) (cost-process ?m - mill)
-		(process-cost ?m - mill)
-		(resource-use)
+		
+	
 		(unharvest-field)
 		(truck-cap ?t - truck)
 		(in-truck-sugar ?b - brand ?t - truck)
 		(in-storage ?m - location ?b - brand)
-		(total-distance)
-		(distance ?l1 ?l2 - location)
 		(has-resource ?r - raw-cane ?m - mill)
 		(max-changing ?m - mill)
 		(inventory-cost)
-		(changing-product)
 		(capacity ?c - crane)
 		(max-service-time ?c - crane)
 		(service-time ?c - crane)
@@ -67,7 +62,6 @@
 		:effect	     (and
 				(increase (in-storage ?m ?b)1)
 				(decrease (has-resource ?r ?m)1)
-				(busy ?m)
 				(not(available ?m))
 				(increase (mill-cost)(cost-process ?m))
 		     	     )
@@ -86,7 +80,6 @@
 		:effect	     (and
 				(increase (in-storage ?m ?b)(max-produce ?m))
 				(decrease (has-resource ?r ?m)(max-produce ?m))
-				(busy ?m)
 				(not(available ?m))
 				(increase (mill-cost) (* 5 (cost-process ?m)))
 		     	     )
@@ -106,10 +99,9 @@
 	(:action setting-machine
 		:parameters (?m - mill)
 		:precondition (and
-				 (busy ?m)
+				  (not (available ?m))
 			      )
 		:effect	      (and
-				 (not (busy ?m))
 				 (available ?m)
 			      )
 	)

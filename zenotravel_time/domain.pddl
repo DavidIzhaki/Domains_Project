@@ -27,7 +27,7 @@
   ;; - slow-speed / fast-speed: speeds during slow and fast flights (new functions).
 
   (:functions 
-    (total-time)
+    (total-time-used)
     (fuel ?a - aircraft)
     (distance ?c1 - city ?c2 - city)
     (slow-burn ?a - aircraft)
@@ -74,7 +74,7 @@
               (located ?a ?c2)
               (decrease (fuel ?a) (* (distance ?c1 ?c2) (slow-burn ?a)))
               ;; NEW: Increase total-time by flight duration: distance divided by slow-speed.
-              (increase (total-time) (/ (distance ?c1 ?c2) (slow-speed ?a)))))
+              (increase (total-time-used) (/ (distance ?c1 ?c2) (slow-speed ?a)))))
   
 
   ;; Action: fly-fast updates aircraft position, fuel, and total-time.
@@ -89,7 +89,7 @@
               (located ?a ?c2)
               (decrease (fuel ?a) (* (distance ?c1 ?c2) (fast-burn ?a)))
               ;; NEW: Increase total-time by flight duration: distance divided by fast-speed.
-              (increase (total-time) (/ (distance ?c1 ?c2) (fast-speed ?a)))))
+              (increase (total-time-used) (/ (distance ?c1 ?c2) (fast-speed ?a)))))
   
 
   ;; Action: refuel replenishes fuel up to aircraft's capacity.

@@ -1,0 +1,814 @@
+{
+  "state": {
+    "places": {
+      "location0": {
+        "id": "location0",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": true,
+        "is_mountain": true,
+        "is_metalliferous": false,
+        "is_by_coast": true
+      },
+      "location1": {
+        "id": "location1",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": true,
+        "is_mountain": false,
+        "is_metalliferous": false,
+        "is_by_coast": true
+      },
+      "location2": {
+        "id": "location2",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": true,
+        "is_mountain": false,
+        "is_metalliferous": false,
+        "is_by_coast": false
+      },
+      "location3": {
+        "id": "location3",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": true,
+        "is_mountain": false,
+        "is_metalliferous": false,
+        "is_by_coast": false
+      },
+      "location4": {
+        "id": "location4",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": false,
+        "is_mountain": false,
+        "is_metalliferous": false,
+        "is_by_coast": false
+      },
+      "location5": {
+        "id": "location5",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": false,
+        "is_mountain": true,
+        "is_metalliferous": true,
+        "is_by_coast": true
+      },
+      "location6": {
+        "id": "location6",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": true,
+        "is_mountain": true,
+        "is_metalliferous": false,
+        "is_by_coast": true
+      },
+      "location7": {
+        "id": "location7",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": false,
+        "is_mountain": false,
+        "is_metalliferous": true,
+        "is_by_coast": false
+      },
+      "location8": {
+        "id": "location8",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": true,
+        "is_mountain": false,
+        "is_metalliferous": false,
+        "is_by_coast": false
+      },
+      "location9": {
+        "id": "location9",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": false,
+        "is_mountain": false,
+        "is_metalliferous": true,
+        "is_by_coast": true
+      },
+      "location10": {
+        "id": "location10",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": true,
+        "is_mountain": true,
+        "is_metalliferous": false,
+        "is_by_coast": false
+      },
+      "location11": {
+        "id": "location11",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": true,
+        "is_mountain": false,
+        "is_metalliferous": false,
+        "is_by_coast": false
+      },
+      "location12": {
+        "id": "location12",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": true,
+        "is_mountain": false,
+        "is_metalliferous": false,
+        "is_by_coast": true
+      },
+      "location13": {
+        "id": "location13",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": true,
+        "is_mountain": true,
+        "is_metalliferous": false,
+        "is_by_coast": true
+      },
+      "location14": {
+        "id": "location14",
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "carts": 0,
+        "housing": 0,
+        "has_cabin": false,
+        "has_coal_stack": false,
+        "has_quarry": false,
+        "has_mine": false,
+        "has_sawmill": false,
+        "has_ironworks": false,
+        "has_docks": false,
+        "has_wharf": false,
+        "is_woodland": true,
+        "is_mountain": true,
+        "is_metalliferous": true,
+        "is_by_coast": false
+      }
+    },
+    "vehicles": {
+      "vehicle0": {
+        "id": "vehicle0",
+        "is_train": false,
+        "is_ship": false,
+        "space_in": 0,
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "location": "",
+        "potential": true
+      },
+      "vehicle1": {
+        "id": "vehicle1",
+        "is_train": false,
+        "is_ship": false,
+        "space_in": 0,
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "location": "",
+        "potential": true
+      },
+      "vehicle2": {
+        "id": "vehicle2",
+        "is_train": false,
+        "is_ship": false,
+        "space_in": 0,
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "location": "",
+        "potential": true
+      },
+      "vehicle3": {
+        "id": "vehicle3",
+        "is_train": false,
+        "is_ship": false,
+        "space_in": 0,
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "location": "",
+        "potential": true
+      },
+      "vehicle4": {
+        "id": "vehicle4",
+        "is_train": false,
+        "is_ship": false,
+        "space_in": 0,
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "location": "",
+        "potential": true
+      },
+      "vehicle5": {
+        "id": "vehicle5",
+        "is_train": false,
+        "is_ship": false,
+        "space_in": 0,
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "location": "",
+        "potential": true
+      },
+      "vehicle6": {
+        "id": "vehicle6",
+        "is_train": false,
+        "is_ship": false,
+        "space_in": 0,
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "location": "",
+        "potential": true
+      },
+      "vehicle7": {
+        "id": "vehicle7",
+        "is_train": false,
+        "is_ship": false,
+        "space_in": 0,
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "location": "",
+        "potential": true
+      },
+      "vehicle8": {
+        "id": "vehicle8",
+        "is_train": false,
+        "is_ship": false,
+        "space_in": 0,
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "location": "",
+        "potential": true
+      },
+      "vehicle9": {
+        "id": "vehicle9",
+        "is_train": false,
+        "is_ship": false,
+        "space_in": 0,
+        "available_resources": {
+          "wood": 0,
+          "timber": 0,
+          "ore": 0,
+          "stone": 0,
+          "iron": 0,
+          "coal": 0
+        },
+        "location": "",
+        "potential": true
+      }
+    },
+    "labour": 0,
+    "resource_use": 0,
+    "pollution": 0,
+    "connections_by_rail": {}
+  },
+  "problem": {
+    "goal": {
+      "conditions": [
+        {
+          "predicate": "has-sawmill",
+          "argument": "location9"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location0",
+          "to": "location4"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location4",
+          "to": "location10"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location10",
+          "to": "location14"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location14",
+          "to": "location6"
+        },
+        {
+          "predicate": "has-ironworks",
+          "argument": "location8"
+        },
+        {
+          "attribute": "housing",
+          "place_id": "location0",
+          "required_amount": 1
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location7",
+          "to": "location11"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location11",
+          "to": "location6"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location6",
+          "to": "location7"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location7",
+          "to": "location1"
+        },
+        {
+          "predicate": "has-sawmill",
+          "argument": "location10"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location4",
+          "to": "location13"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location13",
+          "to": "location12"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location12",
+          "to": "location10"
+        },
+        {
+          "attribute": "housing",
+          "place_id": "location2",
+          "required_amount": 1
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location14",
+          "to": "location2"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location2",
+          "to": "location5"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location5",
+          "to": "location1"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location1",
+          "to": "location8"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location7",
+          "to": "location2"
+        },
+        {
+          "predicate": "has-coal-stack",
+          "argument": "location10"
+        },
+        {
+          "predicate": "has-sawmill",
+          "argument": "location3"
+        },
+        {
+          "predicate": "connected-by-rail",
+          "from": "location1",
+          "to": "location11"
+        },
+        {
+          "predicate": "has-sawmill",
+          "argument": "location0"
+        }
+      ]
+    },
+    "connections_by_land": {
+      "location0": [
+        "location4",
+        "location2",
+        "location8",
+        "location10"
+      ],
+      "location4": [
+        "location0",
+        "location10",
+        "location13",
+        "location7",
+        "location9"
+      ],
+      "location1": [
+        "location8",
+        "location11",
+        "location5",
+        "location7",
+        "location13"
+      ],
+      "location8": [
+        "location1",
+        "location7",
+        "location0",
+        "location9",
+        "location11",
+        "location12",
+        "location14",
+        "location10"
+      ],
+      "location11": [
+        "location1",
+        "location3",
+        "location7",
+        "location8",
+        "location9",
+        "location6"
+      ],
+      "location2": [
+        "location0",
+        "location3",
+        "location5",
+        "location9",
+        "location7",
+        "location10",
+        "location13",
+        "location14"
+      ],
+      "location3": [
+        "location2",
+        "location5",
+        "location11",
+        "location14"
+      ],
+      "location5": [
+        "location2",
+        "location3",
+        "location1",
+        "location7",
+        "location10"
+      ],
+      "location9": [
+        "location2",
+        "location8",
+        "location4",
+        "location7",
+        "location10",
+        "location11",
+        "location14",
+        "location13"
+      ],
+      "location10": [
+        "location4",
+        "location9",
+        "location0",
+        "location2",
+        "location5",
+        "location7",
+        "location8",
+        "location14",
+        "location12"
+      ],
+      "location13": [
+        "location4",
+        "location1",
+        "location2",
+        "location9",
+        "location12"
+      ],
+      "location6": [
+        "location7",
+        "location11",
+        "location14"
+      ],
+      "location7": [
+        "location6",
+        "location1",
+        "location2",
+        "location4",
+        "location5",
+        "location8",
+        "location11",
+        "location9",
+        "location10"
+      ],
+      "location12": [
+        "location8",
+        "location10",
+        "location14",
+        "location13"
+      ],
+      "location14": [
+        "location8",
+        "location9",
+        "location10",
+        "location12",
+        "location2",
+        "location3",
+        "location6"
+      ]
+    },
+    "connections_by_sea": {
+      "location5": [
+        "location9",
+        "location12"
+      ],
+      "location9": [
+        "location5",
+        "location12"
+      ],
+      "location12": [
+        "location5",
+        "location9"
+      ],
+      "location6": [
+        "location13"
+      ],
+      "location13": [
+        "location6"
+      ]
+    }
+  }
+}
