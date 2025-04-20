@@ -59,11 +59,13 @@
 	(= (request goods0) 20)
 	(= (bought goods1) 0)
 	(= (request goods1) 23)
-	(= (total-cost) 0))
+	(= (total-cost) 0)
+	)
 
 (:goal (and
 	(>= (bought goods0) (request goods0))
 	(>= (bought goods1) (request goods1))
 	(loc truck0 depot0)))
+
 (:metric minimize (total-cost))
 )

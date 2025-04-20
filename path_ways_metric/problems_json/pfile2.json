@@ -271,12 +271,12 @@
                 {
                     "molecule_1_name": "cycA",
                     "molecule_2_name": "SP1-p107p1-gP",
-                    "amount_condition": 6
+                    "amount_condition": 3
                 },
                 {
                     "molecule_1_name": "cdk46p1-cycD",
                     "molecule_2_name": "HDAC1-p107-E2F4-DP12p1",
-                    "amount_condition": 6
+                    "amount_condition": 3
                 }
             ]
         },
