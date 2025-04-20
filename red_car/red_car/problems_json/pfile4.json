@@ -3,7 +3,23 @@
         "grid": {
             "row_size": 6,
             "col_size": 6,
-            "cells": {}
+            "cells": {
+                "(3,2)": "red-car",
+                "(4,2)": "red-car",
+                "(4,4)": "orange-car",
+                "(5,4)": "orange-car",
+                "(3,3)": "green-car",
+                "(3,4)": "green-car",
+                "(0,3)": "blue-truck",
+                "(1,3)": "blue-truck",
+                "(2,3)": "blue-truck",
+                "(2,0)": "yellow-truck",
+                "(2,1)": "yellow-truck",
+                "(2,2)": "yellow-truck",
+                "(5,1)": "purple-truck",
+                "(5,2)": "purple-truck",
+                "(5,3)": "purple-truck"
+            }
         },
         "horizontalcars": [
             {
@@ -43,5 +59,6 @@
                 "y": 1
             }
         ]
-    }
+    },
+    "problem": {}
 }

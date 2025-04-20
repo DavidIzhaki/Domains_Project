@@ -3,7 +3,10 @@
         "grid": {
             "row_size": 6,
             "col_size": 6,
-            "cells": {}
+            "cells": {
+                "(0,2)": "red-car",
+                "(1,2)": "red-car"
+            }
         },
         "horizontalcars": [
             {
@@ -15,5 +18,6 @@
         "verticalcars": [],
         "horizontaltrucks": [],
         "verticaltrucks": []
-    }
+    },
+    "problem": {}
 }

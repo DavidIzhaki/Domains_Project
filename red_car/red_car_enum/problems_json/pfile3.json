@@ -1,0 +1,46 @@
+{
+    "state": {
+        "grid": {
+            "row_size": 6,
+            "col_size": 6,
+            "cells": {
+                "(0,2)": "red-car",
+                "(1,2)": "red-car",
+                "(2,2)": "green-car",
+                "(2,3)": "green-car",
+                "(3,2)": "orange-car",
+                "(3,3)": "orange-car",
+                "(2,4)": "purple-truck",
+                "(3,4)": "purple-truck",
+                "(4,4)": "purple-truck"
+            }
+        },
+        "vehicles": [
+            {
+                "vehicle_type": "horizontal_car",
+                "name": "red-car",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "vehicle_type": "vertical_car",
+                "name": "green-car",
+                "x": 2,
+                "y": 2
+            },
+            {
+                "vehicle_type": "vertical_car",
+                "name": "orange-car",
+                "x": 3,
+                "y": 2
+            },
+            {
+                "vehicle_type": "horizontal_truck",
+                "name": "purple-truck",
+                "x": 2,
+                "y": 4
+            }
+        ]
+    },
+    "problem": {}
+}
