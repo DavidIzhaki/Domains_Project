@@ -1,0 +1,105 @@
+{
+    "state": {
+        "grid": {
+            "row_size": 6,
+            "col_size": 6,
+            "cells": {
+                "(0,2)": "red-car",
+                "(1,2)": "red-car",
+                "(0,3)": "green-over-car",
+                "(1,3)": "green-over-car",
+                "(2,3)": "white-car",
+                "(3,3)": "white-car",
+                "(1,0)": "orange-car",
+                "(2,0)": "orange-car",
+                "(2,1)": "pink-car",
+                "(2,2)": "pink-car",
+                "(0,0)": "green-car",
+                "(0,1)": "green-car",
+                "(2,4)": "yellow-car",
+                "(2,5)": "yellow-car",
+                "(4,3)": "yellow-over-car",
+                "(4,4)": "yellow-over-car",
+                "(5,2)": "purple-car",
+                "(5,3)": "purple-car",
+                "(5,0)": "blue-car",
+                "(5,1)": "blue-car",
+                "(3,5)": "purple-truck",
+                "(4,5)": "purple-truck",
+                "(5,5)": "purple-truck",
+                "(3,0)": "yellow-truck",
+                "(3,1)": "yellow-truck",
+                "(3,2)": "yellow-truck"
+            }
+        },
+        "horizontalcars": [
+            {
+                "name": "red-car",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "name": "green-over-car",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "name": "white-car",
+                "x": 2,
+                "y": 3
+            },
+            {
+                "name": "orange-car",
+                "x": 1,
+                "y": 0
+            }
+        ],
+        "verticalcars": [
+            {
+                "name": "pink-car",
+                "x": 2,
+                "y": 1
+            },
+            {
+                "name": "green-car",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "name": "yellow-car",
+                "x": 2,
+                "y": 4
+            },
+            {
+                "name": "yellow-over-car",
+                "x": 4,
+                "y": 3
+            },
+            {
+                "name": "purple-car",
+                "x": 5,
+                "y": 2
+            },
+            {
+                "name": "blue-car",
+                "x": 5,
+                "y": 0
+            }
+        ],
+        "horizontaltrucks": [
+            {
+                "name": "purple-truck",
+                "x": 3,
+                "y": 5
+            }
+        ],
+        "verticaltrucks": [
+            {
+                "name": "yellow-truck",
+                "x": 3,
+                "y": 0
+            }
+        ]
+    },
+    "problem": {}
+}
