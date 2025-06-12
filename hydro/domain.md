@@ -28,6 +28,7 @@ Since we have effect calculations like:
 
 ```
 that involve 2 numeric fluents this domain qualifies as a **Linear Task (LT)**.
+
 ---
 
 ## ⚙️ Domain Mechanics
