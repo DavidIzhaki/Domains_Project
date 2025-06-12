@@ -84,6 +84,15 @@ This makes it suitable for planners that support numeric fluents, such as **Metr
 
 ---
 
+## 🛠 Changes
+
+We made the following modification to the original domain:
+
+- **Added a cost of 1 to the `move-slow` action**, to align it with the cost structure of `move-fast` and enable cost-based optimization.  
+  This change affects the `(cost)` fluent by incrementing it whenever `move-slow` is applied.
+
+---
+
 ## 📧 Attribution
 
 Created by:
