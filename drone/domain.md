@@ -22,17 +22,38 @@ It is especially useful for testing:
 
 ---
 
-## 🧮 Domain Type: Restricted Task (RT)
+## 🧮 Restricted Numeric Planning (RNP + Assign)
 
-This domain qualifies as a **Restricted Task (RT)** because it includes numeric constraints like:
+This domain includes:
+
+**Preconditions** involving single variables and constants:
+
 ```lisp
-  (>= (battery-level) 1)
-  (>= (z) (+ (min_z) 1))
-
+(>= (battery-level) 1)
 ```
 
-The drone's battery level is a numeric resource that must be managed and the drone must stay inside the location limits.
-This makes it more expressive and challenging than SNT.
+**Effects** with constant updates and reset-style assignments:
+
+```lisp
+(decrease (battery-level) 1)
+(assign (battery-level) (battery-level-full))
+```
+
+> The `assign` effect resets a numeric fluent to a constant value. Here, `battery-level-full` is defined in the `:init` section and remains constant throughout the problem.
+
+**Goals** consist of propositional conditions and single-variable numeric comparisons:
+
+```lisp
+(and
+  (visited x0y0z0)
+  (visited x0y0z1)
+  (= (x) 0)
+  (= (y) 0)
+  (= (z) 0)
+)
+```
+
+Since preconditions involve **only one variable**, effects are **constant** or **reset via `assign`**, and goals are **simple**, this domain is classified as **RNP + Assign**.
 
 ---
 
