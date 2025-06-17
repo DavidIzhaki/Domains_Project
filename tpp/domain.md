@@ -23,22 +23,36 @@ Originally introduced in **IPC-5**, this domain was designed to test **metric op
 
 ---
 
-### 🧮 Domain Type: Restricted Linear (RL)
+### 🧮 Domain Type: Linear Numeric Planning (LNP + Assign)
 
-This domain uses numeric expressions such as:
+This domain includes:
 
-- `(* (on-sale ?g ?m) (price ?g ?m))`  
-- `(- (request ?g) (bought ?g))`
+**Preconditions** involving **linear expressions**:
+```lisp
+(> (on-sale ?g ?m) (- (request ?g) (bought ?g)))
+(<= (on-sale ?g ?m) (- (request ?g) (bought ?g)))
+```
 
-These are **linear terms involving multiple fluents and constants**, which disqualifies it from being a **Simple Numeric Task (SNT)**.
+**Effects** include:
+- **Linear updates** involving fluent-to-fluent arithmetic:
+```lisp
+(decrease (on-sale ?g ?m) (- (request ?g) (bought ?g)))
+(increase (total-cost) (* (- (request ?g) (bought ?g)) (price ?g ?m)))
+```
+- An **`assign`** operation that resets a fluent to another:
+```lisp
+(assign (bought ?g) (request ?g))
+```
 
-Therefore, it falls under the **Restricted Linear (RL)** category — where:
+> The `assign` is used here to synchronize the value of `bought` with `request`, which is still within LNP scope due to the absence of nested fluent expressions.
 
-- Preconditions and effects can contain linear arithmetic over fluents
-- Effects include `assign`, `increase`, `decrease` with arithmetic terms
-- No conditionals or non-linear combinations are used
+**Goals** involve **linear comparisons**:
+```lisp
+(>= (bought goods0) (request goods0))
+(>= (bought goods1) (request goods1))
+```
 
-This makes it **harder to optimize** but **more expressive** than SNT.
+Since the domain includes **linear preconditions**, **linear effects**, and uses **assign**, it is classified as **LNP + Assign**.
 
 ---
 
