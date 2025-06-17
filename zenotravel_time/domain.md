@@ -75,14 +75,36 @@ These numerical functions track fuel levels, distances, and time:
 ### 3. Refueling
 - **Refuel (`refuel`)** → Restores fuel to an aircraft's capacity.
 
- ## Domain Type: Linear Task (LT) 
- This domain models fuel consumption and movement in air travel using **numeric fluents** and **linear arithmetic expressions**. It qualifies as a **Linear Task (LT)** due to the following characteristics: 
- - ✅ Uses **numeric fluents** such as `fuel`, `onboard`, and `fuel-used` 
- - ✅ Includes **linear preconditions** involving static functions like `distance` and `burn rate`, e.g., `(>= (fuel ?a) (* (slow-burn ?a) (distance ?c1 ?c2)))` 
- - ✅ Numeric effects use `increase` and `decrease` with **linear expressions** based on static terms (e.g., `(increase (fuel-used) (* (slow-burn ?a) (distance ?c1 ?c2)))`) 
- - ❌ Does **not** use assignments (`:=`) or non-linear expressions 
- - ❌ Violates **SNT** constraints because the `increase`/`decrease` operations are **not by constant literals**, but by computed static terms involving parameters This makes the domain a clear **Linear Task (LT)** 
- — expressive enough for real-world modeling while still compatible with many numeric planners that support linear arithmetic.
+ ##  Domain Type: Restricted Numeric Planning (RNP + Assign)
+
+This domain includes:
+
+**Preconditions** involving **single fluents** and constants:
+```lisp
+(>= (fuel ?a) (* (distance ?c1 ?c2) (fast-burn ?a)))
+(<= (onboard ?a) (zoom-limit ?a))
+```
+
+> `distance`, `fast-burn`, and `zoom-limit` are constants defined in the `:init` section.
+
+**Effects** apply **constant updates**, such as:
+```lisp
+(decrease (fuel ?a) (* (distance ?c1 ?c2) (fast-burn ?a)))
+(increase (total-time-used) (/ (distance ?c1 ?c2) (fast-speed ?a)))
+```
+
+> All terms involved in the multiplications/divisions (`distance`, `fast-burn`, `fast-speed`) are **constants**.
+
+**Goals** are **propositional only**:
+```lisp
+(located person1 city2)
+(located person2 city1)
+(located person3 city2)
+```
+
+Since the domain uses **single-variable preconditions**, **constant effects**, and goals over **predicates only**, and may include **reset behavior via `assign`**, this domain is classified as **RNP + Assign**.
+
+---
 
 ## Summary
 This extended **Zenotravel domain** introduces **total-time tracking** for flights, allowing for more realistic travel planning based solely on time. By differentiating between **slow and fast flights** with corresponding speeds, the domain now enables **time-aware decision-making** in automated planning without tracking total fuel consumption.
