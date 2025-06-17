@@ -17,6 +17,44 @@ This domain reflects **resource-constrained spatial planning**, combining geomet
 
 ---
 
+## 🧮 Domain Type: Simple Numeric Planning (SNP)
+
+This domain includes:
+
+**Preconditions** involving:
+- **Single-variable numeric constraints** with constants:
+```lisp
+(>= (- (x ?a) 1) (minx))
+(<= (+ (x ?a) 1) (maxx))
+(<= (+ (y ?a) 1) (maxy))
+(<= (+ (carrying ?a) 1) (max_carry ?a))
+```
+
+> Here, `maxx`, `minx`, `maxy`, and `max_carry` are defined in the `:init` and remain constant.
+
+- **Equality with constants**, such as:
+```lisp
+(= (x ?a) (x ?t))
+(= (y ?a) (y ?t))
+```
+> Since `?t` refers to a fixed **tap location**, its coordinates are constants.
+
+**Effects** involve constant updates to single variables:
+```lisp
+(decrease (carrying ?a) 1)
+(increase (poured ?p) 1)
+(increase (total_poured) 1)
+```
+
+**Goals** include a **linear numeric comparison** between two fluents:
+```lisp
+(= (total_poured) (total_loaded))
+```
+
+Since the preconditions and effects use **constants and single-variable arithmetic**, and the goal includes a **linear comparison**, this domain is classified as **SNP (Simple Numeric Planning)**.
+
+---
+
 ## ⚙️ Domain Mechanics
 
 ### Predicates
@@ -146,19 +184,6 @@ This domain uses only numeric fluents and does not rely on traditional predicate
    (increase (poured ?p) 1)
    (increase (total_poured) 1)))
 </pre>
-
----
-
-## 🧮 Domain Type: Linear Task (LT)
-
-This domain includes numeric constraints using arithmetic in **preconditions**, like:
-
-<pre>
-(<= (+ (carrying ?a) 1) (max_carry ?a))
-(>= (- (water_reserve) 1) 0)
-</pre>
-
-These expressions go beyond constants and involve general linear updates, making this a **Linear Task (LT)** — the most expressive among SNT, RT, and LT.
 
 ---
 
