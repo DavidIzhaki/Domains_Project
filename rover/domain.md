@@ -17,14 +17,41 @@ The **Rover Domain** simulates a planetary exploration mission in which multiple
 
 ---
 
-## 🧮 Domain Type: Linear Task (LT)
+## 🧮 Domain Type: Restricted Numeric Planning (RNP)
 
-This domain is classified as a **Linear Task (LT)** because it involves:
+This domain includes:
 
-- Numeric fluents like energy and recharge counters
-- Actions that use and update these fluents with arithmetic
-- Complex dependencies between calibration, movement, and communication
-- Conditional effects that depend on sensor status and visibility
+**Preconditions** combining **predicates** and **single-variable numeric constraints**:
+```lisp
+(>= (energy ?r) 5)
+(at_rock_sample ?w)
+(equipped_for_rock_analysis ?r)
+(store_of ?s ?r)
+(empty ?s)
+```
+
+**Effects** include both:
+- **Propositional changes**:
+```lisp
+(not (empty ?s))
+(full ?s)
+(have_rock_analysis ?r ?w)
+(not (at_rock_sample ?w))
+```
+
+- And **constant numeric updates**:
+```lisp
+(decrease (energy ?r) 5)
+```
+
+**Goals** are entirely **predicate-based**:
+```lisp
+(communicated_soil_data waypoint0)
+(communicated_rock_data waypoint0)
+(communicated_image_data objective1 low_res)
+```
+
+Since preconditions use **single fluents and predicates**, effects are **constant or logical**, and goals are **propositional**, this domain is classified as **RNP (Restricted Numeric Planning)**.
 
 ---
 
