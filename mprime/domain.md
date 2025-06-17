@@ -17,15 +17,36 @@ This version adds a new action: `drink`, allowing resource transfer between food
 
 ---
 
-## 🧮 Domain Type: Linear Task (LT)
+## 🧮 Domain Type: Restricted Numeric Planning (RNP)
 
-This domain uses numeric fluents and supports:
+This domain includes:
 
-- Linear arithmetic in preconditions (e.g., `>=`)
-- `increase` and `decrease` effects
-- Numeric expressions in action effects
+**Preconditions** made up of:
+- **Predicates** and
+- **Single-variable numeric conditions**:
+```lisp
+(and
+    (craves ?c ?n)
+    (craves ?v ?n)
+    (>= (harmony ?v) 1)
+)
+```
 
-Because it involves conditional updates and arithmetic effects, this domain is a **Linear Task (LT)**.
+**Effects** include a mix of:
+- **Propositional changes**, and
+- **Constant numeric updates**:
+```lisp
+(not (fears ?c ?v))
+(craves ?c ?n)
+(increase (harmony ?v) 1)
+```
+
+**Goals** are **purely propositional**:
+```lisp
+(and (craves depression chicken))
+```
+
+Since the domain contains **single-variable numeric constraints**, **constant effects**, and **predicate goals**, it is classified as **RNP (Restricted Numeric Planning)**.
 
 ---
 
