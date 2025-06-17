@@ -21,15 +21,34 @@ The **RedCar Domain** is a grid-based planning domain inspired by the classic Ru
 
 ---
 
-## 🧮 Domain Type: Simple Numeric Task (SNT)
+##  Domain Type: Restricted Numeric Planning (RNP)
 
-This domain is classified as a **Simple Numeric Task (SNT)** because:
-- All numeric fluents (such as vehicle positions and cost) are updated using **constant increase** or **decrease** operations.
-- Numerical preconditions involve only **simple arithmetic expressions** (e.g., adding or subtracting a constant).
-- There are no complex linear equations or functions combining multiple fluents.
+This domain includes:
 
-Alternate classifications such as **Restricted Linear (RL)** or **Linear Task (LT)** could be considered if more complex numeric operations were used. In this domain, however, the operations remain simple and constant-based.
+**Preconditions** that are:
+- **Single-variable numeric constraints**, where only `?c` is a fluent variable and the rest are constants:
+```lisp
+(<= (pos-cell-y ?y2) (max_y))                 ;; Ensure grid bounds
+(= (pos-cell-x ?x) (pos-x ?c))                ;; X stays constant
+(= (pos-cell-y ?y) (pos-y ?c))                ;; current Y
+(= (pos-cell-y ?y2) (+ (pos-y ?c) 2))         ;; target Y
+```
 
+**Effects** are **constant updates** to fluents:
+```lisp
+(increase (pos-x ?t) 1)
+(increase (total-cost) 1)
+```
+
+**Goals** are simple numeric conditions:
+```lisp
+(:goal (and 
+    (= (pos-x red-car) 4)  
+    (= (pos-y red-car) 2)
+))
+```
+
+Since preconditions involve **a single variable with constants**, effects are **constant**, and goals are **simple**, this domain is classified as **RNP (Restricted Numeric Planning)**.
 ---
 
 ## ⚙️ Domain Mechanics
