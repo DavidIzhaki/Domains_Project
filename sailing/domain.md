@@ -15,21 +15,30 @@ This domain models **direction-based movement and location-based rescues**, usef
 
 ---
 
-## 🧮 Domain Type: Simple Numeric Task (SNT)
+## 🧮 Domain Type: Simple Numeric Planning (SNP)
 
-This domain includes simple numeric expressions in both **preconditions** and **effects**, such as:
+This domain includes:
 
-Preconditions using expressions like:
+**Preconditions** with **linear expressions** over multiple fluents and constants:
 ```lisp
 (>= (+ (x ?b) (y ?b)) (d ?t))
+(>= (- (y ?b) (x ?b)) (d ?t))
+(<= (+ (x ?b) (y ?b)) (+ (d ?t) 25))
+(<= (- (y ?b) (x ?b)) (+ (d ?t) 25))
 ```
 
-Effects using variable-dependent updates:
+**Effects** apply **constant updates** to individual fluents:
 ```lisp
-(increase (x ?b) 1.5)
+(increase (x ?b) 2)
+(decrease (y ?b) 2)
 ```
 
-These operations fits the definition of a Simple Numeric Task (SNT) domain.
+**Goals** are propositional:
+```lisp
+(saved p0)
+```
+
+Since the domain uses **linear numeric preconditions**, **constant effects**, and **predicate-only goals**, it is classified as **SNP (Simple Numeric Planning)**.
 
 ---
 
