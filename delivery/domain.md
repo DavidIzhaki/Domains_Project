@@ -17,6 +17,45 @@ This domain models **capacity-aware object handling**, useful for evaluating num
 
 ---
 
+## 🧮 Domain Type: Restricted Numeric Planning (RNP)
+
+This domain uses **preconditions** that include:
+- Pure predicates, such as:
+
+```lisp
+(and (at ?i ?x) (at-bot ?b ?x) (free ?a) (mount ?a ?b))
+```
+
+- Simple numeric comparisons where only a **single variable** appears (others are constants initialized in the problem and never changed), for example:
+
+```lisp
+(<= (+ (current_load ?b) (weight ?i)) (load_limit ?b))
+```
+
+> Here, `weight` and `load_limit` are constants: they are defined in the `:init` section of the problem and remain unchanged throughout execution.
+
+The **effects** involve **constant updates**, such as:
+
+```lisp
+(decrease (current_load ?b) (weight ?i))
+(increase (cost) 2)
+```
+
+The **goal** is purely propositional:
+
+```lisp
+(and 
+    (at item4 roomb)
+    (at item3 roomb)
+    (at item2 roomc)
+    (at item1 roomc)
+)
+```
+
+Since numeric preconditions involve only a **single variable** and constants, and effects are **constant**, this domain is classified as **RNP (Restricted Numeric Planning)**.
+
+---
+
 ## ⚙️ Domain Mechanics
 
 ### Predicates
@@ -141,18 +180,6 @@ Loads an item from the tray into a free arm.
 
 ---
 
-## 🧮 Domain Type: Linear Task (LT)
-
-This domain includes numeric calculations using arithmetic in **effects**, like:
-
-```lisp
-(decrease (current_load ?b) (weight ?i))
-
-```
-
-Notice that weight is a numaric fluent so it matches the LT definition.
-
----
 
 ## 🔍 What the Planner Tries to Do
 
