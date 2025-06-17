@@ -18,25 +18,33 @@ This domain is particularly useful for testing:
 
 ---
 
-## 🧮 Domain Type: Linear Task (LT)
+## 🧮 Domain Type: Linear Numeric Planning (LNP)
 
-This domain is classified as a **Linear Task (LT)** because it uses **linear arithmetic expressions** in both preconditions and effects. 
+This domain includes:
 
-### Example:
-```pddl
-(increase (x ?b) (* (v ?b) 1.5))
-
+**Preconditions** with **linear expressions** involving multiple fluents and constants:
+```lisp
+(>= (+ (x ?b) (y ?b)) (d ?t))
+(>= (- (y ?b) (x ?b)) (d ?t))
+(<= (+ (x ?b) (y ?b)) (+ (d ?t) 25))
+(<= (- (y ?b) (x ?b)) (+ (d ?t) 25))
+(<= (v ?b) 1)
 ```
 
-This effect involves the multiplication of a constant (1.5) with a variable (v ?b), which is characteristic of LT domains. Such operations are permitted in LT domains but disallowed in more restrictive types like Simple Numeric Tasks (SNT).
-
-The domain also includes other linear numeric effects, such as:
-```pddl
-(decrease (x ?b) (* (v ?b) 2))
-
+**Effects** include **linear updates**, where variables are multiplied by fluents:
+```lisp
+(decrease (y ?b) (* (v ?b) 2))
+(decrease (x ?b) (* (v ?b) 3))
 ```
 
-These effects demonstrate that the domain relies on linear arithmetic operations for movement and velocity control, further classifying it as a Linear Task (LT).
+**Goals** are purely propositional:
+```lisp
+(saved p0)
+```
+
+Since both **preconditions and effects** include **linear expressions**, and **goals are propositional**, this domain is classified as **LNP (Linear Numeric Planning)**.
+
+---
 
 ## ⚙️ Domain Mechanics
 
