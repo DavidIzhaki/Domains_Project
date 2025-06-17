@@ -15,9 +15,27 @@ This domain is designed to test numeric spatial reasoning and coordination, and 
 
 ---
 
-### 🔍 Domain Type: Restricted Numeric Task (SNT)
+### 🔍 Domain Type: Strictly Numeric Planning (SNP)
 
-This domain allows numeric preconditions with simple arithmetic expressions (e.g., `(+ (x ?b) 1)`), but only uses constant updates in effects.  
+This domain supports **numeric preconditions** involving **constants only**, such as:
+
+```lisp
+(<= (+ (y ?b) 1) (max_y))
+```
+
+**Effects** are limited to **constant updates**, for example:
+
+```lisp
+(increase (y ?b) 1)
+```
+
+The **goal condition**, however, may include **linear numeric comparisons** between variables, such as:
+
+```lisp
+(= (x b1) (x b2))
+```
+
+Since both constant-based updates and linear goals are allowed, this domain is classified as **SNP (Strictly Numeric Planning)**.
 
 ---
 
