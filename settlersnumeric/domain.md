@@ -16,16 +16,29 @@ Originally introduced by **Maria Fox and Derek Long** in IPC-3, this domain test
 
 ---
 
-## 🧮 Domain Type: Linear Task (LT)
+## 🧮 Domain Type: Restricted Numeric Planning (RNP)
 
-This domain qualifies as a **Linear Task (LT)** because it includes:
+This domain includes:
 
-- Numeric fluents with complex dependencies  
-- Resource consumption and production  
-- Conditional effects based on resource availability  
-- Linear arithmetic in preconditions and effects  
+**Preconditions** with **single-variable numeric comparisons**:
+```lisp
+(> (available ?r ?v) 0)
+(> (space-in ?v) 0)
+```
 
-These features make it more expressive than SNT or RT domains, requiring planners that can handle linear numeric expressions.
+**Effects** involve **constant updates** to individual fluents:
+```lisp
+(increase (available ?r ?v) 1)
+(decrease (available ?r ?p) 1)
+(increase (labour) 1)
+```
+
+**Goal** is a **single numeric condition**:
+```lisp
+(>= (available timber location1) 1)
+```
+
+Since the domain uses **single-variable preconditions**, **constant effects**, and **simple numeric goals**, it is classified as **RNP (Restricted Numeric Planning)**.
 
 ---
 
