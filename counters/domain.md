@@ -22,15 +22,22 @@ It is especially useful for testing:
 
 ---
 
-## 🧮 Domain Type: Simple Numeric Task (SNT)
+## 🧮 Domain Type: Simple Numeric Planning (SNP)
 
-This domain uses only **simple numeric fluents** updated through constant `increase` / `decrease` operations. There are:
+This domain uses **constant-based numeric preconditions** and **effects**, for example:
 
-- No linear equations or expressions in effects
-- No arithmetic expressions in preconditions
-- No numeric functions combining multiple fluents
+```lisp
+:precondition (and (<= (+ (value ?c) 1) (max_int)))
+:effect       (and (increase (value ?c) 1))
+```
 
-This makes it a **Simple Numeric Task (SNT)** — highly efficient and well-supported by most numeric planners.
+The **goal** allows **linear numeric expressions**, such as:
+
+```lisp
+(<= (+ (value c0) 1) (value c1))
+```
+
+Since both constant updates and linear goals are used, this domain is classified as **SNP (Simple Numeric Planning)**.
 
 ---
 
