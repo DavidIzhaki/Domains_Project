@@ -15,7 +15,7 @@ This domain is designed to test numeric spatial reasoning and coordination, and 
 
 ---
 
-### 🔍 Domain Type: Strictly Numeric Planning (SNP)
+### 🔍 Domain Type: Simple Numeric Planning (SNP)
 
 This domain supports **numeric preconditions** involving **constants only**, such as:
 
@@ -35,7 +35,7 @@ The **goal condition**, however, may include **linear numeric comparisons** betw
 (= (x b1) (x b2))
 ```
 
-Since both constant-based updates and linear goals are allowed, this domain is classified as **SNP (Strictly Numeric Planning)**.
+Since both constant-based updates and linear goals are allowed, this domain is classified as **SNP (Simple Numeric Planning)**.
 
 ---
 
