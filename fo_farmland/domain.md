@@ -24,6 +24,33 @@ It is useful for testing:
 
 ---
 
+## 📌 Domain Type: Linear Numeric Planning (LNP)
+
+This domain includes:
+
+**Preconditions** with **linear expressions** involving numeric fluents and multiplication:
+```lisp
+(>= (x ?f1) (* 4 (num-of-cars)))
+```
+
+**Effects** involve **linear updates** to fluents:
+```lisp
+(decrease (x ?f1) (* 4 (num-of-cars)))
+(increase (x ?f2) (* 4 (num-of-cars)))
+(increase (cost) (* 0.1 (* 4 (num-of-cars))))
+```
+
+**Goals** contain **linear numeric comparisons** between expressions:
+```lisp
+(>= (- (+ (* 1.0 (x farm0)) (+ (* 1.7 (x farm1)) 0)) (cost)) 560.0)
+```
+
+> This goal expresses a weighted combination of fluents minus a cost term compared to a constant — a clear case of a **linear goal**.
+
+Since preconditions, effects, and goals all use **linear expressions**, this domain is classified as **LNP (Linear Numeric Planning)**.
+
+---
+
 ## ➕ Predicates
 
 - `(adj ?f1 ?f2)`  
@@ -86,20 +113,6 @@ Increases the number of available cars by 1. Can be used once in some formulatio
   - `(not (dummy))`
 - **Effect**:
   - Increase `(num-of-cars)` by 1
-
----
-
-## 📌 Domain Type: Linear Task (LT)
-
-This domain is a **Linear Task (LT)** because:
-- It uses **linear numeric fluents** and **parameterized expressions**
-- Effects include linear multiplications with **external numeric fluents**
-- Preconditions may involve linear arithmetic
-
-This makes it a **more expressive** benchmark for planners supporting full linear numeric modeling, such as:
-- **DiNo**
-- **OPTIC**
-- **Metric-FF (limited)**
 
 ---
 
