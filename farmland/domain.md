@@ -24,6 +24,35 @@ It is useful for testing:
 
 ---
 
+## 📌  Domain Type: Simple Numeric Planning (SNP)
+
+This domain includes:
+
+**Preconditions** involving:
+- **Predicates** and **constant-based numeric constraints**:
+```lisp
+(adj ?f1 ?f2)
+(>= (x ?f1) 4)
+```
+
+**Effects** are **constant updates** to numeric fluents:
+```lisp
+(decrease (x ?f1) 4)
+(increase (x ?f2) 2)
+(increase (cost) 1)
+```
+
+**Goals** contain **linear numeric expressions**, for example:
+```lisp
+(>= (+ (* 1.0 (x farm0)) (+ (* 1.7 (x farm1)) 0)) 840.0)
+```
+
+> This is a linear goal comparing a weighted sum of fluents to a constant.
+
+Since the domain uses **constant effects**, **constant/predicate preconditions**, and **linear goal expressions**, it is classified as **SNP (Simple Numeric Planning)**.
+
+---
+
 ## ➕ Predicates
 
 - `(adj ?f1 ?f2)`  
@@ -70,17 +99,6 @@ Moves **1 worker** from one farm to another, fully conserved.
   - Decrease `x(?f1)` by 1
   - Increase `x(?f2)` by 1
   - Increase `(cost)` by 1
-
----
-
-## 📌 Domain Type: Linear Task (LT)
-
-This domain belongs to the **Linear Task (LT)** class. It uses:
-- **Linear numeric effects** (increases/decreases)
-- **No disjunctions or non-linear operations**
-- **Constant coefficients in all expressions**
-
-This makes it suitable for planners that support numeric fluents, such as **Metric-FF**, **OPTIC**, or **DiNo**.
 
 ---
 
