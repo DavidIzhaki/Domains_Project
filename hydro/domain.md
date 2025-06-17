@@ -19,15 +19,35 @@ This domain is particularly useful for testing:
 
 ---
 
-## 🧮 Domain Type: Linear Task (LT)
+## 🧮 Domain Type: Restricted Numeric Planning (RNP)
 
-Since we have effect calculations like:
+This domain includes:
 
+**Preconditions** involving:
+- **Single-variable numeric constraints**:
 ```lisp
-(decrease (funds) (* 1.05 (value ?n1)))
-
+(>= (funds) (* 1.05 (value ?n1)))
+(>= (stored_capacity) 1)
+(demand ?t1 ?n1)
 ```
-that involve 2 numeric fluents this domain qualifies as a **Linear Task (LT)**.
+
+> Here, `value` is a constant defined in the `:init` section, so `(* 1.05 (value ?n1))` is treated as a constant expression.
+
+**Effects** are **constant updates** to individual fluents:
+```lisp
+(decrease (stored_units) 1)
+(increase (stored_capacity) 1)
+(increase (funds) (value ?n1))
+```
+
+> Again, `value` is treated as constant, so this is a constant increase.
+
+**Goal** involves a **single numeric comparison**:
+```lisp
+(>= (funds) 1060)
+```
+
+Since the preconditions and effects involve **only one variable and constants**, and the goal is **single-variable**, this domain is classified as **RNP (Restricted Numeric Planning)**.
 
 ---
 
