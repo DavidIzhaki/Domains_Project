@@ -38,14 +38,42 @@ This ensures:
   - Uses **`fast-burn`** (which must be **lower than `slow-burn`**).
   - **Zoom-limit** restricts fast travel to a limited number of passengers.
 
- ## Domain Type: Linear Task (LT) 
- This domain models fuel consumption and movement in air travel using **numeric fluents** and **linear arithmetic expressions**. It qualifies as a **Linear Task (LT)** due to the following characteristics: 
- - ✅ Uses **numeric fluents** such as `fuel`, `onboard`, and `fuel-used` 
- - ✅ Includes **linear preconditions** involving static functions like `distance` and `burn rate`, e.g., `(>= (fuel ?a) (* (slow-burn ?a) (distance ?c1 ?c2)))` 
- - ✅ Numeric effects use `increase` and `decrease` with **linear expressions** based on static terms (e.g., `(increase (fuel-used) (* (slow-burn ?a) (distance ?c1 ?c2)))`) 
- - ❌ Does **not** use assignments (`:=`) or non-linear expressions 
- - ❌ Violates **SNT** constraints because the `increase`/`decrease` operations are **not by constant literals**, but by computed static terms involving parameters This makes the domain a clear **Linear Task (LT)** 
- — expressive enough for real-world modeling while still compatible with many numeric planners that support linear arithmetic. 
+ ## Domain Type: Restricted Numeric Planning (RNP + Assign)
+
+This domain includes:
+
+**Preconditions** with **single-variable numeric comparisons** and constants:
+```lisp
+(>= (fuel ?a) (* (distance ?c1 ?c2) (fast-burn ?a)))
+(<= (onboard ?a) (zoom-limit ?a))
+```
+
+> `distance`, `fast-burn`, and `zoom-limit` are all constants defined in the `:init` section.
+
+**Effects** consist of:
+- **Constant updates** using constants and a single fluent:
+```lisp
+(increase (total-fuel-used) (* (distance ?c1 ?c2) (slow-burn ?a)))
+(decrease (fuel ?a) (* (distance ?c1 ?c2) (slow-burn ?a)))
+```
+
+> `slow-burn` and `distance` are constants.
+
+- A **reset effect using `assign`**:
+```lisp
+(assign (fuel ?a) (capacity ?a))
+```
+
+**Goals** are **purely propositional**:
+```lisp
+(located person1 city2)
+(located person2 city1)
+(located person3 city2)
+```
+
+Since this domain contains **single-variable numeric preconditions**, **constant effects**, and an **`assign` effect**, and the goals are **predicate-based**, it is classified as **RNP + Assign**.
+
+---
 
 ## Summary
 This adaptation of **Zenotravel** improves **fuel efficiency** by ensuring that:
