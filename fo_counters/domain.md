@@ -16,16 +16,24 @@ This is especially useful for modeling **time-based progression**, **natural gro
 
 ---
 
-## 🧮 Domain Type: Simple Numeric Task (SNT)
+## 🧮 Domain Type: Linear Numeric Planning (LNP)
 
-This domain uses only **simple numeric fluents** updated through constant `increase` / `decrease` operations. There are:
+This domain includes **linear numeric preconditions** such as:
 
-- No linear equations or expressions in effects
-- No arithmetic expressions in preconditions
-- No numeric functions combining multiple fluents
+```lisp
+:precondition (and (>= (- (value ?c) (rate_value ?c)) 0))
+```
 
-This makes it a **Simple Numeric Task (SNT)** — highly efficient and well-supported by most numeric planners.
+and **linear numeric effects**, for example:
 
+```lisp
+:effect (and 
+    (decrease (value ?c) (rate_value ?c))
+    (increase (total-cost) 1)
+)
+```
+
+Since both the preconditions and effects involve **linear expressions**, this domain is classified as **LNP (Linear Numeric Planning)**.
 ---
 
 ## ⚙️ Domain Mechanics
