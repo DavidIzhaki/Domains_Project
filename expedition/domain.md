@@ -13,9 +13,39 @@ The **Expedition Domain** simulates a scenario where sleds navigate through a se
 
 ---
 
-## 🧮 Domain Type: Simple Numaric Task (SNT)
+## 🧮 Domain Type: Restricted Numeric Planning (RNP)
 
-This domain is classified as SNT (Simple Numeric Task) because it uses numeric fluents updated with constant values and compares them using simple arithmetic in preconditions. All numeric effects are limited to increase or decrease by constants, which fits the SNT definition.
+This domain includes:
+
+**Preconditions** that involve:
+- **Single-variable numeric constraints**:
+```lisp
+(>= (sled_supplies ?s) 1)
+(>= (waypoint_supplies ?w) 1)
+(> (sled_capacity ?s) (sled_supplies ?s))
+```
+
+> Here, `sled_capacity` is a **constant** defined in the `:init` section and never changes, so it does not count as a variable.
+
+- **Propositional predicates**, such as:
+```lisp
+(at ?s ?w1)
+```
+
+**Effects** are limited to **constant updates** involving a single variable:
+```lisp
+(decrease (sled_supplies ?s) 1)
+```
+
+**Goals** are purely propositional:
+```lisp
+(and
+    (at s0 wa5)
+    (at s1 wa5)
+)
+```
+
+Since the domain uses **single-variable preconditions**, **constant effects**, and **predicate-based goals**, it is classified as **RNP (Restricted Numeric Planning)**.
 
 ---
 
