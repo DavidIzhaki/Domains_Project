@@ -34,6 +34,7 @@ and **linear numeric effects**, for example:
 ```
 
 Since both the preconditions and effects involve **linear expressions**, this domain is classified as **LNP (Linear Numeric Planning)**.
+
 ---
 
 ## ⚙️ Domain Mechanics
