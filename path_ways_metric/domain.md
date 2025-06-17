@@ -24,14 +24,39 @@ This domain is ideal for evaluating **numeric resource flows**, especially in bi
 
 ---
 
-### 🧮 Domain Type: Simple Numeric Task (SNT)
+## 🧮  Domain Type: Simple Numeric Planning (SNP)
 
-This domain qualifies as a **Simple Numeric Task (SNT)**:
-- Effects use only constant `increase` / `decrease` operations.
-- No arithmetic expressions in preconditions.
-- No use of functions combining multiple fluents.
+This domain includes:
 
-This makes it compatible with many numeric planners, and ideal for testing **resource flow heuristics**.
+**Preconditions** combining:
+- **Single-variable numeric comparisons** using constants:
+```lisp
+(>= (available ?x1) (need-for-association ?x1 ?x2 ?x3))
+(>= (available ?x2) (need-for-association ?x2 ?x1 ?x3))
+```
+
+- **Predicates** such as:
+```lisp
+(association-reaction ?x1 ?x2 ?x3)
+(catalyzed-association-reaction ?x1 ?x2 ?x3)
+```
+
+> `need-for-*` terms are constants defined in the `:init` section and do not change.
+
+**Effects** include **constant updates to single fluents**:
+```lisp
+(decrease (available ?x1) (need-for-catalyzed-self-association ?x1 ?x3))
+(increase (available ?x3) (prod-by-catalyzed-self-association ?x1 ?x3))
+```
+
+> `need-for-catalyzed-self-association` and `prod-by-*` are constants.
+
+**Goals** contain **linear numeric expressions**:
+```lisp
+(>= (+ (available pRbp1p2-AP2) (available pCAF-p300)) 4)
+```
+
+Since this domain uses **single-variable numeric preconditions**, **constant effects**, and **linear goals**, it is classified as **SNP (Simple Numeric Planning)**.
 
 ---
 
